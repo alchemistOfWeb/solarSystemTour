@@ -4,6 +4,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 .layout {
     height: 100vh;
@@ -14,38 +15,93 @@
 .section-outer{
     height: 100%;
 }
-
-.background-video{
-    position:fixed;
-    z-index:-1;
-    min-width:100%;
-    min-height:100%;
-    overflow:hidden;
-    background: repeating-linear-gradient(45deg, #86bed3, #86bed3 10px, #68828b 15px, #68828b 20px);
-
-}
 // === / common
 
 // === section-header ===
 .section-header {
-    // background-image: url('../img/spaceship-3827558_1920.jpg');
+    background: url('../img/nebula-planet-by-david-cowan-1629768-1599x956.jpg'),
+    radial-gradient(50% 50%, rgba(0, 0, 0, 0.068) 60%, rgba(0, 0, 0, 0.151) , rgba(0, 0, 0, 0.678));
     background-position: center;
     background-size: 100% 100%;
+    background-blend-mode: multiply;
     .section-inner{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 60%;
+    }
+    &-content{
+        flex-grow: 1;
         display: flex;
         align-items: center;
-        justify-content: center;
-        padding-top: 300px;
-    }
-    &__main-title{
-        color: white;
-        font-size: 50px;
-        @include NiseSegaRegular;
-        text-shadow: 0 0 15px red;
         
     }
-}
+    &-wrapper{
+        margin: 0 auto;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        &__title,
+        &__subtitle{
+            text-align: center;
+        }
+        &__title{
+            color: white;
+            font-size: 50px;
+            @include NiseSegaRegular;
+            text-shadow: 0 0 15px red;
+            letter-spacing: 10px;
+        }
+        &__subtitle{
+            margin: auto;
+            color: white;
+            font-size: 27px;
+            line-height: 20px;
+            @include CStrike;
+            margin-top: 10px;
 
+        }
+        &__form{
+            display: flex;
+            position: relative;
+            top: 30px;
+            &-input { 
+                flex: 1;
+                padding-right: 40px;
+                input{
+                    color: rgb(57, 129, 57);
+                    text-shadow: 0 0 9px rgb(116, 101, 51);
+                    flex: 1;
+                    border: none;
+                    background: rgba(128, 128, 128, 0.548);
+                    margin: 0;
+                    padding: 16px 20px;
+                    font-size: 16px;
+                    outline: none;
+                    border-radius: 5px;
+                    width: 100%;
+                    &::placeholder {
+                        color: white; 
+                        text-shadow: 0 0 0px;
+                    }
+                }
+            }
+            &-button {
+                button{
+                    border: none;
+                    background: rgba(184, 102, 64, 0.829);
+                    margin: 0;
+                    padding: 16px 35px;
+                    font-size: 16px;
+                    outline: none;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+    
+}
 // === / section-header ===
 
 // === section-header ===

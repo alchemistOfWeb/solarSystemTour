@@ -25,6 +25,8 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .layout {
@@ -35,38 +37,130 @@
   height: 100%;
 }
 
-.background-video {
-  position: fixed;
-  z-index: -1;
-  min-width: 100%;
-  min-height: 100%;
-  overflow: hidden;
-  background: repeating-linear-gradient(45deg, #86bed3, #86bed3 10px, #68828b 15px, #68828b 20px);
-}
-
 .section-header {
+  background: url("../img/nebula-planet-by-david-cowan-1629768-1599x956.jpg"), radial-gradient(50% 50%, rgba(0, 0, 0, 0.068) 60%, rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.678));
   background-position: center;
   background-size: 100% 100%;
+  background-blend-mode: multiply;
 }
 
 .section-header .section-inner {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  width: 60%;
+}
+
+.section-header-content {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding-top: 300px;
 }
 
-.section-header__main-title {
+.section-header-wrapper {
+  margin: 0 auto;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.section-header-wrapper__title, .section-header-wrapper__subtitle {
+  text-align: center;
+}
+
+.section-header-wrapper__title {
   color: white;
   font-size: 50px;
   font-family: 'Nise Sega Cyrillic Regular';
   text-shadow: 0 0 15px red;
+  letter-spacing: 10px;
+}
+
+.section-header-wrapper__subtitle {
+  margin: auto;
+  color: white;
+  font-size: 27px;
+  line-height: 20px;
+  font-family: 'Counter-Strike Regular';
+  margin-top: 10px;
+}
+
+.section-header-wrapper__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  top: 30px;
+}
+
+.section-header-wrapper__form-input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-right: 40px;
+}
+
+.section-header-wrapper__form-input input {
+  color: #398139;
+  text-shadow: 0 0 9px #746533;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border: none;
+  background: rgba(128, 128, 128, 0.548);
+  margin: 0;
+  padding: 16px 20px;
+  font-size: 16px;
+  outline: none;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.section-header-wrapper__form-input input::-webkit-input-placeholder {
+  color: white;
+  text-shadow: 0 0 0px;
+}
+
+.section-header-wrapper__form-input input:-ms-input-placeholder {
+  color: white;
+  text-shadow: 0 0 0px;
+}
+
+.section-header-wrapper__form-input input::-ms-input-placeholder {
+  color: white;
+  text-shadow: 0 0 0px;
+}
+
+.section-header-wrapper__form-input input::placeholder {
+  color: white;
+  text-shadow: 0 0 0px;
+}
+
+.section-header-wrapper__form-button button {
+  border: none;
+  background: rgba(184, 102, 64, 0.829);
+  margin: 0;
+  padding: 16px 35px;
+  font-size: 16px;
+  outline: none;
+  border-radius: 5px;
 }
 
 .choose-cabin {

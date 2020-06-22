@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'Russian2 Regular';
+  src: url("../fonts/Russian.eot");
+  src: url("../fonts/Russian.eot?#iefix") format("embedded-opentype"), url("../fonts/Russian.woff") format("woff"), url("../fonts/Russian.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Counter-Strike Regular';
+  src: url("../fonts/Counter-StrikeRegular.eot");
+  src: url("../fonts/Counter-StrikeRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/Counter-StrikeRegular.woff") format("woff"), url("../fonts/Counter-StrikeRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nise Sega Cyrillic Regular';
+  src: url("../fonts/NiseSegaCyrillic.eot");
+  src: url("../fonts/NiseSegaCyrillic.eot?#iefix") format("embedded-opentype"), url("../fonts/NiseSegaCyrillic.woff") format("woff"), url("../fonts/NiseSegaCyrillic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.layout {
+  height: 100vh;
+}
+
+.section-outer {
+  height: 100%;
+}
+
+.background-video {
+  position: fixed;
+  z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  background: repeating-linear-gradient(45deg, #86bed3, #86bed3 10px, #68828b 15px, #68828b 20px);
+}
+
+.section-header {
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.section-header .section-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 300px;
+}
+
+.section-header__main-title {
+  color: white;
+  font-size: 50px;
+  font-family: 'Nise Sega Cyrillic Regular';
+  text-shadow: 0 0 15px red;
+}
+
+.choose-cabin {
+  background: linear-gradient(45deg, red, black);
+  background-position: center;
+  background-size: 100% 100%;
+}
+/*# sourceMappingURL=style.css.map */

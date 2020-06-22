@@ -1,0 +1,87 @@
+@import 'fonts';
+
+// === common
+*{
+    margin: 0;
+    padding: 0;
+}
+.layout {
+    height: 100vh;
+    // overflow: hidden;
+
+}
+
+.section-outer{
+    height: 100%;
+}
+
+.background-video{
+    position:fixed;
+    z-index:-1;
+    min-width:100%;
+    min-height:100%;
+    overflow:hidden;
+    background: repeating-linear-gradient(45deg, #86bed3, #86bed3 10px, #68828b 15px, #68828b 20px);
+
+}
+// === / common
+
+// === section-header ===
+.section-header {
+    // background-image: url('../img/spaceship-3827558_1920.jpg');
+    background-position: center;
+    background-size: 100% 100%;
+    .section-inner{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 300px;
+    }
+    &__main-title{
+        color: white;
+        font-size: 50px;
+        @include NiseSegaRegular;
+        text-shadow: 0 0 15px red;
+        
+    }
+}
+
+// === / section-header ===
+
+// === section-header ===
+.choose-cabin {
+    background: linear-gradient(45deg, red, black);
+    background-position: center;
+    background-size: 100% 100%;
+}
+// === / section-header ===
+
+// === section-header ===
+.choose-flight {
+
+}
+// === / section-header ===
+
+// === section-header ===
+.choose-food {
+
+}
+// === / section-header ===
+
+// === section-header ===
+.choose-luggage {
+
+}
+// === / section-header ===
+
+// === section-header ===
+.choose-personalData {
+
+}
+// === / section-header ===
+
+// === section-header ===
+.choose-spaceShip {
+
+}
+// === / section-header ===

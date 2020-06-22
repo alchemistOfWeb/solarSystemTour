@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Russian2 Regular';
+    src: url('../fonts/Russian.eot');
+    src: url('../fonts/Russian.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Russian.woff') format('woff'),
+    url('../fonts/Russian.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Counter-Strike Regular';
+    src: url('../fonts/Counter-StrikeRegular.eot');
+    src: url('../fonts/Counter-StrikeRegular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Counter-StrikeRegular.woff') format('woff'),
+    url('../fonts/Counter-StrikeRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Nise Sega Cyrillic Regular';
+    src: url('../fonts/NiseSegaCyrillic.eot');
+    src: url('../fonts/NiseSegaCyrillic.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/NiseSegaCyrillic.woff') format('woff'),
+    url('../fonts/NiseSegaCyrillic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@mixin russian2 {
+    font-family: 'Russian2 Regular';
+}
+
+@mixin CStrike {
+    font-family: 'Counter-Strike Regular';
+}
+
+@mixin NiseSegaRegular {
+    font-family: 'Nise Sega Cyrillic Regular';
+}

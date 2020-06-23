@@ -12,8 +12,12 @@
 
 }
 
-.section-outer{
-    height: 100%;
+.section-inner{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 70%;
 }
 // === / common
 
@@ -24,13 +28,11 @@
     background-position: center;
     background-size: 100% 100%;
     background-blend-mode: multiply;
+
     .section-inner{
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        margin: auto;
         width: 60%;
     }
+    
     &-content{
         flex-grow: 1;
         display: flex;
@@ -59,31 +61,34 @@
             font-size: 27px;
             line-height: 20px;
             @include CStrike;
-            margin-top: 10px;
+            margin-top: 15px;
 
         }
         &__form{
             display: flex;
             position: relative;
-            top: 30px;
+            top: 40px;
             &-input { 
                 flex: 1;
                 padding-right: 40px;
                 input{
-                    color: rgb(57, 129, 57);
-                    text-shadow: 0 0 9px rgb(116, 101, 51);
+                    color: rgb(1, 15, 1);
+                    text-shadow: 0 0 3px rgb(207, 201, 178), 0 0 6px rgb(211, 175, 56);
                     flex: 1;
                     border: none;
                     background: rgba(128, 128, 128, 0.548);
                     margin: 0;
                     padding: 16px 20px;
-                    font-size: 16px;
+                    font-size: 20px;
                     outline: none;
                     border-radius: 5px;
                     width: 100%;
                     &::placeholder {
                         color: white; 
                         text-shadow: 0 0 0px;
+                    }
+                    &:focus{
+                        box-shadow: 0 0 0 2px white;
                     }
                 }
             }
@@ -104,13 +109,108 @@
 }
 // === / section-header ===
 
-// === section-header ===
-.choose-cabin {
-    background: linear-gradient(45deg, red, black);
-    background-position: center;
-    background-size: 100% 100%;
+// for choose-starship and choose-flightPath
+.little-choise{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    &__description{
+        padding-top: 100px;
+        text-align: center;
+        color: white;
+        font-size: 40px;
+        line-height: 20px;
+        @include CStrike;
+    }
+    &-container{
+        padding-top: 350px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        &__radio{
+            flex-shrink: 0;
+            width: 200px;
+            height: auto;
+            &-input{
+                display: none;
+            }
+            &-label{
+                text-align: center;
+                padding-top: 40px;
+                color: white;
+                font-size: 27px;
+                @include CStrike;
+                position: relative;
+                display: block;
+                width: 100%;
+                cursor: pointer;
+                &:before{
+                    content: "";
+                    background-position: center;
+                    background-size: 95%;
+                    background-repeat: no-repeat;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: -200px;
+                    height:200px;
+                    width: 200px;
+                    display: block;
+                    transition-duration: .4s;
+                } 
+                
+            }
+
+            &+&{
+                margin-left: 100px;
+            }
+            &-input:checked + &-label:before {
+                box-shadow: 0 0 1px 6px rgb(255, 255, 255)!important;
+
+                
+            }
+            &-input:hover + &-label:before {
+                box-shadow: 0 0 1px 6px rgba(255, 255, 255, 0.555);
+                
+            } 
+
+        }
+    }
+    
 }
-// === / section-header ===
+.picture-serenity:before{
+    background-image: url('../img/Serenity.png');
+}
+.picture-rossinant:before{
+    background-image: url('../img/Rossinant.png');
+}
+.picture-millenniumFalcon:before{
+    background-image: url('../img/milleniumFalcon.png');
+}
+.picture-normandia:before{
+    background-image: url('../img/NormandiaSr2.png');
+}
+.choise-link{
+    width: 72px;
+    align-self: center;
+    cursor: pointer;
+    &-text{
+        color: white;
+        text-align: center;
+        font-size: 27px;
+    }
+    &-icon{
+        width: 100%;
+    }
+}
+// / for choose-starship and choose-flightPath
+
+// === choose-starship ===
+.choose-starship {
+    background: linear-gradient(45deg, rgb(30, 209, 185), rgb(3, 88, 109));
+    background-position: center;
+    background-size: cover;
+}
+// === / choose-starship ===
 
 // === section-header ===
 .choose-flight {

@@ -39,7 +39,7 @@
                     <div class="little-choise__description">Выбирай корабль</div>
                     <div class="little-choise-container">
                         <div class="little-choise-container__radio">
-                            <input class="little-choise-container__radio-input" id="starship0" value="0" type="radio" name="starship">
+                            <input class="little-choise-container__radio-input" id="starship0" value="0" type="radio" name="starship" checked>
                             <label class="little-choise-container__radio-label  picture-serenity" for="starship0">
                                 Serenity
                             </label>
@@ -75,9 +75,37 @@
         <!-- / choose-starship -->
 
         <!-- choose-combatEquipment -->
-        <section class="section-outer choose-combatEquipment">
+        <section class="section-outer choose-equipment">
             <div class="section-inner">
-                <span>choose-combatEquipment</span>
+                <div class="little-choise">
+                    <div class="little-choise__description">Выбирай оснащение <span class="hyphen">-</span> вы решили посетить магазин на орбитальной станции земли(у вас: 5000$)</div>
+                    <div class="little-choise-container">
+                        <div class="little-choise-container__radio">
+                            <input class="little-choise-container__radio-input" id="item-equ0" value="0" type="checkbox" name="item-equipment" checked>
+                            <label class="little-choise-container__radio-label picture-accelerator" for="item-equ0">
+                                ускоритель(5000$)
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio">
+                            <input class="little-choise-container__radio-input" id="item-equ1" value="1" type="checkbox" name="item-equipment">
+                            <label class="little-choise-container__radio-label picture-railGan" for="item-equ1">
+                                рельсовые пушки(4000$)
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio">
+                            <input class="little-choise-container__radio-input" id="item-equ2" value="2" type="checkbox" name="item-equipment">
+                            <label class="little-choise-container__radio-label  picture-faceBeacon" for="item-equ2">
+                                псевдо<span class="hyphen">-</span>маячки(3200$)
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio">
+                            <input class="little-choise-container__radio-input" id="item-equ3" value="3" type="checkbox" name="item-equipment">
+                            <label class="little-choise-container__radio-label picture-strangeSphere" for="item-equ3">
+                                таинственный шар(сувенир)(2000$)
+                            </label>
+                        </div>
+                    </div>
+                </div>
                 <div class="choise-link">
                     <div class="choise-link-text">next</div>
                     <div class="choise-link-icon">

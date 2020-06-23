@@ -19,6 +19,10 @@
     margin: auto;
     width: 70%;
 }
+
+.hyphen{
+    font-family: Arial, Helvetica, sans-serif;
+}
 // === / common
 
 // === section-header ===
@@ -119,7 +123,7 @@
         text-align: center;
         color: white;
         font-size: 40px;
-        line-height: 20px;
+        line-height: 25px;
         @include CStrike;
     }
     &-container{
@@ -211,10 +215,23 @@
     background-size: cover;
 }
 // === / choose-starship ===
-
+.picture-accelerator:before{
+    background-image: url('../img/accelerator.png');
+}
+.picture-railGan:before{
+    background-image: url('../img/railGan.png');
+}
+.picture-faceBeacon:before{
+    background-image: url('../img/fakeBeacon.png')
+}
+.picture-strangeSphere:before{
+    background-image: url('../img/strangeSphere.png')
+}
 // === section-header ===
-.choose-flight {
-
+.choose-equipment {
+    background: linear-gradient(45deg, rgb(53, 223, 157), rgb(19, 52, 114));
+    background-position: center;
+    background-size: cover;
 }
 // === / section-header ===
 

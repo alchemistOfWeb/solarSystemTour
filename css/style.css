@@ -46,6 +46,10 @@
   width: 70%;
 }
 
+.hyphen {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .section-header {
   background: url("../img/nebula-planet-by-david-cowan-1629768-1599x956.jpg"), radial-gradient(50% 50%, rgba(0, 0, 0, 0.068) 60%, rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.678));
   background-position: center;
@@ -184,7 +188,7 @@
   text-align: center;
   color: white;
   font-size: 40px;
-  line-height: 20px;
+  line-height: 25px;
   font-family: 'Counter-Strike Regular';
 }
 
@@ -290,6 +294,28 @@
 
 .choose-starship {
   background: linear-gradient(45deg, #1ed1b9, #03586d);
+  background-position: center;
+  background-size: cover;
+}
+
+.picture-accelerator:before {
+  background-image: url("../img/accelerator.png");
+}
+
+.picture-railGan:before {
+  background-image: url("../img/railGan.png");
+}
+
+.picture-faceBeacon:before {
+  background-image: url("../img/fakeBeacon.png");
+}
+
+.picture-strangeSphere:before {
+  background-image: url("../img/strangeSphere.png");
+}
+
+.choose-equipment {
+  background: linear-gradient(45deg, #35df9d, #133472);
   background-position: center;
   background-size: cover;
 }

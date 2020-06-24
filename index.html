@@ -15,17 +15,17 @@
                     <div class="section-header-wrapper">
                         <div class="section-header-wrapper__title">Solar system tour</div>
                         <div class="section-header-wrapper__subtitle">Выбирай корабль, оснащение, экипаж, траекторию и отправляйся в незабываемое приключение по солнечной системе 2189</div>
-                        <form class="section-header-wrapper__form" action="">
+                        <div class="section-header-wrapper__form">
                             <div class="section-header-wrapper__form-input">
-                                <input type="text" placeholder="name">
+                                <input type="text" placeholder="name" id="name">
                             </div>
                             <div class="section-header-wrapper__form-input">
-                                <input type="text" placeholder="surname">
+                                <input type="text" placeholder="surname" id="surname">
                             </div>
                             <div class="section-header-wrapper__form-button">
-                                <button>get started</button>
+                                <button class="swiper-js">get started</button>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -38,33 +38,33 @@
                 <div class="little-choise">
                     <div class="little-choise__description">Выбирай корабль</div>
                     <div class="little-choise-container">
-                        <div class="little-choise-container__radio">
+                        <div class="little-choise-container__radio little-choise-container__radio_margin">
                             <input class="little-choise-container__radio-input" id="starship0" value="0" type="radio" name="starship" checked>
-                            <label class="little-choise-container__radio-label  picture-serenity" for="starship0">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_big  picture-serenity" for="starship0">
                                 Serenity
                             </label>
                         </div>
-                        <div class="little-choise-container__radio">
+                        <div class="little-choise-container__radio little-choise-container__radio_margin">
                             <input class="little-choise-container__radio-input" id="starship1" value="1" type="radio" name="starship">
-                            <label class="little-choise-container__radio-label  picture-rossinant" for="starship1">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_big  picture-rossinant" for="starship1">
                                 Rossinant
                             </label>
                         </div>
-                        <div class="little-choise-container__radio">
+                        <div class="little-choise-container__radio little-choise-container__radio_margin">
                             <input class="little-choise-container__radio-input" id="starship2" value="2" type="radio" name="starship">
-                            <label class="little-choise-container__radio-label  picture-millenniumFalcon" for="starship2">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_big  picture-millenniumFalcon" for="starship2">
                                 Millennium Falcon
                             </label>
                         </div>
-                        <div class="little-choise-container__radio">
+                        <div class="little-choise-container__radio little-choise-container__radio_margin">
                             <input class="little-choise-container__radio-input" id="starship3" value="3" type="radio" name="starship">
-                            <label class="little-choise-container__radio-label picture-normandia" for="starship3">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_big picture-normandia" for="starship3">
                                 Normandia Sr2
                             </label>
                         </div>
                     </div>
                 </div>
-                <div class="choise-link">
+                <div class="choise-link swiper-js">
                     <div class="choise-link-text">next</div>
                     <div class="choise-link-icon">
                         <img src="icons/1492533501-arrow-30_83308.ico" alt="next">
@@ -78,35 +78,35 @@
         <section class="section-outer choose-equipment">
             <div class="section-inner">
                 <div class="little-choise">
-                    <div class="little-choise__description">Выбирай оснащение <span class="hyphen">-</span> вы решили посетить магазин на орбитальной станции земли(у вас: 5000$)</div>
+                    <div class="little-choise__description">Выбирите оснащение</div>
                     <div class="little-choise-container">
-                        <div class="little-choise-container__radio">
-                            <input class="little-choise-container__radio-input" id="item-equ0" value="0" type="checkbox" name="item-equipment" checked>
-                            <label class="little-choise-container__radio-label picture-accelerator" for="item-equ0">
+                        <div class="little-choise-container__radio little-choise-container__radio_margin">
+                            <input class="little-choise-container__radio-input" id="item-equ0" value="0" type="radio" name="item-equipment" checked>
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_big picture-accelerator" for="item-equ0">
                                 ускоритель(5000$)
                             </label>
                         </div>
-                        <div class="little-choise-container__radio">
-                            <input class="little-choise-container__radio-input" id="item-equ1" value="1" type="checkbox" name="item-equipment">
-                            <label class="little-choise-container__radio-label picture-railGan" for="item-equ1">
+                        <div class="little-choise-container__radio little-choise-container__radio_margin">
+                            <input class="little-choise-container__radio-input" id="item-equ1" value="1" type="radio" name="item-equipment">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_big picture-railGan" for="item-equ1">
                                 рельсовые пушки(4000$)
                             </label>
                         </div>
-                        <div class="little-choise-container__radio">
-                            <input class="little-choise-container__radio-input" id="item-equ2" value="2" type="checkbox" name="item-equipment">
-                            <label class="little-choise-container__radio-label  picture-faceBeacon" for="item-equ2">
+                        <div class="little-choise-container__radio little-choise-container__radio_margin">
+                            <input class="little-choise-container__radio-input" id="item-equ2" value="2" type="radio" name="item-equipment">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_big  picture-faceBeacon" for="item-equ2">
                                 псевдо<span class="hyphen">-</span>маячки(3200$)
                             </label>
                         </div>
-                        <div class="little-choise-container__radio">
-                            <input class="little-choise-container__radio-input" id="item-equ3" value="3" type="checkbox" name="item-equipment">
-                            <label class="little-choise-container__radio-label picture-strangeSphere" for="item-equ3">
+                        <div class="little-choise-container__radio little-choise-container__radio_margin">
+                            <input class="little-choise-container__radio-input" id="item-equ3" value="3" type="radio" name="item-equipment">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_big picture-strangeSphere" for="item-equ3">
                                 таинственный шар(сувенир)(2000$)
                             </label>
                         </div>
                     </div>
                 </div>
-                <div class="choise-link">
+                <div class="choise-link swiper-js">
                     <div class="choise-link-text">next</div>
                     <div class="choise-link-icon">
                         <img src="icons/1492533501-arrow-30_83308.ico" alt="next">
@@ -119,12 +119,78 @@
         <!-- choose-crew -->
         <section class="section-outer choose-crew">
             <div class="section-inner">
-                <span>choose-crew</span>
-            </div>
-            <div class="choise-link">
-                <div class="choise-link-text">next</div>
-                <div class="choise-link-icon">
-                    <img src="icons/1492533501-arrow-30_83308.ico" alt="next">
+                <div class="little-choise">
+                    <div class="little-choise__description">Выбирите экипаж (максимум 5)</div>
+                    <div class="little-choise-container">
+                        <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
+                            <input class="little-choise-container__radio-input" id="crew-member0" value="0" type="checkbox" name="crew-member" checked>
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member0">
+                                Алан Шепард
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
+                            <input class="little-choise-container__radio-input" id="crew-member1" value="1" type="checkbox" name="crew-member">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_small picture-bobBehnken" for="crew-member1">
+                                Боб Бенкин
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
+                            <input class="little-choise-container__radio-input" id="crew-member2" value="2" type="checkbox" name="crew-member">
+                            <label 
+                            class="little-choise-container__radio-label little-choise-container__radio-label_small picture-dougHurley" for="crew-member2">
+                                Даг Херли
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
+                            <input class="little-choise-container__radio-input" id="crew-member3" value="3" type="checkbox" name="crew-member">
+                            <label 
+                            class="little-choise-container__radio-label little-choise-container__radio-label_small picture-neilArmstrong" for="crew-member3">
+                                Нил Армстронг
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
+                            <input class="little-choise-container__radio-input" id="crew-member4" value="4" type="checkbox" name="crew-member">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member4">
+                                1
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
+                            <input class="little-choise-container__radio-input" id="crew-member5" value="5" type="checkbox" name="crew-member">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member5">
+                                2
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
+                            <input class="little-choise-container__radio-input" id="crew-member6" value="6" type="checkbox" name="crew-member">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member6">
+                                3
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
+                            <input class="little-choise-container__radio-input" id="crew-member7" value="7" type="checkbox" name="crew-member">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member7">
+                                4
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
+                            <input class="little-choise-container__radio-input" id="crew-member8" value="8" type="checkbox" name="crew-member">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member8">
+                                Дифектив
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
+                            <input class="little-choise-container__radio-input" id="crew-member9" value="9" type="checkbox" name="crew-member">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member9">
+                                Киберленин
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="choise-link swiper-js">
+                    <div class="choise-link-text">next</div>
+                    <div class="choise-link-icon">
+                        <img src="icons/1492533501-arrow-30_83308.ico" alt="next">
+                    </div>
                 </div>
             </div>
         </section>
@@ -134,23 +200,41 @@
         <section class="section-outer choose-flightPath">
             <div class="section-inner">
                 <div class="little-choise">
-                    <div class="little-choise__description">choise__description</div>
-                    <div class="little-choise__container">
-                        <div class="little-choise__radio">
-                            <input id="starship0" type="radio" name="flightPath" checked>
-                            <label for="starship0">FireFly</label>
+                    <div class="little-choise__description">Куда полетите?</div>
+                    <div class="little-choise-container">
+                        <div class="little-choise-container__radio">
+                            <input class="little-choise-container__radio-input" id="flightPath0" value="0" type="radio" name="flightPath" checked>
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-asteroidBelt" for="flightPath0">
+                                Пояс астеройдов
+                            </label>
                         </div>
-                        <div class="little-choise__radio">
-                            <input id="starship1" type="radio" name="flightPath">
-                            <label for="starship1">Rossinant</label>
+                        <div class="little-choise-container__radio">
+                            <input class="little-choise-container__radio-input" id="flightPath1" value="1" type="radio" name="flightPath">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-mars" for="flightPath1">
+                                Марс
+                            </label>
                         </div>
-                        <div class="little-choise__radio">
-                            <input id="starship2" type="radio" name="flightPath">
-                            <label for="starship2">Millennium Falcon</label>
+                        <div class="little-choise-container__radio">
+                            <input class="little-choise-container__radio-input" id="flightPath2" value="2" type="radio" name="flightPath">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle  picture-jupiter" for="flightPath2">
+                                Спутники Юпитера
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio">
+                            <input class="little-choise-container__radio-input" id="flightPath3" value="3" type="radio" name="flightPath">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-saturnsSputnics" for="flightPath3">
+                                Спутники Сатурна
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio">
+                            <input class="little-choise-container__radio-input" id="flightPath4" value="4" type="radio" name="flightPath">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-ceres" for="flightPath4">
+                                Церера
+                            </label>
                         </div>
                     </div>
                 </div>
-                <div class="choise-link">
+                <div class="choise-link swiper-js">
                     <div class="choise-link-text">next</div>
                     <div class="choise-link-icon">
                         <img src="icons/1492533501-arrow-30_83308.ico" alt="next">
@@ -158,28 +242,14 @@
                 </div>
             </div>
         </section>
+        <section class="section-outer section-launch">
+            <div class="section-inner">
+
+            </div>
+        </section>
         <!-- / choose-flightPath -->
-
-        <!-- choose-personalData -->
-        <section class="section-outer choose-personalData">
-            <div class="section-inner">
-                <span>choose-personalData</span>
-            </div>
-        </section>
-        <!-- / choose-personalData -->
-
-        <!-- choose-spaceShip -->
-        <section class="section-outer choose-spaceShip">
-            <div class="section-inner">
-                <span>choose-spaceShip</span>
-            </div>
-        </section>
-        <!-- / choose-spaceShip -->
-        <section class="section-outer fly">
-            <div class="section-inner">
-                <span>fly</span>
-            </div>
-        </section>
     </div>
-</body>
+    <script src="js/JQuery.js"></script>
+    <script src="js/scripts.js"></script>
+</body> 
 </html>

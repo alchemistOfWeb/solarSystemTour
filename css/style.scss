@@ -8,7 +8,7 @@
 }
 .layout {
     height: 100vh;
-    // overflow: hidden;
+    overflow: hidden;
 
 }
 
@@ -17,7 +17,7 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: 70%;
+    width: 95%;
 }
 
 .hyphen{
@@ -87,6 +87,7 @@
                     outline: none;
                     border-radius: 5px;
                     width: 100%;
+                    transition-duration: .3s;
                     &::placeholder {
                         color: white; 
                         text-shadow: 0 0 0px;
@@ -105,6 +106,13 @@
                     font-size: 16px;
                     outline: none;
                     border-radius: 5px;
+                    transition-duration: .3s;
+                    &:hover{
+                        box-shadow: 0 0 4px 2px rgb(255, 185, 71);
+                    }
+                    &:active{
+                        box-shadow: 0 0 6px 3px rgb(255, 114, 21);
+                    }
                 }
             }
         }
@@ -113,13 +121,15 @@
 }
 // === / section-header ===
 
-// for choose-starship and choose-flightPath
+// === also common
 .little-choise{
     height: 80%;
     display: flex;
     flex-direction: column;
+    padding-top: 100px;
     &__description{
-        padding-top: 100px;
+        padding-top: 70px;
+        padding-bottom: 70px;
         text-align: center;
         color: white;
         font-size: 40px;
@@ -127,14 +137,23 @@
         @include CStrike;
     }
     &-container{
-        padding-top: 350px;
         display: flex;
         flex-direction: row;
         justify-content: center;
+        flex-wrap: wrap;
+
         &__radio{
+            padding-top: 250px;
             flex-shrink: 0;
             width: 200px;
-            height: auto;
+            height: 50px;
+            &_margin{
+                margin: 30px;
+            }
+            &_small{
+                width: 100px;
+                padding-top: 150px;
+            }
             &-input{
                 display: none;
             }
@@ -151,22 +170,39 @@
                 &:before{
                     content: "";
                     background-position: center;
-                    background-size: 95%;
                     background-repeat: no-repeat;
-                    border-radius: 50%;
                     position: absolute;
-                    top: -200px;
-                    height:200px;
-                    width: 200px;
                     display: block;
                     transition-duration: .4s;
                 } 
+                &_big:before{
+                    top: -200px;
+                    height:200px;
+                    width: 200px;
+                    background-size: 95%;
+                    border-radius: 50%;
+                }
+                &_small:before{
+                    top: -100px;
+                    height:100px;
+                    width: 100px;
+                    background-size: 90%;
+                    border-radius: 50%;
+                }
+                &_rectangle:before{
+                    top: -250px;
+                    height:400px;
+                    width: 180px;
+                    background-size: auto 100%;
+                }
+                &_rectangle{
+                    padding-top: 170px;
+                }
                 
             }
-
-            &+&{
-                margin-left: 100px;
-            }
+            // &+&{
+            //     margin-left: 100px;
+            // }
             &-input:checked + &-label:before {
                 box-shadow: 0 0 1px 6px rgb(255, 255, 255)!important;
 
@@ -194,9 +230,16 @@
     background-image: url('../img/NormandiaSr2-min.png');
 }
 .choise-link{
-    width: 72px;
+    position: relative;
+    top: 50px;
+    min-width: 72px;
     align-self: center;
     cursor: pointer;
+    animation-name: arrow-link;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     &-text{
         color: white;
         text-align: center;
@@ -204,9 +247,18 @@
     }
     &-icon{
         width: 100%;
+        filter: drop-shadow(0 1px 10px black);
     }
 }
-// / for choose-starship and choose-flightPath
+@keyframes arrow-link{
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(-10px);
+    }
+}
+// === / also common
 
 // === choose-starship ===
 .choose-starship {
@@ -222,39 +274,73 @@
     background-image: url('../img/railGan.png');
 }
 .picture-faceBeacon:before{
-    background-image: url('../img/fakeBeacon.png')
+    background-image: url('../img/fakeBeacon.png');
 }
 .picture-strangeSphere:before{
-    background-image: url('../img/strangeSphere.png')
+    background-image: url('../img/strangeSphere.png');
 }
-// === section-header ===
+// === section-equipment ===
 .choose-equipment {
     background: linear-gradient(45deg, rgb(53, 223, 157), rgb(19, 52, 114));
     background-position: center;
     background-size: cover;
 }
-// === / section-header ===
+// === / section-equipment ===
 
-// === section-header ===
-.choose-food {
-
+.picture-neilArmstrong:before{
+    background-image: url('../img/neilArmstrong.png');
 }
-// === / section-header ===
-
-// === section-header ===
-.choose-luggage {
-
+.picture-dougHurley:before{
+    background-image: url('../img/DougHurley.png');
 }
-// === / section-header ===
-
-// === section-header ===
-.choose-personalData {
-
+.picture-bobBehnken:before{
+    background-image: url('../img/bobBehnken.png');
 }
-// === / section-header ===
-
-// === section-header ===
-.choose-spaceShip {
-
+.picture-placeholder:before{
+    background-image: url('../img/placeholder-Copy.png');
 }
-// === / section-header ===
+// === section-crew ===
+.choose-crew {
+    .section-inner{
+        width: 70% !important;
+    }
+    background: linear-gradient(45deg, rgb(128, 63, 113), rgb(19, 134, 180));
+    background-position: center;
+    background-size: cover;
+}
+// === / section-crew ===
+.picture-titan:before{
+    background-image: url('../img/nebula-planet-by-david-cowan-1629768-1599x956.jpg');
+}
+.picture-mars:before{
+    background-image: url('../img/mars.jpg');
+}
+.picture-jupiter:before{
+    background-image: url('../img/Jupiter\'sSputnics.jpg');
+}
+.picture-asteroidBelt:before{
+    background-image: url('../img/asteroidBelt.jpg')
+}
+.picture-ceres:before{
+    background-image: url('../img/Ceres.jpg')
+}
+.picture-saturnsSputnics:before{
+    background-image: url('../img/saturnSputnics.jpg')
+}
+// === flight-path ===
+.choose-flightPath{
+    background: linear-gradient(45deg, rgb(117, 41, 99), rgb(60, 44, 206));
+    background-position: center;
+    background-size: cover;
+}
+// === / flight-path ===
+
+// === section-launch ===
+.section-launch{
+    // background: linear-gradient(90deg, rgb(213, 216, 172), rgb(167, 133, 133));
+    background: url('../img/arrivingOnMars.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+// === / section-launch ===

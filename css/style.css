@@ -51,6 +51,134 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.info-bar {
+  background: -webkit-gradient(linear, left top, left bottom, from(black), to(gray));
+  background: linear-gradient(180deg, black, gray);
+  top: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.info-bar__wrapper {
+  min-height: 81px;
+  width: 1200px;
+  margin: 0 auto;
+  background: -webkit-gradient(linear, left bottom, left top, from(#444141), color-stop(#974646), color-stop(#974646), to(#444141));
+  background: linear-gradient(0deg, #444141, #974646, #974646, #444141);
+}
+
+.info-bar__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.info-bar__personal-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 20%;
+}
+
+.info-bar__params {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 50%;
+}
+
+.info-bar__crew {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 30%;
+}
+
+.info-bar__crew-wrapper {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.info-bar__crew-link {
+  width: 50px;
+  text-decoration: none;
+}
+
+.info-bar__crew-list {
+  padding-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.info-bar__crew-list-item {
+  margin: 0 10px;
+  width: 40px;
+  height: 40px;
+  display: block;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.info-bar__point {
+  width: 20%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-decoration: none;
+}
+
+.info-bar__item {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 33.3%;
+}
+
+.info-bar__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 50px;
+  text-decoration: none;
+}
+
+.info-bar__title {
+  color: white;
+}
+
+.info-bar__text {
+  color: white;
+  font-size: 22px;
+}
+
 .section-header {
   background: url("../img/nebula-planet-by-david-cowan-1629768-1599x956.jpg"), radial-gradient(50% 50%, rgba(0, 0, 0, 0.068) 60%, rgba(0, 0, 0, 0.151), rgba(0, 0, 0, 0.678));
   background-position: center;
@@ -302,6 +430,11 @@
 .little-choise-container__radio-input:hover + .little-choise-container__radio-label:before {
   -webkit-box-shadow: 0 0 1px 6px rgba(255, 255, 255, 0.555);
           box-shadow: 0 0 1px 6px rgba(255, 255, 255, 0.555);
+}
+
+.little-choise-container__radio-input-js_red:hover + .little-choise-container__radio-label:before {
+  -webkit-box-shadow: 0 0 1px 6px rgba(110, 16, 16, 0.555);
+          box-shadow: 0 0 1px 6px rgba(110, 16, 16, 0.555);
 }
 
 .picture-serenity:before {

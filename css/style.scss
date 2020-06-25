@@ -25,6 +25,95 @@
 }
 // === / common
 
+// === info-bar
+.info-bar{
+    background: linear-gradient(180deg, black, gray);
+    top: 0;
+    right: 0;
+    left: 0;
+    position: fixed; 
+    z-index: 1000;
+    display: flex;
+    &__wrapper{
+        min-height: 81px;
+        width: 1200px;
+        margin: 0 auto;
+        background: linear-gradient(0deg, #444141, #974646, #974646, #444141);
+    }
+    &__content{
+        display: flex;
+        width: 100%;
+        
+    }
+    &__personal-data{
+        display: flex;
+        flex-direction: row;
+        width: 20%;
+        // background-color: rgb(116, 64, 64);
+    }
+    &__params{
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        // background-color: gray;
+    }
+    &__crew{
+        display: flex;
+        flex-direction: row;
+        // background-color: rgb(69, 128, 61);
+        width: 30%;
+        &-wrapper{
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        &-link{
+            width: 50px;
+            text-decoration: none;
+        }
+        &-list{
+            padding-top: 15px;
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            &-item{
+                margin: 0 10px;
+                width: 40px;
+                height: 40px;
+                display: block;
+                background-color: red;
+                border-radius: 50%;
+            }
+        }
+
+    }
+    &__point{
+        width: 20%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-decoration: none;
+    }
+    &__item{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 33.3%;
+        
+    }
+    &__link{
+        display: flex;
+        flex-direction: column;
+        width: 50px;
+        text-decoration: none;
+    }
+    &__title{
+        color: white;
+    }
+    &__text{
+        color: white;
+        font-size: 22px;
+    }
+}
+// === / info-bar
+
 // === section-header ===
 .section-header {
     background: url('../img/nebula-planet-by-david-cowan-1629768-1599x956.jpg'),
@@ -36,12 +125,10 @@
     .section-inner{
         width: 60%;
     }
-    
     &-content{
         flex-grow: 1;
         display: flex;
         align-items: center;
-        
     }
     &-wrapper{
         margin: 0 auto;
@@ -66,7 +153,6 @@
             line-height: 20px;
             @include CStrike;
             margin-top: 15px;
-
         }
         &__form{
             display: flex;
@@ -117,7 +203,6 @@
             }
         }
     }
-    
 }
 // === / section-header ===
 
@@ -198,19 +283,19 @@
                 &_rectangle{
                     padding-top: 170px;
                 }
-                
             }
             // &+&{
             //     margin-left: 100px;
             // }
             &-input:checked + &-label:before {
                 box-shadow: 0 0 1px 6px rgb(255, 255, 255)!important;
-
-                
             }
+            // little-choise-container__radio-input-js_grey
             &-input:hover + &-label:before {
                 box-shadow: 0 0 1px 6px rgba(255, 255, 255, 0.555);
-                
+            }
+            &-input-js_red:hover + &-label:before {
+                box-shadow: 0 0 1px 6px rgba(110, 16, 16, 0.555);
             } 
 
         }

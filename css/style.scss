@@ -1,6 +1,10 @@
 @import 'fonts';
 
 // === common
+$sm : 576px;    $sm-max : 767px;
+$md : 768px;    $md-max : 991px; 
+$lg : 992px;    $lg-max : 1199px;
+$xl : 1200px;
 *{
     margin: 0;
     padding: 0;
@@ -18,6 +22,21 @@
     flex-direction: column;
     margin: auto;
     width: 95%;
+    position: relative;
+    
+}
+.bacground-stars{
+    position: absolute;
+    height: 100px; 
+    width: 100px; 
+    &__img{
+        height: 100%;
+        width: 100%;
+        filter: contrast(20%);
+    }
+}
+.section-outer{
+    position: relative;
 }
 
 .hyphen{
@@ -34,16 +53,77 @@
     position: fixed; 
     z-index: 1000;
     display: flex;
+    &__data{
+        position: relative;
+        &-rule:after{
+            position: absolute;
+            margin-top: 5px;
+            content: '';
+            height: 2px;
+            width: 30%;
+            background: linear-gradient(90deg, black, yellow);
+            background-position: center;
+            background-size: cover;
+            @media (min-width: $lg){
+                display: none;
+            }
+            // @media (max-width: 
+        }
+    }
+    &__toggle{
+        position: absolute;
+        
+        bottom: 10px;
+        transition-duration: .3s;
+        @media(min-width: $lg){
+            display: none;
+        }
+        @media(min-width: $md){
+            right: 33%;
+        }
+        @media(max-width: $sm-max){
+            right: 25%;
+        }
+        @media(max-width: $sm){
+            right: 4%;
+        }
+        &-arrow{
+            height: 50px;
+            width: 35px;
+            filter: brightness(2060%) drop-shadow(0 0 10px black);
+            cursor: pointer;
+            &_up{
+                transform: rotateX(180deg);
+            }
+        }
+    }
+    &_open{
+        max-height: 1100px !important;
+        
+    }
     &__wrapper{
+        transition-duration: .9s;
         min-height: 81px;
         width: 1200px;
         margin: 0 auto;
         background: linear-gradient(0deg, #444141, #974646, #974646, #444141);
+        @media (max-width: $md-max){
+            overflow: hidden;
+            min-height: 70px;
+            max-height: 70px;
+            position: relative;
+        }
     }
     &__content{
         display: flex;
         width: 100%;
         padding-left: 5px;
+        @media (min-width: $lg){
+            flex-direction: row;
+        }
+        @media (max-width: $md-max){
+            flex-direction: column;
+        }
         
     }
     &__personal-data{
@@ -51,16 +131,36 @@
         flex-direction: row;
         width: 20%;
         // background-color: rgb(116, 64, 64);
+        @media (max-width: $md-max){
+            margin: 0 20%;
+        }
+        @media(max-width: $sm-max){
+            margin: 0 4%;
+        }
     }
     &__params{
         display: flex;
-        flex-direction: row;
         width: 50%;
-        // background-color: gray;
+        @media (min-width: $lg){
+            flex-direction: row;
+        }
+        @media (max-width: $md-max){
+            margin: 0 20%;
+            flex-direction: column;
+        }
+        @media(max-width: $sm-max){
+            margin: 0 4%;
+        }
     }
     &__crew{
         display: flex;
         flex-direction: row;
+        @media (max-width: $md-max){
+            margin: 0 20%;
+        }
+        @media(max-width: $sm-max){
+            margin: 0 4%;
+        }
         // background-color: rgb(69, 128, 61);
         width: 30%;
         &-wrapper{
@@ -90,9 +190,15 @@
     }
     &__point{
         width: 20%;
-        padding-top: 20px;
-        padding-bottom: 20px;
         text-decoration: none;
+        @media (min-width: $lg){
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        @media (max-width: $md-max){
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
     }
     &__item{
         padding-top: 20px;
@@ -126,12 +232,20 @@
     background: url('../img/nebula-planet-by-david-cowan-1629768-1599x956.jpg'),
     radial-gradient(50% 50%, rgba(0, 0, 0, 0.068) 60%, rgba(0, 0, 0, 0.151) , rgba(0, 0, 0, 0.678));
     background-position: center;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-blend-mode: multiply;
-
-    .section-inner{
-        width: 60%;
+    @media (min-width: $md){
+        .section-inner{
+            width: 60%;
+        }
     }
+    @media (max-width: $sm-max){
+        .section-inner{
+            width: 80%;
+        }
+    }
+    
     &-content{
         flex-grow: 1;
         display: flex;
@@ -152,6 +266,9 @@
             @include NiseSegaRegular;
             text-shadow: 0 0 15px red;
             letter-spacing: 10px;
+            @media (max-width: $sm - 1){
+                font-size: 40px;
+            }
         }
         &__subtitle{
             margin: auto;
@@ -160,14 +277,28 @@
             line-height: 20px;
             @include CStrike;
             margin-top: 15px;
+            @media (max-width: $sm - 1){
+                margin-top: 10px;
+            }
         }
         &__form{
             display: flex;
             position: relative;
             top: 40px;
+            @media (max-width: $lg-max) {
+                flex-direction: column;
+            }
+            @media (min-width: $xl) {
+                flex-direction: row;
+            }
             &-input { 
                 flex: 1;
-                padding-right: 40px;
+                @media (min-width: $xl) {
+                    padding-right: 40px;
+                }
+                @media (max-width: $lg-max) {
+                    padding-bottom: 20px;
+                }
                 input{
                     color: rgb(1, 15, 1);
                     text-shadow: 0 0 3px rgb(207, 201, 178), 0 0 6px rgb(211, 175, 56);
@@ -227,6 +358,7 @@
 
 // === also common
 .little-choise{
+    z-index: 50;
     height: 80%;
     display: flex;
     flex-direction: column;
@@ -298,6 +430,7 @@
                     height:400px;
                     width: 180px;
                     background-size: auto 100%;
+                    
                 }
                 &_rectangle{
                     padding-top: 170px;
@@ -423,13 +556,21 @@
     background-image: url('../img/Jupiter\'sSputnics.jpg');
 }
 .picture-asteroidBelt:before{
-    background-image: url('../img/asteroidBelt.jpg')
+    background-image: url('../img/asteroidBelt.jpg');
 }
 .picture-ceres:before{
-    background-image: url('../img/Ceres.jpg')
+    background-image: url('../img/Ceres.jpg');
 }
 .picture-saturnsSputnics:before{
-    background-image: url('../img/saturnSputnics.jpg')
+    background-image: url('../img/saturnSputnics.jpg');
+    
+}
+.picture-saturnsSputnics:after{
+    content: "Спутники Сатурна";
+    color: white;
+    font-size: 0px;
+    position: relative;
+    bottom: 200px;
 }
 // === flight-path ===
 .choose-flightPath{

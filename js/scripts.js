@@ -106,5 +106,11 @@
     checkboxChangeInfo('input[name=starship]', '#starship');
     checkboxChangeInfo('input[name=item-equipment]', '#equipment');
     checkboxChangeInfo('input[name=flightPath]', '#flightPath');
-    
+    const $infoBarWrapper = $('.info-bar__wrapper');
+    const $btnInfoBarOpen = $('.info-bar__toggle');
+    $btnInfoBarOpen.click(()=>{
+        $btnInfoBarOpen.toggleClass('info-bar__toggle-arrow_up');
+        $infoBarWrapper.toggleClass('info-bar_open');
+        
+    });
 })();

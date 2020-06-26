@@ -43,6 +43,7 @@
     &__content{
         display: flex;
         width: 100%;
+        padding-left: 5px;
         
     }
     &__personal-data{
@@ -69,6 +70,7 @@
         &-link{
             width: 50px;
             text-decoration: none;
+            
         }
         &-list{
             padding-top: 15px;
@@ -104,7 +106,12 @@
         width: 50px;
         text-decoration: none;
     }
+    &__link:hover>&__title{
+        color: rgb(58, 177, 58);
+    }
     &__title{
+        font-size: 17px;
+        text-shadow: 0 0 2px green;
         color: white;
     }
     &__text{
@@ -178,8 +185,20 @@
                         color: white; 
                         text-shadow: 0 0 0px;
                     }
+                }
+                &_border-color_white{
                     &:focus{
                         box-shadow: 0 0 0 2px white;
+                    }
+                }
+                &_border-color_red{
+                    &:focus{
+                        box-shadow: 0 0 0 2px rgb(194, 29, 29);
+                    }
+                }
+                &_border-color_green{
+                    &:focus{
+                        box-shadow: 0 0 0 2px rgb(29, 194, 29);
                     }
                 }
             }

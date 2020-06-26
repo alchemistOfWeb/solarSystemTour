@@ -77,6 +77,7 @@
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  padding-left: 5px;
 }
 
 .info-bar__personal-data {
@@ -170,7 +171,13 @@
   text-decoration: none;
 }
 
+.info-bar__link:hover > .info-bar__title {
+  color: #3ab13a;
+}
+
 .info-bar__title {
+  font-size: 17px;
+  text-shadow: 0 0 2px green;
   color: white;
 }
 
@@ -288,9 +295,19 @@
   text-shadow: 0 0 0px;
 }
 
-.section-header-wrapper__form-input input:focus {
+.section-header-wrapper__form-input_border-color_white:focus {
   -webkit-box-shadow: 0 0 0 2px white;
           box-shadow: 0 0 0 2px white;
+}
+
+.section-header-wrapper__form-input_border-color_red:focus {
+  -webkit-box-shadow: 0 0 0 2px #c21d1d;
+          box-shadow: 0 0 0 2px #c21d1d;
+}
+
+.section-header-wrapper__form-input_border-color_green:focus {
+  -webkit-box-shadow: 0 0 0 2px #1dc21d;
+          box-shadow: 0 0 0 2px #1dc21d;
 }
 
 .section-header-wrapper__form-button button {

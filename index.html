@@ -32,7 +32,7 @@
                             </a>
                         </div>
                         <div class="info-bar__item info-bar__data-rule">
-                            <a href="#" class="info-bar__link js-layout-screen-set info-bar-link-js" data-index-translate="-400">
+                            <a href="#" class="info-bar__link js-layout-screen-set info-bar-link-js" data-index-translate="-300">
                                 <p class="info-bar__title info-bar__title_params">направление</p>
                                 <p class="info-bar__text info-bar__text_params" id="flightPath">............</p>
                             </a>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="info-bar__crew">
                         <div class="info-bar__crew-wrapper">
-                            <a href="#" class="info-bar__crew-link js-layout-screen-set info-bar-link-js" data-index-translate="-300">
+                            <a href="#" class="info-bar__crew-link js-layout-screen-set info-bar-link-js" data-index-translate="-400">
                                 <p class="info-bar__title info-bar__title_params">экипаж</p>
                             </a>
                             <ul class="info-bar__crew-list info-bar__list_params" id="js-crew-list">
@@ -225,6 +225,86 @@
             </div>
         </section>
         <!-- / choose-combatEquipment -->
+        
+        <!-- choose-flightPath -->
+        <section class="section-outer choose-flightPath">
+            <div class="background-stars" style="top: 12%; left: 21%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="">
+            </div>
+            <div class="background-stars" style="top: 72%; left: 71%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
+            </div>
+            <div class="background-stars" style="top: 34%; left: 12%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
+            </div>
+            <div class="background-stars" style="top: 74%; left: 7%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
+            </div>
+            <div class="background-stars" style="top: 80%; left: 35%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
+            </div>
+            <div class="background-stars" style="top: 30%; left: 85%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
+            </div>
+            <div class="background-stars" style="top: 20%; left: 1%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
+            </div>
+            <div class="background-stars" style="top: 88%; left: 95%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
+            </div>
+            <div class="section-inner">
+                <div class="little-choise">
+                    <div class="little-choise__description">Куда полетите?</div>
+                    <div class="little-choise-container little-choise-container_flex" id = "flightPath-container-js">
+                        <div class="little-choise-container__radio little-choise-container__radio_big">
+                            <input class="little-choise-container__radio-input" id="flightPath0" value="Пояс астеройдов" type="radio" name="flightPath">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-asteroidBelt" for="flightPath0">
+                                Пояс астеройдов
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio little-choise-container__radio_big">
+                            <input class="little-choise-container__radio-input" id="flightPath1" value="Марс" type="radio" name="flightPath">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-mars" for="flightPath1">
+                                Марс
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio little-choise-container__radio_big">
+                            <input class="little-choise-container__radio-input" id="flightPath2" value="Спутники Юпитера" type="radio" name="flightPath">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle  picture-jupiter" for="flightPath2">
+                                Спутники Юпитера
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio little-choise-container__radio_big">
+                            <input class="little-choise-container__radio-input" id="flightPath3" value="Спутники Сатурна" type="radio" name="flightPath">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-saturnsSputnics" for="flightPath3">
+                                Спутники Сатурна
+                            </label>
+                        </div>
+                        <div class="little-choise-container__radio little-choise-container__radio_big">
+                            <input class="little-choise-container__radio-input" id="flightPath4" value="Церера" type="radio" name="flightPath">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-ceres" for="flightPath4">
+                                Церера
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container spec">
+                    <div class="btn-back" id="btn-back-flightPath-js">
+                        <img src="icons/down-arrows_icon-icons.com_70186.svg" alt="next" class="btn-arrow btn-back__arrow"></img>
+                    </div>
+                    <div class="btn-next" id="btn-next-flightPath-js">
+                        <img src="icons/down-arrows_icon-icons.com_70186.svg" alt="back" class="btn-arrow btn-next__arrow"></img>
+                    </div>
+                </div>
+                <div class="choise-link swiper-js">
+                    <div class="choise-link-text">Start</div>
+                    <div class="choise-link-icon">
+                        <img src="icons/1492533501-arrow-30_83308.ico" alt="next">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- / choose-flightPath -->
 
         <!-- choose-crew -->
         <section class="section-outer choose-crew">
@@ -338,90 +418,12 @@
         </section>
         <!-- / choose-crew -->
 
-        <!-- choose-flightPath -->
-        <section class="section-outer choose-flightPath">
-            <div class="background-stars" style="top: 12%; left: 21%;">
-                <img class="background-stars__img" src="img/stars.jpg" alt="">
-            </div>
-            <div class="background-stars" style="top: 72%; left: 71%;">
-                <img class="background-stars__img" src="img/stars.jpg" alt="" >
-            </div>
-            <div class="background-stars" style="top: 34%; left: 12%;">
-                <img class="background-stars__img" src="img/stars.jpg" alt="" >
-            </div>
-            <div class="background-stars" style="top: 74%; left: 7%;">
-                <img class="background-stars__img" src="img/stars.jpg" alt="" >
-            </div>
-            <div class="background-stars" style="top: 80%; left: 35%;">
-                <img class="background-stars__img" src="img/stars.jpg" alt="" >
-            </div>
-            <div class="background-stars" style="top: 30%; left: 85%;">
-                <img class="background-stars__img" src="img/stars.jpg" alt="" >
-            </div>
-            <div class="background-stars" style="top: 20%; left: 1%;">
-                <img class="background-stars__img" src="img/stars.jpg" alt="" >
-            </div>
-            <div class="background-stars" style="top: 88%; left: 95%;">
-                <img class="background-stars__img" src="img/stars.jpg" alt="" >
-            </div>
-            <div class="section-inner">
-                <div class="little-choise">
-                    <div class="little-choise__description">Куда полетите?</div>
-                    <div class="little-choise-container little-choise-container_flex" id = "flightPath-container-js">
-                        <div class="little-choise-container__radio little-choise-container__radio_big">
-                            <input class="little-choise-container__radio-input" id="flightPath0" value="Пояс астеройдов" type="radio" name="flightPath">
-                            <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-asteroidBelt" for="flightPath0">
-                                Пояс астеройдов
-                            </label>
-                        </div>
-                        <div class="little-choise-container__radio little-choise-container__radio_big">
-                            <input class="little-choise-container__radio-input" id="flightPath1" value="Марс" type="radio" name="flightPath">
-                            <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-mars" for="flightPath1">
-                                Марс
-                            </label>
-                        </div>
-                        <div class="little-choise-container__radio little-choise-container__radio_big">
-                            <input class="little-choise-container__radio-input" id="flightPath2" value="Спутники Юпитера" type="radio" name="flightPath">
-                            <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle  picture-jupiter" for="flightPath2">
-                                Спутники Юпитера
-                            </label>
-                        </div>
-                        <div class="little-choise-container__radio little-choise-container__radio_big">
-                            <input class="little-choise-container__radio-input" id="flightPath3" value="Спутники Сатурна" type="radio" name="flightPath">
-                            <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-saturnsSputnics" for="flightPath3">
-                                Спутники Сатурна
-                            </label>
-                        </div>
-                        <div class="little-choise-container__radio little-choise-container__radio_big">
-                            <input class="little-choise-container__radio-input" id="flightPath4" value="Церера" type="radio" name="flightPath">
-                            <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-ceres" for="flightPath4">
-                                Церера
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="btn-container spec">
-                    <div class="btn-back" id="btn-back-flightPath-js">
-                        <img src="icons/down-arrows_icon-icons.com_70186.svg" alt="next" class="btn-arrow btn-back__arrow"></img>
-                    </div>
-                    <div class="btn-next" id="btn-next-flightPath-js">
-                        <img src="icons/down-arrows_icon-icons.com_70186.svg" alt="back" class="btn-arrow btn-next__arrow"></img>
-                    </div>
-                </div>
-                <div class="choise-link swiper-js">
-                    <div class="choise-link-text">Start</div>
-                    <div class="choise-link-icon">
-                        <img src="icons/1492533501-arrow-30_83308.ico" alt="next">
-                    </div>
-                </div>
-            </div>
-        </section>
         <section class="section-outer section-launch">
             <div class="section-inner">
 
             </div>
         </section>
-        <!-- / choose-flightPath -->
+        
     </div>
     <script src="js/JQuery.js"></script>
     <script src="js/scripts.js"></script>

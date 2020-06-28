@@ -187,5 +187,7 @@
         positionSlide = $(this).attr('data-index-translate');
         changePositionSlide($section, positionSlide);
         infoBarHide($infoBar, INFO_BAR_HIDE_POS, positionSlide);
+        $btnInfoBarOpen.toggleClass('info-bar__toggle-arrow_up');
+        $infoBarWrapper.toggleClass('info-bar_open');
     });
 })();

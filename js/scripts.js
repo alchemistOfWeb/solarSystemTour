@@ -149,7 +149,7 @@
                 class: 'info-bar__crew-list-item',
                 id: id + "in-list"
             }).css({
-                'backgroundImage': "url('../" + $(this).attr('data-url-image') + "')"
+                'backgroundImage': "url('./" + $(this).attr('data-url-image') + "')"
             }).appendTo($('#js-crew-list'));
             console.log('ok');
         }else{

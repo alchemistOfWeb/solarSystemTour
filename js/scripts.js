@@ -11,6 +11,7 @@
             }else{
                 $(`${checkboxSelector}:disabled`).removeAttr('disabled');
                 $crewMembers.removeClass('little-choise-container__radio-input-js_red');
+
             }
         });
     }
@@ -24,6 +25,31 @@
         let str = $inputSelector.val();
         return regularExp.test(str);
     }
+    function btnAddSwiperEvent($container, $btnBack, $btnNext){
+        $btnBack.on('click',(e)=>{
+            $container.animate({left:'+=250'}, 400, 'swing');
+            console.log('hi back');
+        });
+        $btnNext.on('click',(e)=>{
+            $container.animate({left:'-=250'}, 400, 'swing');
+            console.log('hi next');
+        });
+    }
+    // function addCrewMemberTo($idSelectorCrewMember, placeCrewMember){
+    //     placeCrewMember.add $idSelectorCrewMember.attr('value');
+    // }
+
+    const infoBarHide = ($selector, CONST_POS, pos)=>{
+        console.log(pos);
+        if (pos > CONST_POS || pos < -400){
+            $selector.animate({'top':'-115px'}, 700, 'swing');
+            console.log('yes');
+        } else{
+            $selector.animate({'top':'0'}, 700, 'swing');
+            console.log('no');
+        }
+    }
+    
     const BIND_DELAY = 400;
     let lastWheel = new Date();
     let positionSlide = 0;
@@ -33,9 +59,11 @@
     const sectionCount = $('.section-outer').length;
     const SCROLL_MAX = (sectionCount * 100) - 100;
     const SCROLL_MIN = 0;
+    const INFO_BAR_HIDE_POS = -100;
     let isCorrectInputName = false;
     let isCorrectInputSurame = false;
-
+    const $infoBar = $('.js-info-bar');
+    
     const inputName = $('#name-js');
     inputName.bind('input',(e)=>{
         if(isACorrectInput(inputName)){
@@ -72,8 +100,9 @@
             personSurname.text(inputSurname.val());
             if(positionSlide > -SCROLL_MAX){
                 positionSlide -=100;
+                infoBarHide($infoBar, INFO_BAR_HIDE_POS, positionSlide);
+                changePositionSlide($section, positionSlide);
             }
-            changePositionSlide($section, positionSlide);
         } else {
             alert('Введите корректное имя и фамилию иначе мы вас убьём. (Имя и фамилия должны быть от 3 до 18 символов)');
         }
@@ -81,8 +110,9 @@
     $commonSwiper.click(()=>{
         if(positionSlide > -SCROLL_MAX){
             positionSlide -=100;
+            infoBarHide($infoBar, INFO_BAR_HIDE_POS, positionSlide);
+            changePositionSlide($section, positionSlide);
         }
-        changePositionSlide($section, positionSlide);
     });
     $(document).bind('mousewheel DOMMouseScroll', (e)=>{
         let nowWheel = new Date();
@@ -91,18 +121,45 @@
             if(e.originalEvent.wheelDelta > 0){
                 if(positionSlide < SCROLL_MIN){
                     positionSlide +=100;
+                    infoBarHide($infoBar, INFO_BAR_HIDE_POS, positionSlide);
+                    changePositionSlide($section, positionSlide);
                 }
-                changePositionSlide($section, positionSlide);
+                
             }else{
                 if(positionSlide > -SCROLL_MAX){
                     positionSlide -=100;
+                    infoBarHide($infoBar, INFO_BAR_HIDE_POS, positionSlide);
+                    changePositionSlide($section, positionSlide);
                 }
-                changePositionSlide($section, positionSlide);
+                
             }
         }
     });
     // const btnSwiper = $('#swiper-js');
+    const $checkboxCrewMember = $('input[name=crew-member]');
+    $checkboxCrewMember.bind('click', function(e){
+        const id = $(this).prop('id');
+        const title = $(this).prop('value');
+        console.log($(this).attr('data-url-image'));
+
+        if($(this).prop('checked')){
+            $('<li></li>',{
+                title: title,
+                click: (e)=>{console.log(title)},
+                class: 'info-bar__crew-list-item',
+                id: id + "in-list"
+            }).css({
+                'backgroundImage': "url('../" + $(this).attr('data-url-image') + "')"
+            }).appendTo($('#js-crew-list'));
+            console.log('ok');
+        }else{
+            $("#" + id + "in-list").remove();
+            console.log('none');
+        }
+
+    });
     checkboxLimitation('input[name=crew-member]', 5);
+
     checkboxChangeInfo('input[name=starship]', '#starship');
     checkboxChangeInfo('input[name=item-equipment]', '#equipment');
     checkboxChangeInfo('input[name=flightPath]', '#flightPath');
@@ -111,6 +168,22 @@
     $btnInfoBarOpen.click(()=>{
         $btnInfoBarOpen.toggleClass('info-bar__toggle-arrow_up');
         $infoBarWrapper.toggleClass('info-bar_open');
-        
     });
+    
+    $starshipContainer = $('#starship-container-js');
+    $btnBackStarship = $('#btn-back-starship-js');
+    $btnNextStarship = $('#btn-next-starship-js');
+    btnAddSwiperEvent($starshipContainer, $btnBackStarship, $btnNextStarship);
+    $equipmentContainer = $('#equipment-container-js');
+    $btnBackEquipment = $('#btn-back-equipment-js');
+    $btnNextEquipment = $('#btn-next-equipment-js');
+    btnAddSwiperEvent($equipmentContainer, $btnBackEquipment, $btnNextEquipment);
+    $crewContainer = $('#crew-container-js');
+    $btnBackCrew = $('#btn-back-crew-js');
+    $btnNextCrew = $('#btn-next-crew-js');
+    btnAddSwiperEvent($crewContainer, $btnBackCrew, $btnNextCrew);
+    $flightPathContainer = $('#flightPath-container-js');
+    $btnBackFlightPath = $('#btn-back-flightPath-js');
+    $btnNextFlightPath = $('#btn-next-flightPath-js');
+    btnAddSwiperEvent($flightPathContainer, $btnBackFlightPath, $btnNextFlightPath);
 })();

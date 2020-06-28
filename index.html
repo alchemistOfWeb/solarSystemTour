@@ -10,7 +10,6 @@
     <div class="layout">
         <!-- info-bar -->
         <div class="info-bar js-info-bar">
-            <!-- important -->
             <div class="info-bar__wrapper">
                 <div class="info-bar__content">
                     <div class="info-bar__personal-data">
@@ -44,12 +43,12 @@
                             <a href="#" class="info-bar__crew-link js-layout-screen-set">
                                 <p class="info-bar__title info-bar__title_params">экипаж</p>
                             </a>
-                            <ul class="info-bar__crew-list info-bar__list_params" id="crew">
+                            <ul class="info-bar__crew-list info-bar__list_params" id="js-crew-list">
+                                <!-- <li class="info-bar__crew-list-item" title="someone"></li>
                                 <li class="info-bar__crew-list-item" title="someone"></li>
                                 <li class="info-bar__crew-list-item" title="someone"></li>
                                 <li class="info-bar__crew-list-item" title="someone"></li>
-                                <li class="info-bar__crew-list-item" title="someone"></li>
-                                <li class="info-bar__crew-list-item" title="someone"></li>
+                                <li class="info-bar__crew-list-item" title="someone"></li> -->
                             </ul>
                         </div>
                     </div>
@@ -86,58 +85,66 @@
 
         <!-- choose-starship -->
         <section class="section-outer choose-starship">
-            <div class="bacground-stars" style="top: 12%; left: 21%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="">
+            <div class="background-stars" style="top: 12%; left: 21%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="">
             </div>
-            <div class="bacground-stars" style="top: 72%; left: 71%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 72%; left: 71%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 34%; left: 12%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 34%; left: 12%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 74%; left: 7%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 74%; left: 7%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 80%; left: 35%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 80%; left: 35%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 30%; left: 85%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 30%; left: 85%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 20%; left: 1%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 20%; left: 1%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 88%; left: 95%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 88%; left: 95%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
             <div class="section-inner">
                 <div class="little-choise">
                     <div class="little-choise__description">Выберите корабль</div>
-                    <div class="little-choise-container">
-                        <div class="little-choise-container__radio little-choise-container__radio_margin">
+                    <div class="little-choise-container little-choise-container_flex" id = "starship-container-js">
+                        <div class="little-choise-container__radio little-choise-container__radio_margin little-choise-container__radio_big">
                             <input class="little-choise-container__radio-input" id="starship0" value="Serenity" type="radio" name="starship">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_big  picture-serenity" for="starship0">
                                 Serenity
                             </label>
                         </div>
-                        <div class="little-choise-container__radio little-choise-container__radio_margin">
+                        <div class="little-choise-container__radio little-choise-container__radio_margin little-choise-container__radio_big">
                             <input class="little-choise-container__radio-input" id="starship1" value="Rosinant" type="radio" name="starship">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_big  picture-rossinant" for="starship1">
                                 Rosinant
                             </label>
                         </div>
-                        <div class="little-choise-container__radio little-choise-container__radio_margin">
+                        <div class="little-choise-container__radio little-choise-container__radio_margin little-choise-container__radio_big">
                             <input class="little-choise-container__radio-input" id="starship2" value="Millennium Falcon" type="radio" name="starship">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_big  picture-millenniumFalcon" for="starship2">
                                 Millennium Falcon
                             </label>
                         </div>
-                        <div class="little-choise-container__radio little-choise-container__radio_margin">
+                        <div class="little-choise-container__radio little-choise-container__radio_margin little-choise-container__radio_big">
                             <input class="little-choise-container__radio-input" id="starship3" value="Normandia Sr2" type="radio" name="starship">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_big picture-normandia" for="starship3">
                                 Normandia Sr2
                             </label>
                         </div>
+                    </div>
+                </div>
+                <div class="btn-container default">
+                    <div class="btn-back" id="btn-back-starship-js">
+                        <img src="icons/down-arrows_icon-icons.com_70186.svg" alt="next" class="btn-arrow btn-back__arrow"></img>
+                    </div>
+                    <div class="btn-next" id="btn-next-starship-js">
+                        <img src="icons/down-arrows_icon-icons.com_70186.svg" alt="back" class="btn-arrow btn-next__arrow"></img>
                     </div>
                 </div>
                 <div class="choise-link swiper-js">
@@ -152,58 +159,66 @@
 
         <!-- choose-combatEquipment -->
         <section class="section-outer choose-equipment">
-            <div class="bacground-stars" style="top: 12%; left: 21%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="">
+            <div class="background-stars" style="top: 12%; left: 21%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="">
             </div>
-            <div class="bacground-stars" style="top: 72%; left: 71%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 72%; left: 71%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 34%; left: 12%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 34%; left: 12%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 74%; left: 7%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 74%; left: 7%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 80%; left: 35%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 80%; left: 35%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 30%; left: 85%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 30%; left: 85%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 20%; left: 1%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 20%; left: 1%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 88%; left: 95%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 88%; left: 95%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
             <div class="section-inner">
                 <div class="little-choise">
                     <div class="little-choise__description">Выберите оснащение</div>
-                    <div class="little-choise-container">
-                        <div class="little-choise-container__radio little-choise-container__radio_margin">
+                    <div class="little-choise-container  little-choise-container_flex" id = "equipment-container-js">
+                        <div class="little-choise-container__radio little-choise-container__radio_margin little-choise-container__radio_big">
                             <input class="little-choise-container__radio-input" id="item-equ0" value="ускоритель" type="radio" name="item-equipment">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_big picture-accelerator" for="item-equ0">
-                                ускоритель(5000$)
+                                ускоритель
                             </label>
                         </div>
-                        <div class="little-choise-container__radio little-choise-container__radio_margin">
+                        <div class="little-choise-container__radio little-choise-container__radio_margin little-choise-container__radio_big">
                             <input class="little-choise-container__radio-input" id="item-equ1" value="рельсовые пушки" type="radio" name="item-equipment">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_big picture-railGan" for="item-equ1">
-                                рельсовые пушки(4000$)
+                                рельсовые пушки
                             </label>
                         </div>
-                        <div class="little-choise-container__radio little-choise-container__radio_margin">
+                        <div class="little-choise-container__radio little-choise-container__radio_margin little-choise-container__radio_big">
                             <input class="little-choise-container__radio-input" id="item-equ2" value="псевдо-маячки" type="radio" name="item-equipment">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_big  picture-faceBeacon" for="item-equ2">
-                                псевдо<span class="hyphen">-</span>маячки(3200$)
+                                псевдо<span class="hyphen">-</span>маячки
                             </label>
                         </div>
-                        <div class="little-choise-container__radio little-choise-container__radio_margin">
+                        <div class="little-choise-container__radio little-choise-container__radio_margin little-choise-container__radio_big">
                             <input class="little-choise-container__radio-input" id="item-equ3" value="таинственный шар" type="radio" name="item-equipment">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_big picture-strangeSphere" for="item-equ3">
-                                таинственный шар(сувенир)(2000$)
+                                таинственный шар(сувенир)
                             </label>
                         </div>
+                    </div>
+                </div>
+                <div class="btn-container default">
+                    <div class="btn-back" id="btn-back-equipment-js">
+                        <img src="icons/down-arrows_icon-icons.com_70186.svg" alt="next" class="btn-arrow btn-back__arrow"></img>
+                    </div>
+                    <div class="btn-next" id="btn-next-equipment-js">
+                        <img src="icons/down-arrows_icon-icons.com_70186.svg" alt="back" class="btn-arrow btn-next__arrow"></img>
                     </div>
                 </div>
                 <div class="choise-link swiper-js">
@@ -218,96 +233,104 @@
 
         <!-- choose-crew -->
         <section class="section-outer choose-crew">
-            <div class="bacground-stars" style="top: 12%; left: 21%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="">
+            <div class="background-stars" style="top: 12%; left: 21%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="">
             </div>
-            <div class="bacground-stars" style="top: 72%; left: 71%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 72%; left: 71%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 34%; left: 12%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 34%; left: 12%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 74%; left: 7%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 74%; left: 7%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 80%; left: 35%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 80%; left: 35%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 30%; left: 85%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 30%; left: 85%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 20%; left: 1%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 20%; left: 1%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 88%; left: 95%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 88%; left: 95%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
             <div class="section-inner">
                 <div class="little-choise">
                     <div class="little-choise__description">Выберите членов экипажа (максимум 5)</div>
-                    <div class="little-choise-container">
+                    <div class="little-choise-container little-choise-container_flex little-choise-container_grid" id = "crew-container-js">
                         <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
-                            <input class="little-choise-container__radio-input" id="crew-member0" value="0" type="checkbox" name="crew-member">
+                            <input class="little-choise-container__radio-input" id="crew-member0" value="Алан Шепард" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member0">
                                 Алан Шепард
                             </label>
                         </div>
                         <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
-                            <input class="little-choise-container__radio-input" id="crew-member1" value="1" type="checkbox" name="crew-member">
+                            <input class="little-choise-container__radio-input" id="crew-member1" value="Боб Бенкин" type="checkbox" name="crew-member" data-url-image="img/bobBehnken.png">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_small picture-bobBehnken" for="crew-member1">
                                 Боб Бенкин
                             </label>
                         </div>
                         <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
-                            <input class="little-choise-container__radio-input" id="crew-member2" value="2" type="checkbox" name="crew-member">
+                            <input class="little-choise-container__radio-input" id="crew-member2" value="Даг Херли" type="checkbox" name="crew-member" data-url-image="img/DougHurley.png">
                             <label 
                             class="little-choise-container__radio-label little-choise-container__radio-label_small picture-dougHurley" for="crew-member2">
                                 Даг Херли
                             </label>
                         </div>
                         <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
-                            <input class="little-choise-container__radio-input" id="crew-member3" value="3" type="checkbox" name="crew-member">
+                            <input class="little-choise-container__radio-input" id="crew-member3" value="Нил Армстронг" type="checkbox" name="crew-member" data-url-image="img/neilArmstrong.png">
                             <label 
                             class="little-choise-container__radio-label little-choise-container__radio-label_small picture-neilArmstrong" for="crew-member3">
                                 Нил Армстронг
                             </label>
                         </div>
                         <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
-                            <input class="little-choise-container__radio-input" id="crew-member4" value="4" type="checkbox" name="crew-member">
+                            <input class="little-choise-container__radio-input" id="crew-member4" value="Чек бокс" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member4">
-                                1
+                                Чек бокс
                             </label>
                         </div>
                         <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
-                            <input class="little-choise-container__radio-input" id="crew-member5" value="5" type="checkbox" name="crew-member">
+                            <input class="little-choise-container__radio-input" id="crew-member5" value="Человек" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member5">
-                                2
+                                Человек
                             </label>
                         </div>
                         <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
-                            <input class="little-choise-container__radio-input" id="crew-member6" value="6" type="checkbox" name="crew-member">
+                            <input class="little-choise-container__radio-input" id="crew-member6" value="Член Экипажа" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member6">
-                                3
+                                Член Экипажа
                             </label>
                         </div>
                         <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
-                            <input class="little-choise-container__radio-input" id="crew-member7" value="7" type="checkbox" name="crew-member">
-                            <label class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member7">
-                                4
+                            <input class="little-choise-container__radio-input" id="crew-member7" value="Пришелец" type="checkbox" name="crew-member" data-url-image="img/feian-min.png">
+                            <label class="little-choise-container__radio-label little-choise-container__radio-label_small picture-feian" for="crew-member7">
+                                Пришелец
                             </label>
                         </div>
                         <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
-                            <input class="little-choise-container__radio-input" id="crew-member8" value="8" type="checkbox" name="crew-member">
+                            <input class="little-choise-container__radio-input" id="crew-member8" value="Диффектив" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member8">
-                                Дифектив
+                                Диффектив
                             </label>
                         </div>
                         <div class="little-choise-container__radio little-choise-container__radio_small little-choise-container__radio_margin">
-                            <input class="little-choise-container__radio-input" id="crew-member9" value="9" type="checkbox" name="crew-member">
+                            <input class="little-choise-container__radio-input" id="crew-member9" value="Киберленин" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member9">
                                 Киберленин
                             </label>
                         </div>
+                    </div>
+                </div>
+                <div class="btn-container default">
+                    <div class="btn-back" id="btn-back-crew-js">
+                        <img src="icons/down-arrows_icon-icons.com_70186.svg" alt="next" class="btn-arrow btn-back__arrow"></img>
+                    </div>
+                    <div class="btn-next" id="btn-next-crew-js">
+                        <img src="icons/down-arrows_icon-icons.com_70186.svg" alt="back" class="btn-arrow btn-next__arrow"></img>
                     </div>
                 </div>
                 <div class="choise-link swiper-js">
@@ -322,64 +345,72 @@
 
         <!-- choose-flightPath -->
         <section class="section-outer choose-flightPath">
-            <div class="bacground-stars" style="top: 12%; left: 21%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="">
+            <div class="background-stars" style="top: 12%; left: 21%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="">
             </div>
-            <div class="bacground-stars" style="top: 72%; left: 71%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 72%; left: 71%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 34%; left: 12%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 34%; left: 12%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 74%; left: 7%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 74%; left: 7%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 80%; left: 35%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 80%; left: 35%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 30%; left: 85%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 30%; left: 85%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 20%; left: 1%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 20%; left: 1%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
-            <div class="bacground-stars" style="top: 88%; left: 95%;">
-                <img class="bacground-stars__img" src="img/stars.jpg" alt="" >
+            <div class="background-stars" style="top: 88%; left: 95%;">
+                <img class="background-stars__img" src="img/stars.jpg" alt="" >
             </div>
             <div class="section-inner">
                 <div class="little-choise">
                     <div class="little-choise__description">Куда полетите?</div>
-                    <div class="little-choise-container">
-                        <div class="little-choise-container__radio">
+                    <div class="little-choise-container little-choise-container_flex" id = "flightPath-container-js">
+                        <div class="little-choise-container__radio little-choise-container__radio_big">
                             <input class="little-choise-container__radio-input" id="flightPath0" value="Пояс астеройдов" type="radio" name="flightPath">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-asteroidBelt" for="flightPath0">
                                 Пояс астеройдов
                             </label>
                         </div>
-                        <div class="little-choise-container__radio">
+                        <div class="little-choise-container__radio little-choise-container__radio_big">
                             <input class="little-choise-container__radio-input" id="flightPath1" value="Марс" type="radio" name="flightPath">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-mars" for="flightPath1">
                                 Марс
                             </label>
                         </div>
-                        <div class="little-choise-container__radio">
+                        <div class="little-choise-container__radio little-choise-container__radio_big">
                             <input class="little-choise-container__radio-input" id="flightPath2" value="Спутники Юпитера" type="radio" name="flightPath">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle  picture-jupiter" for="flightPath2">
                                 Спутники Юпитера
                             </label>
                         </div>
-                        <div class="little-choise-container__radio">
+                        <div class="little-choise-container__radio little-choise-container__radio_big">
                             <input class="little-choise-container__radio-input" id="flightPath3" value="Спутники Сатурна" type="radio" name="flightPath">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-saturnsSputnics" for="flightPath3">
                                 Спутники Сатурна
                             </label>
                         </div>
-                        <div class="little-choise-container__radio">
+                        <div class="little-choise-container__radio little-choise-container__radio_big">
                             <input class="little-choise-container__radio-input" id="flightPath4" value="Церера" type="radio" name="flightPath">
                             <label class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-ceres" for="flightPath4">
                                 Церера
                             </label>
                         </div>
+                    </div>
+                </div>
+                <div class="btn-container spec">
+                    <div class="btn-back" id="btn-back-flightPath-js">
+                        <img src="icons/down-arrows_icon-icons.com_70186.svg" alt="next" class="btn-arrow btn-back__arrow"></img>
+                    </div>
+                    <div class="btn-next" id="btn-next-flightPath-js">
+                        <img src="icons/down-arrows_icon-icons.com_70186.svg" alt="back" class="btn-arrow btn-next__arrow"></img>
                     </div>
                 </div>
                 <div class="choise-link swiper-js">

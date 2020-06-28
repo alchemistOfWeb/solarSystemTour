@@ -25,7 +25,7 @@ $xl : 1200px;
     position: relative;
     
 }
-.bacground-stars{
+.background-stars{
     position: absolute;
     height: 100px; 
     width: 100px; 
@@ -46,13 +46,21 @@ $xl : 1200px;
 
 // === info-bar
 .info-bar{
-    background: linear-gradient(180deg, black, gray);
-    top: 0;
+    // background: linear-gradient(180deg, black, gray);
+    background: url('../img/s1200.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: -115px;
     right: 0;
     left: 0;
     position: fixed; 
     z-index: 1000;
     display: flex;
+    // transition-duration: .5s;
+    &-none{
+        display: none !important;
+    }
     &__data{
         position: relative;
         &-rule:after{
@@ -106,7 +114,7 @@ $xl : 1200px;
         min-height: 81px;
         width: 1200px;
         margin: 0 auto;
-        background: linear-gradient(0deg, #444141, #974646, #974646, #444141);
+        background: linear-gradient(0deg, #4441416e, #9746468c, #9746467a, #4441413a);
         @media (max-width: $md-max){
             overflow: hidden;
             min-height: 70px;
@@ -170,7 +178,6 @@ $xl : 1200px;
         &-link{
             width: 50px;
             text-decoration: none;
-            
         }
         &-list{
             padding-top: 15px;
@@ -183,7 +190,13 @@ $xl : 1200px;
                 height: 40px;
                 display: block;
                 background-color: red;
+                background-size: cover;
+                background-position: center;
                 border-radius: 50%;
+                box-shadow: 0 0 1px 1px rgb(63, 87, 77);
+                &:hover{
+                    box-shadow: 0 0 3px 3px rgb(108, 151, 151);
+                }
             }
         }
 
@@ -266,9 +279,6 @@ $xl : 1200px;
             @include NiseSegaRegular;
             text-shadow: 0 0 15px red;
             letter-spacing: 10px;
-            @media (max-width: $sm - 1){
-                font-size: 40px;
-            }
         }
         &__subtitle{
             margin: auto;
@@ -277,9 +287,6 @@ $xl : 1200px;
             line-height: 20px;
             @include CStrike;
             margin-top: 15px;
-            @media (max-width: $sm - 1){
-                margin-top: 10px;
-            }
         }
         &__form{
             display: flex;
@@ -357,13 +364,20 @@ $xl : 1200px;
 // === / section-header ===
 
 // === also common
+
 .little-choise{
     z-index: 50;
     height: 80%;
     display: flex;
     flex-direction: column;
     padding-top: 100px;
+    position: relative;
+    @media(max-width: $sm-max){
+        padding-top: 10px;
+    }
+    
     &__description{
+        display: block;
         padding-top: 70px;
         padding-bottom: 70px;
         text-align: center;
@@ -371,24 +385,56 @@ $xl : 1200px;
         font-size: 40px;
         line-height: 25px;
         @include CStrike;
+        @media(max-width: $sm-max){
+            font-size: 30px;
+        }
     }
     &-container{
         display: flex;
-        flex-direction: row;
-        justify-content: center;
         flex-wrap: wrap;
+        position: relative;
+        @media(max-width: $sm-max){
+            padding-left: 20%;
+        }
+        &_flex{
+            @media (min-width: $xl){
+                flex-direction: row;
+                justify-content: center;
+            }
+            @media (max-width: $lg-max){
+                flex-direction: column;
+                height: 450px;
+                justify-content: center;
+                top: -100px;
+                
+            }
+        }
+        &_grid{
+            @media(max-width: $sm-max){
+                display: grid;
+                grid-template-rows: 150px 150px;
+                grid-auto-flow: column;
+                margin-top: 30px;
+            }
+        }
 
         &__radio{
-            padding-top: 250px;
             flex-shrink: 0;
             width: 200px;
             height: 50px;
+            &_big{
+                padding-top: 250px;
+            }
             &_margin{
                 margin: 30px;
             }
             &_small{
                 width: 100px;
                 padding-top: 150px;
+                @media(max-width: $sm-max){
+                    width: 70px;
+                    padding-top: 45px;
+                }
             }
             &-input{
                 display: none;
@@ -418,22 +464,57 @@ $xl : 1200px;
                     background-size: 95%;
                     border-radius: 50%;
                 }
+                // @media(max-width: $sm-max){
+                //     position: relative;
+                //     top: -10px;
+                //     height:80px;
+                //     width: 80px;
+                // }
+                &_small{
+                    @media(max-width: $sm-max){
+                        position: relative;
+                        top: -100px;
+                    }
+                }
                 &_small:before{
-                    top: -100px;
+                    top: -80px;
                     height:100px;
                     width: 100px;
                     background-size: 90%;
                     border-radius: 50%;
+                    @media(max-width: $sm-max){
+                        position: relative;
+                        top: 0px;
+                        width: 70px;
+                        height: 70px;
+                    }
                 }
                 &_rectangle:before{
-                    top: -250px;
-                    height:400px;
-                    width: 180px;
+                    
                     background-size: auto 100%;
+                    @media (min-width: $lg){
+                        height:410px;
+                        width: 180px;
+                        top: -250px;
+                    }
+                    @media (max-width: $md-max){
+                        height:340px;
+                        width: 170px;
+                        top: -230px;
+                        
+                    }
                     
                 }
                 &_rectangle{
-                    padding-top: 170px;
+                    
+                    @media (min-width: $lg){
+                        width: 180px;
+                        padding-top: 170px;
+                    }
+                    @media (max-width: $md-max){
+                        padding-top: 130px;
+                        width: 170px;
+                    }
                 }
             }
             // &+&{
@@ -477,6 +558,9 @@ $xl : 1200px;
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    @media (max-width: $sm-max){
+        top: -20px;
+    }
     &-text{
         color: white;
         text-align: center;
@@ -494,6 +578,50 @@ $xl : 1200px;
     to{
         transform: translateY(-10px);
     }
+}
+.default{
+    z-index: 150;
+    top: -30px;
+    width: 220px;
+}
+.spec{
+    top: 30px;
+    width: 260px;
+}
+.btn-container{
+    margin: 0 auto;
+    position: relative;
+    @media (min-width: $lg){
+        display: none;
+    }
+    @media (max-width: $md-max){
+        display: block;
+    }
+}
+.btn-back{
+    position: relative;
+    cursor: pointer;
+    float: left;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    &__arrow{
+        transform: rotate(90deg);
+    }
+}
+.btn-next{
+    position: relative;
+    cursor: pointer;
+    float: right;
+    display: flex;
+    &__arrow{
+        transform: rotate(-90deg);
+    }
+}
+.btn-arrow{
+    width: 50px;
+    height: 50px;
+    filter: brightness(1000%);
 }
 // === / also common
 
@@ -532,6 +660,9 @@ $xl : 1200px;
 }
 .picture-bobBehnken:before{
     background-image: url('../img/bobBehnken.png');
+}
+.picture-feian:before{
+    background-image: url('../img/feian-min.png');
 }
 .picture-placeholder:before{
     background-image: url('../img/placeholder-Copy.png');

@@ -22,8 +22,9 @@
     }
     function isACorrectInput($inputSelector){
         let regularExp = /^.{3,18}$/i;
+        let regularExp2 = /\s/;
         let str = $inputSelector.val();
-        return regularExp.test(str);
+        return regularExp.test(str) && (!regularExp2.test(str));
     }
     function btnAddSwiperEvent($container, $btnBack, $btnNext){
         $btnBack.on('click',(e)=>{
@@ -35,10 +36,6 @@
             console.log('hi next');
         });
     }
-    // function addCrewMemberTo($idSelectorCrewMember, placeCrewMember){
-    //     placeCrewMember.add $idSelectorCrewMember.attr('value');
-    // }
-
     const infoBarHide = ($selector, CONST_POS, pos)=>{
         console.log(pos);
         if (pos > CONST_POS || pos < -400){
@@ -49,7 +46,6 @@
             console.log('no');
         }
     }
-    
     const BIND_DELAY = 400;
     let lastWheel = new Date();
     let positionSlide = 0;
@@ -104,7 +100,7 @@
                 changePositionSlide($section, positionSlide);
             }
         } else {
-            alert('Введите корректное имя и фамилию иначе мы вас убьём. (Имя и фамилия должны быть от 3 до 18 символов)');
+            alert('Введите корректное имя и фамилию иначе вас посетит паранойя. (Имя и фамилия должны быть от 3 до 18 символов и не содержать пробелов)');
         }
     });
     $commonSwiper.click(()=>{
@@ -124,7 +120,6 @@
                     infoBarHide($infoBar, INFO_BAR_HIDE_POS, positionSlide);
                     changePositionSlide($section, positionSlide);
                 }
-                
             }else{
                 if(positionSlide > -SCROLL_MAX){
                     positionSlide -=100;
@@ -170,20 +165,27 @@
         $infoBarWrapper.toggleClass('info-bar_open');
     });
     
-    $starshipContainer = $('#starship-container-js');
-    $btnBackStarship = $('#btn-back-starship-js');
-    $btnNextStarship = $('#btn-next-starship-js');
+    const $starshipContainer = $('#starship-container-js');
+    const $btnBackStarship = $('#btn-back-starship-js');
+    const $btnNextStarship = $('#btn-next-starship-js');
     btnAddSwiperEvent($starshipContainer, $btnBackStarship, $btnNextStarship);
-    $equipmentContainer = $('#equipment-container-js');
-    $btnBackEquipment = $('#btn-back-equipment-js');
-    $btnNextEquipment = $('#btn-next-equipment-js');
+    const $equipmentContainer = $('#equipment-container-js');
+    const $btnBackEquipment = $('#btn-back-equipment-js');
+    const $btnNextEquipment = $('#btn-next-equipment-js');
     btnAddSwiperEvent($equipmentContainer, $btnBackEquipment, $btnNextEquipment);
-    $crewContainer = $('#crew-container-js');
-    $btnBackCrew = $('#btn-back-crew-js');
-    $btnNextCrew = $('#btn-next-crew-js');
+    const $crewContainer = $('#crew-container-js');
+    const $btnBackCrew = $('#btn-back-crew-js');
+    const $btnNextCrew = $('#btn-next-crew-js');
     btnAddSwiperEvent($crewContainer, $btnBackCrew, $btnNextCrew);
-    $flightPathContainer = $('#flightPath-container-js');
-    $btnBackFlightPath = $('#btn-back-flightPath-js');
-    $btnNextFlightPath = $('#btn-next-flightPath-js');
+    const $flightPathContainer = $('#flightPath-container-js');
+    const $btnBackFlightPath = $('#btn-back-flightPath-js');
+    const $btnNextFlightPath = $('#btn-next-flightPath-js');
     btnAddSwiperEvent($flightPathContainer, $btnBackFlightPath, $btnNextFlightPath);
+
+    const $infoBarLinks =  $('.info-bar-link-js');
+    $infoBarLinks.bind('click', function(){
+        positionSlide = $(this).attr('data-index-translate');
+        changePositionSlide($section, positionSlide);
+        infoBarHide($infoBar, INFO_BAR_HIDE_POS, positionSlide);
+    });
 })();

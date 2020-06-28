@@ -292,6 +292,10 @@
   text-decoration: none;
 }
 
+.info-bar__crew-link:hover > p {
+  color: #3f923f;
+}
+
 .info-bar__crew-list {
   padding-top: 15px;
   display: -webkit-box;

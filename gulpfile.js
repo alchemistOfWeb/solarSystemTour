@@ -8,6 +8,7 @@ import clear from "./task/clear.js";
 import scss from "./task/scss.js";
 import js from "./task/js.js";
 import img from "./task/img.js";
+import icon from "./task/icon.js";
 import font from "./task/font.js";
 import app from "./config/app.js";
 
@@ -18,6 +19,7 @@ const watcher = () => {
     gulp.watch(path.scss.watch, scss).on("all", browserSync.reload);
     gulp.watch(path.js.watch, js).on("all", browserSync.reload);
     gulp.watch(path.img.watch, img).on("all", browserSync.reload);
+    gulp.watch(path.icon.watch, icon).on("all", browserSync.reload);
     gulp.watch(path.font.watch, font).on("all", browserSync.reload);
 };
 
@@ -31,7 +33,7 @@ const server = () => {
 
 const build = gulp.series(
     clear,
-    gulp.parallel(pug, scss, js, font, img)
+    gulp.parallel(pug, scss, js, font, icon, img)
 );
 
 const dev = gulp.series(
@@ -39,5 +41,5 @@ const dev = gulp.series(
     gulp.parallel(watcher, server)
 );
 
-export { pug, scss, js, img, font, watcher, clear }
+export { pug, scss, js, img, icon, font, watcher, clear }
 export default app.isProd ? build : dev;

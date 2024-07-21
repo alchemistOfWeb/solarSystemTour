@@ -52,6 +52,9 @@
     "webpack-stream": "^7.0.0"
   },
   "dependencies": {
-    "aos": "^2.3.4"
+    "aos": "^2.3.4",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "jquery": "^3.7.1"
   }
 }

@@ -1,5 +1,12 @@
-@import 'fonts';
-
+@import "chunk/_fonts.scss";
+@import "../../node_modules/aos/dist/aos";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+@font-face {
+    font-display: block;
+    font-family: "bootstrap-icons";
+    src: url(/fonts/bootstrap-icons.woff2) format("woff2"),url(/fonts/bootstrap-icons.woff) format("woff")
+}
 // === common
 $sm : 576px;    $sm-max : 767px;
 $md : 768px;    $md-max : 991px; 
@@ -163,14 +170,14 @@ $xl : 1200px;
     &__crew{
         display: flex;
         flex-direction: row;
+        width: 30%;
+        // background-color: rgb(69, 128, 61);
         @media (max-width: $md-max){
             margin: 0 20%;
         }
         @media(max-width: $sm-max){
             margin: 0 4%;
         }
-        // background-color: rgb(69, 128, 61);
-        width: 30%;
         &-wrapper{
             padding-top: 20px;
             padding-bottom: 20px;
@@ -202,7 +209,6 @@ $xl : 1200px;
                 }
             }
         }
-
     }
     &__point{
         width: 20%;
@@ -235,10 +241,12 @@ $xl : 1200px;
         font-size: 17px;
         text-shadow: 0 0 2px green;
         color: white;
+        line-height: normal;
     }
     &__text{
         color: white;
         font-size: 22px;
+        line-height: normal;
     }
 }
 // === / info-bar
@@ -464,7 +472,9 @@ $xl : 1200px;
                     top: -200px;
                     height:200px;
                     width: 200px;
-                    background-size: 95%;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center;
                     border-radius: 50%;
                 }
                 // @media(max-width: $sm-max){
@@ -538,17 +548,26 @@ $xl : 1200px;
     }
     
 }
+@mixin background($imgpath, $position: center, $repeat: no-repeat) {
+    background: {
+        image: url($imgpath);
+        position: $position;
+        repeat: $repeat;
+        size: cover;
+    }
+}
 .picture-serenity:before{
-    background-image: url('../img/Serenity.png');
+    @include background('../img/Serenity.png')
+    // background-image: url();
 }
 .picture-rossinant:before{
-    background-image: url('../img/Rossinant.png');
+    @include background('../img/Rossinant.png');
 }
 .picture-millenniumFalcon:before{
-    background-image: url('../img/milleniumFalcon-min.png');
+    @include background('../img/milleniumFalcon-min.png');
 }
 .picture-normandia:before{
-    background-image: url('../img/NormandiaSr2-min.png');
+    @include background('../img/NormandiaSr2-min.png');
 }
 .choise-link{
     position: relative;
@@ -636,16 +655,16 @@ $xl : 1200px;
 }
 // === / choose-starship ===
 .picture-accelerator:before{
-    background-image: url('../img/accelerator.png');
+    @include background('../img/accelerator.png');
 }
 .picture-railGan:before{
-    background-image: url('../img/railGan.png');
+    @include background('../img/railGan.png');
 }
 .picture-faceBeacon:before{
-    background-image: url('../img/fakeBeacon.png');
+    @include background('../img/fakeBeacon.png');
 }
 .picture-strangeSphere:before{
-    background-image: url('../img/strangeSphere.png');
+    @include background('../img/strangeSphere.png');
 }
 // === section-equipment ===
 .choose-equipment {
@@ -656,47 +675,47 @@ $xl : 1200px;
 // === / section-equipment ===
 
 .picture-neilArmstrong:before{
-    background-image: url('../img/neilArmstrong.png');
+    @include background('../img/neilArmstrong.png');
 }
 .picture-dougHurley:before{
-    background-image: url('../img/DougHurley.png');
+    @include background('../img/DougHurley.png');
 }
 .picture-bobBehnken:before{
-    background-image: url('../img/bobBehnken.png');
+    @include background('../img/bobBehnken.png');
 }
 .picture-feian:before{
-    background-image: url('../img/feian-min.png');
+    @include background('../img/feian-min.png');
 }
 .picture-placeholder:before{
-    background-image: url('../img/placeholder-Copy.png');
+    @include background('../img/placeholder-Copy.png');
 }
 // === section-crew ===
 .choose-crew {
-    .section-inner{
-        width: 70% !important;
-    }
     background: linear-gradient(45deg, rgb(128, 63, 113), rgb(19, 134, 180));
     background-position: center;
     background-size: cover;
+    .section-inner{
+        width: 70% !important;
+    }
 }
 // === / section-crew ===
 .picture-titan:before{
-    background-image: url('../img/nebula-planet-by-david-cowan-1629768-1599x956.jpg');
+    @include background('../img/nebula-planet-by-david-cowan-1629768-1599x956.jpg');
 }
 .picture-mars:before{
-    background-image: url('../img/mars.jpg');
+    @include background('../img/mars.jpg');
 }
 .picture-jupiter:before{
-    background-image: url('../img/Jupiter\'sSputnics.jpg');
+    @include background('../img/Jupiter\'sSputnics.jpg');
 }
 .picture-asteroidBelt:before{
-    background-image: url('../img/asteroidBelt.jpg');
+    @include background('../img/asteroidBelt.jpg');
 }
 .picture-ceres:before{
-    background-image: url('../img/Ceres.jpg');
+    @include background('../img/Ceres.jpg');
 }
 .picture-saturnsSputnics:before{
-    background-image: url('../img/saturnSputnics.jpg');
+    @include background('../img/saturnSputnics.jpg');
     
 }
 .picture-saturnsSputnics:after{

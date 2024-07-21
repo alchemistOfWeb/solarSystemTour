@@ -33,6 +33,11 @@ export default {
         watch: pathSrc + "/img/**/*.{jpg,jpeg,png,gif,svg}",
         dest: pathDest + "/img"
     },
+    icon: {
+        src: pathSrc + "/icon/*.{ico,svg}",
+        watch: pathSrc + "/icon/**/*.{ico,svg}",
+        dest: pathDest + "/icons"
+    },
     font: {
         src: pathSrc + "/font/*.{ttf,otf,eot,otc,ttc,woff,woff2,svg}",
         watch: pathSrc + "/font/**/*.{ttf,otf,eot,otc,ttc,woff,woff2,svg}",

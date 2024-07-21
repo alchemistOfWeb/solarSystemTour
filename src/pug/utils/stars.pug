@@ -1,0 +1,39 @@
+li.d-flex.justify-content-between
+    span= stars.title
+    div.stars
+        if stars.number == 5
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+        else if stars.number == 4
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star"></i>
+        else if stars.number == 3
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+        else if stars.number == 2
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+        else if stars.number == 1
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+        else
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-star"></i>

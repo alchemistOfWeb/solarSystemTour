@@ -1,0 +1,310 @@
+$base-font-size: 22px;
+
+@font-face {
+    font-family: "bangers";
+    src: url(/fonts/bangers.regular.woff2) format("woff2"), url(/fonts/bangers.regular.woff) format("woff");
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: $base-font-size;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+
+// @import "../../node_modules/node_modules/wowjs/css/libs/animate";
+@import "../../node_modules/aos/dist/aos";
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+@font-face {
+    font-display: block;
+    font-family: "bootstrap-icons";
+    src: url(/fonts/bootstrap-icons.woff2) format("woff2"),url(/fonts/bootstrap-icons.woff) format("woff")
+}
+
+@import "chunk/title.scss";
+
+.section-header {
+    overflow: overlay;
+    height: 100vh;
+    background-image: url("/img/fog.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    &__name {
+        animation-name: riseup;
+        animation-duration: 1s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        animation-delay: 0s;
+        font-size: 63px;
+    }
+    &__job {
+        animation-name: risedown;
+        animation-duration: 1s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in-out;
+        animation-delay: 0s;
+        font-size: 43px;
+    }
+    & h1, & h2 {
+        font-family: 'bangers', cursive, sans-serif;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-weight: 700;
+        color: #10e3ba;
+        text-shadow: rgb(0, 0, 0) 1px 0 10px;
+    }
+    &__inner-layout {
+        height: 100%;
+    }
+    // &__header {
+        
+        // font-family:'Courier New', Courier, monospace;
+        // font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    // }
+    & .animated-line {
+        animation-name: rise;
+        animation-duration: 2s;
+        height: 3px;
+        background-color: #8df7df;
+        width: 0%;
+        box-shadow: 0 0 7px 1px white;
+    }
+
+}
+@keyframes riseup {
+    from {
+        transform: translateY(75px);
+    }
+    25% {
+        transform: translateY(75px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes risedown {
+    from {
+        transform: translateY(-75px);
+    }
+    25% {
+        transform: translateY(-75px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+@keyframes rise {
+    from {
+        width: 0%;
+    }
+    50% {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
+
+.aboutme {
+    &__profile-photo {
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+
+.bottom-line {
+    border-bottom-color: white;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.footer {
+    min-height: 100px;
+    box-shadow: 0px 1px 15px bisque;
+}
+
+.top-line {
+    border-top-color: white;
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+
+.skills {
+    overflow: hidden;
+    &__list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.education {
+    &__picture {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.careers {
+    &__picture {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.tech-link {
+    margin-left: 7px;
+}
+
+*::-webkit-scrollbar {
+    height: 12px;
+    width: 3px;
+}
+*::-webkit-scrollbar-track {
+    background: rgb(0, 174, 255);
+}
+*::-webkit-scrollbar-thumb {
+    background-color: rgb(247, 255, 142);
+    border-radius: 5px;
+    border: 1px solid rgb(255, 123, 0);
+}
+
+// .table-scrollable::-webkit-scrollbar-thumb {
+//     background-color: #ccc; 
+//     border-radius: 10px;
+// }
+
+// .table-scrollable::-webkit-scrollbar {
+//     width: 12px; 
+//     background-color: #000066; 
+// }
+.clickable-list {
+    & li {
+        cursor: pointer;
+    }
+}
+.timeline {
+    color:#fff;
+    padding:30px 20px;
+    & ul{
+        list-style-type:none;
+        border-left:2px solid #8a9fa8;
+        padding: 10px 5px;
+    }
+    & ul li{
+        padding: 20px 20px;
+        position: relative;
+        // cursor: pointer;
+        transition: .5s;
+    }
+    & ul li:before{
+        position:absolute;
+        content:'';
+        width:15px;
+        height:15px;
+        background-color:#7194a3;
+        border-radius:50%;
+        left: -14px;
+        top: 25px;
+        transition:.5s;
+    }
+    & ul li:hover{
+        background-color:#071f2a;
+    }
+    & ul li:hover:before{
+        background-color:#0F0;
+        box-shadow:0px 0px 10px 2px #0F0;
+    }
+}
+
+.project-card {
+    width: 18rem;
+    cursor: pointer;
+    height: 250px;
+    & * {
+        cursor: inherit;
+    }
+    &__content {
+        width: 100%;
+        height: fit-content;
+        text-shadow: 0 0 3px rgb(203, 236, 236);
+    }
+    img {
+        transition-duration: 500ms;
+        object-fit: cover;
+        height: 100%;
+    }
+    &:hover > img {
+        filter: blur(4px);
+    }
+    &__title {
+        font-size: 23px;
+    }
+    &__text {
+        font-size: 15px;
+    }
+}
+
+.contact {
+    cursor: pointer;
+    text-shadow: 0px 0px 0px red;
+    &__icon {
+        font-size: 40px;
+        transition-duration: 250ms;
+    }
+    &:hover {
+        text-shadow: 1px 1px 4px red;
+    }
+}
+
+.modal-wrapper {
+    position: fixed;
+    background: linear-gradient(#e6646465, #9198e569);
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.modal {
+    & .btn-close {
+        top: 0;
+        right: 0;
+        z-index: 10;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+.modal-image-shadow {
+    // box-shadow: inset 0px 0px 40px 25px black;
+    box-shadow: inset 0 0 20rem rgba(0, 0, 0, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.carousel-indicators {
+    & button[data-bs-target] {
+        background-clip: padding-box;
+    }
+}
+
+.carousel-inner {
+    max-height: 400px;
+}

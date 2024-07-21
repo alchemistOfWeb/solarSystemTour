@@ -1,0 +1,40 @@
+//- vars: modal_data(id, title, text, img)  
+div.modal.fade(id=modal_data.id, aria-hidden="true", data-bs-keyboard="false")
+    div.modal-dialog.modal-lg.modal-dialog-centered
+        div.modal-content.overflow-hidden
+            div(id="indicators"+modal_data.id class="carousel slide" data-bs-ride="carousel")
+                div.carousel-indicators
+                    if modal_data.img
+                        each val, index in modal_data.img
+                            if index == 0
+                                button.active(type="button" data-bs-target="#indicators"+modal_data.id data-bs-slide-to=index aria-current="true" aria-label=val.label)
+                            else
+                                button(type="button" data-bs-target="#indicators"+modal_data.id data-bs-slide-to=index aria-label=val.label)
+                    //- button.active(type="button" data-bs-target="#indicators"+modal_data.id data-bs-slide-to="0" aria-current="true" aria-label="Slide 1")
+                    //- button(type="button" data-bs-target="#indicators"+modal_data.id data-bs-slide-to="1" aria-label="Slide 2")
+                        //- button(type="button" data-bs-target="#indicators"+modal_id data-bs-slide-to="2" aria-label="Slide 3")
+                div.carousel-inner
+                    if modal_data.img
+                        each val, index in modal_data.img
+                            if index == 0
+                                div.carousel-item.active
+                                    img.d-block.w-100(src=val.src, alt="...", srcset="")
+                            else
+                                div.carousel-item
+                                    img.d-block.w-100(src=val.src, alt="...", srcset="")
+
+                div.modal-image-shadow
+
+                button.carousel-control-prev(type="button" data-bs-target="#indicators"+modal_data.id data-bs-slide="prev")
+                    span.carousel-control-prev-icon(aria-hidden="true")
+                    span.visually-hidden Previous
+                
+                button.carousel-control-next(type="button" data-bs-target="#indicators"+modal_data.id data-bs-slide="next")
+                    span.carousel-control-next-icon(aria-hidden="true")
+                    span.visually-hidden Next
+
+            button(type="button" class="btn-close position-absolute btn-close-white" data-bs-dismiss="modal" aria-label="Close")
+            div.modal-header
+                h2= modal_data.title
+            div.modal-body
+                p !{modal_data.text}

@@ -1,0 +1,65 @@
+div.section-outer.choose-flightPath
+    div.background-stars(style="top: 12%; left: 21%;")
+        img.background-stars__img(src="img/stars.jpg" alt="")
+    
+    div.background-stars(style="top: 72%; left: 71%;")
+        img.background-stars__img(src="img/stars.jpg" alt="" )
+    
+    div.background-stars(style="top: 34%; left: 12%;")
+        img.background-stars__img(src="img/stars.jpg" alt="" )
+    
+    div.background-stars(style="top: 74%; left: 7%;")
+        img.background-stars__img(src="img/stars.jpg" alt="" )
+    
+    div.background-stars(style="top: 80%; left: 35%;")
+        img.background-stars__img(src="img/stars.jpg" alt="" )
+    
+    div.background-stars(style="top: 30%; left: 85%;")
+        img.background-stars__img(src="img/stars.jpg" alt="" )
+    
+    div.background-stars(style="top: 20%; left: 1%;")
+        img.background-stars__img(src="img/stars.jpg" alt="" )
+    
+    div.background-stars(style="top: 88%; left: 95%;")
+        img.background-stars__img(src="img/stars.jpg" alt="" )
+    
+    div.section-inner
+        div.little-choise
+            div.little-choise__description Куда полетите?
+            div.little-choise-container.little-choise-container_flex(id = "flightPath-container-js")
+                div.little-choise-container__radio.little-choise-container__radio_big
+                    input(class="little-choise-container__radio-input" id="flightPath0" value="Пояс астеройдов" type="radio" name="flightPath")
+                    label(class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-asteroidBelt" for="flightPath0")
+                        | Пояс астеройдов
+                
+                div.little-choise-container__radio.little-choise-container__radio_big
+                    input(class="little-choise-container__radio-input" id="flightPath1" value="Марс" type="radio" name="flightPath")
+                    label(class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-mars" for="flightPath1")
+                        | Марс
+                
+                div.little-choise-container__radio.little-choise-container__radio_big
+                    input(class="little-choise-container__radio-input" id="flightPath2" value="Спутники Юпитера" type="radio" name="flightPath")
+                    label(class="little-choise-container__radio-label little-choise-container__radio-label_rectangle  picture-jupiter" for="flightPath2")
+                        | Спутники Юпитера
+                
+                div.little-choise-container__radio.little-choise-container__radio_big
+                    input(class="little-choise-container__radio-input" id="flightPath3" value="Спутники Сатурна" type="radio" name="flightPath")
+                    label(class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-saturnsSputnics" for="flightPath3")
+                        | Спутники Сатурна
+                
+                div.little-choise-container__radio.little-choise-container__radio_big
+                    input(class="little-choise-container__radio-input" id="flightPath4" value="Церера" type="radio" name="flightPath")
+                    label(class="little-choise-container__radio-label little-choise-container__radio-label_rectangle picture-ceres" for="flightPath4")
+                        | Церера
+
+        div.btn-container.spec
+            div.btn-back(id="btn-back-flightPath-js")
+                img(src="icons/down-arrows_icon-icons.com_70186.svg" alt="next" class="btn-arrow btn-back__arrow")
+            
+            div.btn-next(id="btn-next-flightPath-js")
+                img(src="icons/down-arrows_icon-icons.com_70186.svg" alt="back" class="btn-arrow btn-next__arrow")
+        
+        div.choise-link.swiper-js
+            div.choise-link-text Start
+            div.choise-link-icon
+                img(src="icons/1492533501-arrow-30_83308.ico" alt="next")

@@ -1,0 +1,59 @@
+div.section-outer.choose-starship
+    div.background-stars(style="top: 12%; left: 21%;")
+        img(class="background-stars__img" src="img/stars.jpg" alt="")
+    
+    div.background-stars(style="top: 72%; left: 71%;")
+        img(class="background-stars__img" src="img/stars.jpg" alt="")
+    
+    div.background-stars(style="top: 34%; left: 12%;")
+        img(class="background-stars__img" src="img/stars.jpg" alt="")
+    
+    div.background-stars(style="top: 74%; left: 7%;")
+        img(class="background-stars__img" src="img/stars.jpg" alt="")
+    
+    div.background-stars(style="top: 80%; left: 35%;")
+        img(class="background-stars__img" src="img/stars.jpg" alt="")
+    
+    div.background-stars(style="top: 30%; left: 85%;")
+        img(class="background-stars__img" src="img/stars.jpg" alt="")
+    
+    div.background-stars(style="top: 20%; left: 1%;")
+        img(class="background-stars__img" src="img/stars.jpg" alt="")
+    
+    div.background-stars(style="top: 88%; left: 95%;")
+        img(class="background-stars__img" src="img/stars.jpg" alt="")
+    
+    div.section-inner
+        div.little-choise
+            div.little-choise__description Выберите корабль
+            div.little-choise-container.little-choise-container_flex(id="starship-container-js")
+                div.little-choise-container__radio.little-choise-container__radio_margin.little-choise-container__radio_big
+                    input(class="little-choise-container__radio-input" id="starship0" value="Serenity" type="radio" name="starship")
+                    label(class="little-choise-container__radio-label little-choise-container__radio-label_big  picture-serenity" for="starship0")
+                        | Serenity
+                    
+                div.little-choise-container__radio.little-choise-container__radio_margin.little-choise-container__radio_big
+                    input(class="little-choise-container__radio-input" id="starship1" value="Rosinant" type="radio" name="starship")
+                    label(class="little-choise-container__radio-label little-choise-container__radio-label_big  picture-rossinant" for="starship1")
+                        | Rosinant
+                    
+                div.little-choise-container__radio.little-choise-container__radio_margin.little-choise-container__radio_big
+                    input(class="little-choise-container__radio-input" id="starship2" value="Millennium Falcon" type="radio" name="starship")
+                    label(class="little-choise-container__radio-label little-choise-container__radio-label_big  picture-millenniumFalcon" for="starship2")
+                        | Millennium Falcon
+                    
+                div.little-choise-container__radio.little-choise-container__radio_margin.little-choise-container__radio_big
+                    input(class="little-choise-container__radio-input" id="starship3" value="Normandia Sr2" type="radio" name="starship")
+                    label(class="little-choise-container__radio-label little-choise-container__radio-label_big picture-normandia" for="starship3")
+                        | Normandia Sr2
+                
+        div.btn-container.default
+            div.btn-back(id="btn-back-starship-js")
+                img(src="icons/down-arrows_icon-icons.com_70186.svg" alt="next" class="btn-arrow btn-back__arrow")
+            div.btn-next(id="btn-next-starship-js")
+                img(src="icons/down-arrows_icon-icons.com_70186.svg" alt="back" class="btn-arrow btn-next__arrow")
+            
+        div.choise-link.swiper-js
+            div.choise-link-text next
+            div.choise-link-icon
+                img(src="icons/1492533501-arrow-30_83308.ico" alt="next")

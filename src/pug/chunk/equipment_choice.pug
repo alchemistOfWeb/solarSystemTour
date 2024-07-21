@@ -1,0 +1,60 @@
+div.section-outer.choose-equipment
+    div.background-stars(style="top: 12%; left: 21%;")
+        img.background-stars__img(src="img/stars.jpg" alt="")
+    
+    div.background-stars(style="top: 72%; left: 71%;")
+        img.background-stars__img(src="img/stars.jpg" alt="" )
+    
+    div.background-stars(style="top: 34%; left: 12%;")
+        img.background-stars__img(src="img/stars.jpg" alt="" )
+    
+    div.background-stars(style="top: 74%; left: 7%;")
+        img.background-stars__img(src="img/stars.jpg" alt="" )
+    
+    div.background-stars(style="top: 80%; left: 35%;")
+        img.background-stars__img(src="img/stars.jpg" alt="" )
+    
+    div.background-stars(style="top: 30%; left: 85%;")
+        img.background-stars__img(src="img/stars.jpg" alt="" )
+    
+    div.background-stars(style="top: 20%; left: 1%;")
+        img.background-stars__img(src="img/stars.jpg" alt="" )
+    
+    div.background-stars(style="top: 88%; left: 95%;")
+        img.background-stars__img(src="img/stars.jpg" alt="" )
+    
+    div.section-inner
+        div.little-choise
+            div.little-choise__description Выберите оснащение
+            div.little-choise-container.little-choise-container_flex(id = "equipment-container-js")
+                div.little-choise-container__radio.little-choise-container__radio_margin.little-choise-container__radio_big
+                    input(class="little-choise-container__radio-input" id="item-equ0" value="ускоритель" type="radio" name="item-equipment")
+                    label(class="little-choise-container__radio-label little-choise-container__radio-label_big picture-accelerator" for="item-equ0")
+                        | ускоритель
+                
+                div.little-choise-container__radio.little-choise-container__radio_margin.little-choise-container__radio_big
+                    input(class="little-choise-container__radio-input" id="item-equ1" value="рельсовые пушки" type="radio" name="item-equipment")
+                    label(class="little-choise-container__radio-label little-choise-container__radio-label_big picture-railGan" for="item-equ1")
+                        | рельсовые пушки
+                
+                div.little-choise-container__radio.little-choise-container__radio_margin.little-choise-container__radio_big
+                    input(class="little-choise-container__radio-input" id="item-equ2" value="псевдо-маячки" type="radio" name="item-equipment")
+                    label(class="little-choise-container__radio-label little-choise-container__radio-label_big  picture-faceBeacon" for="item-equ2")
+                        | псевдо<span class="hyphen">-</span>маячки
+                
+                div.little-choise-container__radio.little-choise-container__radio_margin.little-choise-container__radio_big
+                    input(class="little-choise-container__radio-input" id="item-equ3" value="таинственный шар" type="radio" name="item-equipment")
+                    label(class="little-choise-container__radio-label little-choise-container__radio-label_big picture-strangeSphere" for="item-equ3")
+                        | таинственный шар(сувенир)
+            
+        div.btn-container.default
+            div.btn-back(id="btn-back-equipment-js")
+                img(src="icons/down-arrows_icon-icons.com_70186.svg" alt="next" class="btn-arrow btn-back__arrow")
+            
+            div.btn-next(id="btn-next-equipment-js")
+                img(src="icons/down-arrows_icon-icons.com_70186.svg" alt="back" class="btn-arrow btn-next__arrow")
+            
+        div.choise-link.swiper-js
+            div.choise-link-text next
+            div.choise-link-icon
+                img(src="icons/1492533501-arrow-30_83308.ico" alt="next")

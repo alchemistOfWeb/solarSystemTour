@@ -1,9 +1,15 @@
-div.section-header.mb-5
-    div.container.d-flex.flex-column.align-items-center.justify-content-center.section-header__inner-layout
-        div.d-flex.flex-column.align-items-center
-            div.px-3.overflow-hidden
-                h1.section-header__name Nikita Kuznetsov
-            div.animated-line
-            div.px-3.overflow-hidden
-                h2.section-header__job Python Backend developer
-        
+div.section-outer.section-header
+    div.section-inner
+        div.section-header-content
+            div.section-header-wrapper
+                div.section-header-wrapper__title Solar system tour
+                div.section-header-wrapper__subtitle Выбирай корабль, оснащение, экипаж, траекторию и отправляйся в незабываемое приключение по солнечной системе 2189
+                div.section-header-wrapper__form
+                    div.section-header-wrapper__form-input
+                        input(class="section-header-wrapper__form-input_border-color_white" type="text" placeholder="name" id="name-js")
+                    
+                    div.section-header-wrapper__form-input
+                        input(class="section-header-wrapper__form-input_border-color_white" type="text" placeholder="surname" id="surname-js")
+                    
+                    div.section-header-wrapper__form-button
+                        button(id="swiper-js") get started

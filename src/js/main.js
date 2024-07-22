@@ -161,13 +161,16 @@ $(function() {
         console.log($(this).attr('data-url-image'));
 
         if($(this).prop('checked')){
+            const imageUrl = $(this).attr('data-url-image');
             $('<li></li>',{
                 title: title,
                 click: (e)=>{console.log(title)},
                 class: 'info-bar__crew-list-item',
                 id: id + "in-list"
             }).css({
-                'backgroundImage': "url('./" + $(this).attr('data-url-image') + "')"
+                'backgroundImage': `url('./${imageUrl}')`,
+                'backgroundPosition': "center",
+                'backgroundSize': "contain"
             }).appendTo($('#js-crew-list'));
             console.log('ok');
         } else {

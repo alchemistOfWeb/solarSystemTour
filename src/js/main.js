@@ -11,6 +11,9 @@
 //     console.log("using wow2");
 // });
 import $ from "jquery";
+import * as popper from "@popperjs/core";
+import * as bootstrap from "bootstrap";
+import tippy from 'tippy.js';
 
 function checkboxLimitation(checkboxSelector, num){
     const $crewMembers = $(checkboxSelector);
@@ -48,9 +51,79 @@ function btnAddSwiperEvent($container, $btnBack, $btnNext){
     });
 }
 
+const starshipTPLayout = (speed, fuel, health, firepower) => `
+<span>speed: ${speed}</span>
+<span>fuel: ${fuel}</span>
+<span>health: ${health}</span>
+<span>firepower: ${firepower}</span>
+`;
+
+const SCREENSIZES = {
+    sm: 576,
+    md: 768,
+    lg: 992,
+    xl: 1200
+}
 
 // ENTRYPOINT ----------------------------------------
 $(function() {
+    // tooltips
+    // tippy(".little-choise-container__radio:has(> #starship0)", {
+    //     theme: 'material',
+    //     animation: 'scale',
+    //     content: 'Tooltip test',
+    //     placement: 'left'
+    // })
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+    // starship carousel
+    // const starshipCarouselControls = document.querySelector(
+    //     "#starshipCarouselControls"
+    // );
+    const $starshipCarouselControls = $("#starshipCarouselControls");
+    if (window.matchMedia(`(min-width: ${SCREENSIZES.md}px)`).matches) {
+        var carousel = new bootstrap.Carousel($starshipCarouselControls, {
+            interval: false,
+        });
+        var carouselWidth = $(".carousel-inner")[0].scrollWidth;
+        var cardWidth = $(".carousel-item").width();
+        var scrollPosition = 0;
+        
+        $starshipCarouselControls.find(".carousel-control-next").on("click", function () {
+            if (scrollPosition < carouselWidth - cardWidth * 4) {
+                scrollPosition += cardWidth;
+                $starshipCarouselControls.find(".carousel-inner").animate(
+                    { scrollLeft: scrollPosition },
+                    600
+                );
+            }
+        });
+        // $("#carouselExampleControls .carousel-control-prev").on("click", function () {
+        //     if (scrollPosition > 0) {
+        //         scrollPosition -= cardWidth;
+        //         $("#carouselExampleControls .carousel-inner").animate(
+        //             { scrollLeft: scrollPosition },
+        //             600
+        //         );
+        //     }
+        // });
+        $starshipCarouselControls.find(".carousel-control-prev").on("click", function () {
+            if (scrollPosition > 0) {
+                scrollPosition -= cardWidth;
+                $starshipCarouselControls.find(".carousel-inner").animate(
+                    { scrollLeft: scrollPosition },
+                    600
+                );
+            }
+        });
+    } else {
+        $starshipCarouselControls.addClass("slide");
+    }
+
+
     // change to funtion
     const changePositionSlide = ($object, newPos)=>{
         $object.animate({marginTop: `${newPos}vh`}, 500,'swing');

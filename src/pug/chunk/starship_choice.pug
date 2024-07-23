@@ -1,4 +1,5 @@
-div.section-outer.choose-starship
+div.d-flex.flex-column.section-outer.choose-starship
+    div.infobar-min-height.w-100
     div.background-stars(style="top: 12%; left: 21%;")
         img(class="background-stars__img" src="img/stars.jpg" alt="")
     
@@ -23,37 +24,71 @@ div.section-outer.choose-starship
     div.background-stars(style="top: 88%; left: 95%;")
         img(class="background-stars__img" src="img/stars.jpg" alt="")
     
-    div.section-inner
-        div.little-choise
-            div.little-choise__description Выберите корабль
-            div.little-choise-container.little-choise-container_flex(id="starship-container-js")
-                div.little-choise-container__radio.little-choise-container__radio_margin.little-choise-container__radio_big
-                    input(class="little-choise-container__radio-input" id="starship0" value="Serenity" type="radio" name="starship")
-                    label(class="little-choise-container__radio-label little-choise-container__radio-label_big  picture-serenity" for="starship0")
-                        | Serenity
-                    
-                div.little-choise-container__radio.little-choise-container__radio_margin.little-choise-container__radio_big
-                    input(class="little-choise-container__radio-input" id="starship1" value="Rosinant" type="radio" name="starship")
-                    label(class="little-choise-container__radio-label little-choise-container__radio-label_big  picture-rossinant" for="starship1")
-                        | Rosinant
-                    
-                div.little-choise-container__radio.little-choise-container__radio_margin.little-choise-container__radio_big
-                    input(class="little-choise-container__radio-input" id="starship2" value="Millennium Falcon" type="radio" name="starship")
-                    label(class="little-choise-container__radio-label little-choise-container__radio-label_big  picture-millenniumFalcon" for="starship2")
-                        | Millennium Falcon
-                    
-                div.little-choise-container__radio.little-choise-container__radio_margin.little-choise-container__radio_big
-                    input(class="little-choise-container__radio-input" id="starship3" value="Normandia Sr2" type="radio" name="starship")
-                    label(class="little-choise-container__radio-label little-choise-container__radio-label_big picture-normandia" for="starship3")
-                        | Normandia Sr2
+    div.container
+        div.little-choise__description.text-center.text-light.mt-4 Выберите корабль
+        div.carousel.mt-5.d-flex(id="starshipCarouselControls")
+            button.carousel-control-prev.position-relative(type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev")
+                span.carousel-control-prev-icon(aria-hidden="true")
+                span.visually-hidden Previous
+            div.carousel-inner
+                div.active.carousel-item
+                    div.d-flex.flex-column.align-items-center.starship-choice-item
+                        div.img-wrapper.px-3
+                            img(class="rounded-circle w-100" src="img/Serenity.png" alt="..." srcset="")
+                        div.card-body
+                            input(class="d-none" id="starship0" value="Serenity" type="radio" name="starship")
+                            label(
+                                class="text-center text-light fs-4 fw-bold"
+                                tabindex="0"
+                                data-bs-toggle="tooltip"
+                                title="Tooltip on top"
+                                for="starship0")
+                                | Serenity
+                div.carousel-item
+                    div.d-flex.flex-column.align-items-center.starship-choice-item
+                        div.img-wrapper.px-3
+                            img(class="rounded-circle w-100" src="img/Rossinant.png" alt="..." srcset="")
+                        div.card-body
+                            input(class="d-none" id="starship1" value="Rosinant" type="radio" name="starship")
+                            label(
+                                class="text-center text-light fs-4 fw-bold"
+                                tabindex="0"
+                                data-bs-toggle="tooltip"
+                                title="Tooltip on top"
+                                for="starship1")
+                                | Rosinant
+                div.carousel-item
+                    div.d-flex.flex-column.align-items-center.starship-choice-item
+                        div.img-wrapper.px-3
+                            img(class="rounded-circle w-100" src="img/milleniumFalcon-min.png" alt="..." srcset="")
+                        div.card-body
+                            input(class="d-none" id="starship2" value="Millennium Falcon" type="radio" name="starship")
+                            label(
+                                class="text-center text-light fs-4 fw-bold"
+                                tabindex="0"
+                                data-bs-toggle="tooltip"
+                                title="Tooltip on top"
+                                for="starship2")
+                                | Millennium Falcon
+                div.carousel-item
+                    div.d-flex.flex-column.align-items-center.starship-choice-item
+                        div.img-wrapper.px-3
+                            img(class="rounded-circle w-100" src="img/NormandiaSr2-min.png" alt="..." srcset="")
+                        div.card-body
+                            input(class="d-none" id="starship3" value="Normandia Sr2" type="radio" name="starship")
+                            label(
+                                class="text-center text-light fs-4 fw-bold"
+                                tabindex="0"
+                                data-bs-toggle="tooltip"
+                                title="Tooltip on top"
+                                for="starship3")
+                                | Normandia Sr2
                 
-        div.btn-container.default
-            div.btn-back(id="btn-back-starship-js")
-                img(src="icons/down-arrows_icon-icons.com_70186.svg" alt="next" class="btn-arrow btn-back__arrow")
-            div.btn-next(id="btn-next-starship-js")
-                img(src="icons/down-arrows_icon-icons.com_70186.svg" alt="back" class="btn-arrow btn-next__arrow")
-            
-        div.choise-link.swiper-js
-            div.choise-link-text next
-            div.choise-link-icon
+            button.carousel-control-next.position-relative(type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next")
+                span.carousel-control-next-icon(aria-hidden="true")
+                span.visually-hidden Next
+        
+        div.position-absolute.w-100.bottom-0.start-0.d-flex.flex-column.align-items-center.choise-link-animation.swiper-js
+            div.text-light.fs-3.fit-content next
+            div.choise-link-icon.fit-content
                 img(src="icons/1492533501-arrow-30_83308.ico" alt="next")

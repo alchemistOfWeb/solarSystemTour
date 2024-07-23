@@ -1,4 +1,7 @@
 @import "chunk/_fonts.scss";
+@import "../../node_modules/tippy.js/dist/tippy";
+@import "../../node_modules/tippy.js/themes/material.css";
+@import "../../node_modules/tippy.js/animations/scale.css";
 @import "../../node_modules/aos/dist/aos";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
@@ -12,6 +15,10 @@ $sm : 576px;    $sm-max : 767px;
 $md : 768px;    $md-max : 991px; 
 $lg : 992px;    $lg-max : 1199px;
 $xl : 1200px;
+
+// top bar options
+$infobar_height: 115px;
+
 *{
     margin: 0;
     padding: 0;
@@ -43,7 +50,15 @@ $xl : 1200px;
     }
 }
 .section-outer{
+    height: 100vh;
     position: relative;
+}
+
+.infobar-min-height {
+    min-height: $infobar_height;
+}
+.infobar-height {
+    height: $infobar_height;
 }
 
 .hyphen{
@@ -118,10 +133,10 @@ $xl : 1200px;
     }
     &__wrapper{
         transition-duration: .9s;
-        min-height: 81px;
         width: 1200px;
         margin: 0 auto;
-        background: linear-gradient(0deg, #4441416e, #9746468c, #9746467a, #4441413a);
+        // background: linear-gradient(0deg, #4441416e, #9746468c, #9746467a, #4441413a);
+        background: linear-gradient(0deg, #4441416e, #4697978c, #4650977a, #4441413a);
         @media (max-width: $md-max){
             overflow: hidden;
             min-height: 70px;
@@ -388,11 +403,6 @@ $xl : 1200px;
     }
     
     &__description{
-        display: block;
-        padding-top: 70px;
-        padding-bottom: 70px;
-        text-align: center;
-        color: white;
         font-size: 40px;
         line-height: 25px;
         @include CStrike;
@@ -433,12 +443,13 @@ $xl : 1200px;
             flex-shrink: 0;
             width: 200px;
             height: 50px;
-            &_big{
-                padding-top: 250px;
-            }
-            &_margin{
-                margin: 30px;
-            }
+            // delete:
+            // &_big{
+            //     padding-top: 250px;
+            // }
+            // &_margin{
+            //     margin: 30px;
+            // }
             &_small{
                 width: 100px;
                 padding-top: 150px;
@@ -556,40 +567,51 @@ $xl : 1200px;
         size: cover;
     }
 }
-.picture-serenity:before{
-    @include background('../img/Serenity.png')
-    // background-image: url();
+// .picture-serenity:before{
+//     @include background('../img/Serenity.png')
+//     // background-image: url();
+// }
+// .picture-rossinant:before{
+//     @include background('../img/Rossinant.png');
+// }
+// .picture-millenniumFalcon:before{
+//     @include background('../img/milleniumFalcon-min.png');
+// }
+// .picture-normandia:before{
+//     @include background('../img/NormandiaSr2-min.png');
+// }
+
+@media (min-width: $md) {
+    .carousel-item {
+      margin-right: 0;
+      flex: 0 0 33.333333%;
+      display: block;
+    }
+    .carousel-inner {
+      display: flex;
+    }
 }
-.picture-rossinant:before{
-    @include background('../img/Rossinant.png');
+// .carousel-control-next,
+// .carousel-control-prev {
+//     position: relative;
+// }
+
+.fit-content {
+    width: fit-content;
 }
-.picture-millenniumFalcon:before{
-    @include background('../img/milleniumFalcon-min.png');
-}
-.picture-normandia:before{
-    @include background('../img/NormandiaSr2-min.png');
-}
-.choise-link{
-    position: relative;
-    top: 50px;
-    min-width: 72px;
-    align-self: center;
+
+.choise-link-animation{
+    // position: relative;
+    // top: 50px;
+    // min-width: 72px;
+    // align-self: center;
     cursor: pointer;
     animation-name: arrow-link;
     animation-timing-function: ease-in-out;
     animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    @media (max-width: $sm-max){
-        top: -20px;
-    }
-    &-text{
-        color: white;
-        text-align: center;
-        font-size: 27px;
-    }
     &-icon{
-        width: 100%;
         filter: drop-shadow(0 1px 10px black);
     }
 }

@@ -51,6 +51,40 @@ function btnAddSwiperEvent($container, $btnBack, $btnNext){
     });
 }
 
+function activateCarousel(selectorStr) {
+
+    const $starshipCarouselControls = $(selectorStr);
+    if (window.matchMedia(`(min-width: ${SCREENSIZES.md}px)`).matches) {
+        var carousel = new bootstrap.Carousel($starshipCarouselControls, {
+            interval: false,
+        });
+        var carouselWidth = $(".carousel-inner")[0].scrollWidth;
+        var cardWidth = $(".carousel-item").width();
+        var scrollPosition = 0;
+        
+        $starshipCarouselControls.find(".carousel-control-next").on("click", function () {
+            if (scrollPosition < carouselWidth - cardWidth * 4) {
+                scrollPosition += cardWidth;
+                $starshipCarouselControls.find(".carousel-inner").animate(
+                    { scrollLeft: scrollPosition },
+                    600
+                );
+            }
+        });
+        $starshipCarouselControls.find(".carousel-control-prev").on("click", function () {
+            if (scrollPosition > 0) {
+                scrollPosition -= cardWidth;
+                $starshipCarouselControls.find(".carousel-inner").animate(
+                    { scrollLeft: scrollPosition },
+                    600
+                );
+            }
+        });
+    } else {
+        $starshipCarouselControls.addClass("slide");
+    }
+}
+
 const starshipTPLayout = (speed, fuel, health, firepower) => `
 <span>speed: ${speed}</span>
 <span>fuel: ${fuel}</span>
@@ -79,50 +113,9 @@ $(function() {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
 
-    // starship carousel
-    // const starshipCarouselControls = document.querySelector(
-    //     "#starshipCarouselControls"
-    // );
-    const $starshipCarouselControls = $("#starshipCarouselControls");
-    if (window.matchMedia(`(min-width: ${SCREENSIZES.md}px)`).matches) {
-        var carousel = new bootstrap.Carousel($starshipCarouselControls, {
-            interval: false,
-        });
-        var carouselWidth = $(".carousel-inner")[0].scrollWidth;
-        var cardWidth = $(".carousel-item").width();
-        var scrollPosition = 0;
-        
-        $starshipCarouselControls.find(".carousel-control-next").on("click", function () {
-            if (scrollPosition < carouselWidth - cardWidth * 4) {
-                scrollPosition += cardWidth;
-                $starshipCarouselControls.find(".carousel-inner").animate(
-                    { scrollLeft: scrollPosition },
-                    600
-                );
-            }
-        });
-        // $("#carouselExampleControls .carousel-control-prev").on("click", function () {
-        //     if (scrollPosition > 0) {
-        //         scrollPosition -= cardWidth;
-        //         $("#carouselExampleControls .carousel-inner").animate(
-        //             { scrollLeft: scrollPosition },
-        //             600
-        //         );
-        //     }
-        // });
-        $starshipCarouselControls.find(".carousel-control-prev").on("click", function () {
-            if (scrollPosition > 0) {
-                scrollPosition -= cardWidth;
-                $starshipCarouselControls.find(".carousel-inner").animate(
-                    { scrollLeft: scrollPosition },
-                    600
-                );
-            }
-        });
-    } else {
-        $starshipCarouselControls.addClass("slide");
-    }
-
+    
+    activateCarousel("#starshipCarouselControls");
+    activateCarousel("#equipmentCarouselControls");
 
     // change to funtion
     const changePositionSlide = ($object, newPos)=>{

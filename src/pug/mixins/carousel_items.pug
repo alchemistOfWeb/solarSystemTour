@@ -1,0 +1,30 @@
+mixin circled_item(id, name, value, title, img_path, active=false)
+    if active
+        div.active.carousel-item
+            div.d-flex.flex-column.align-items-center.starship-choice-item
+                div.img-wrapper.w-100.px-3
+                    img(class="rounded-circle w-100" src=img_path alt="..." srcset="")
+                div.card-body
+                    input(class="d-none" id=id value=value type="radio" name=name)
+                    label(
+                        class="text-center text-light fs-4 fw-bold"
+                        tabindex="0"
+                        data-bs-toggle="tooltip"
+                        title="Tooltip on top"
+                        for="starship0")
+                        =title
+    else
+        div.carousel-item
+            div.d-flex.flex-column.align-items-center.starship-choice-item
+                div.img-wrapper.w-100.px-3
+                    img(class="rounded-circle w-100" src=img_path alt="..." srcset="")
+                div.card-body
+                    input(class="d-none" id=id value=value type="radio" name=name)
+                    label(
+                        class="text-center text-light fs-4 fw-bold"
+                        tabindex="0"
+                        data-bs-toggle="tooltip"
+                        title="Tooltip on top"
+                        for="starship0")
+                        =title
+    

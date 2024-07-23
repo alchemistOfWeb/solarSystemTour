@@ -1,3 +1,4 @@
+include ../mixins/carousel_items
 div.d-flex.flex-column.section-outer.choose-starship
     div.infobar-min-height.w-100
     div.background-stars(style="top: 12%; left: 21%;")
@@ -31,58 +32,38 @@ div.d-flex.flex-column.section-outer.choose-starship
                 span.carousel-control-prev-icon(aria-hidden="true")
                 span.visually-hidden Previous
             div.carousel-inner
-                div.active.carousel-item
-                    div.d-flex.flex-column.align-items-center.starship-choice-item
-                        div.img-wrapper.px-3
-                            img(class="rounded-circle w-100" src="img/Serenity.png" alt="..." srcset="")
-                        div.card-body
-                            input(class="d-none" id="starship0" value="Serenity" type="radio" name="starship")
-                            label(
-                                class="text-center text-light fs-4 fw-bold"
-                                tabindex="0"
-                                data-bs-toggle="tooltip"
-                                title="Tooltip on top"
-                                for="starship0")
-                                | Serenity
-                div.carousel-item
-                    div.d-flex.flex-column.align-items-center.starship-choice-item
-                        div.img-wrapper.px-3
-                            img(class="rounded-circle w-100" src="img/Rossinant.png" alt="..." srcset="")
-                        div.card-body
-                            input(class="d-none" id="starship1" value="Rosinant" type="radio" name="starship")
-                            label(
-                                class="text-center text-light fs-4 fw-bold"
-                                tabindex="0"
-                                data-bs-toggle="tooltip"
-                                title="Tooltip on top"
-                                for="starship1")
-                                | Rosinant
-                div.carousel-item
-                    div.d-flex.flex-column.align-items-center.starship-choice-item
-                        div.img-wrapper.px-3
-                            img(class="rounded-circle w-100" src="img/milleniumFalcon-min.png" alt="..." srcset="")
-                        div.card-body
-                            input(class="d-none" id="starship2" value="Millennium Falcon" type="radio" name="starship")
-                            label(
-                                class="text-center text-light fs-4 fw-bold"
-                                tabindex="0"
-                                data-bs-toggle="tooltip"
-                                title="Tooltip on top"
-                                for="starship2")
-                                | Millennium Falcon
-                div.carousel-item
-                    div.d-flex.flex-column.align-items-center.starship-choice-item
-                        div.img-wrapper.px-3
-                            img(class="rounded-circle w-100" src="img/NormandiaSr2-min.png" alt="..." srcset="")
-                        div.card-body
-                            input(class="d-none" id="starship3" value="Normandia Sr2" type="radio" name="starship")
-                            label(
-                                class="text-center text-light fs-4 fw-bold"
-                                tabindex="0"
-                                data-bs-toggle="tooltip"
-                                title="Tooltip on top"
-                                for="starship3")
-                                | Normandia Sr2
+                +circled_item(
+                    "starship0",
+                    "starship",
+                    "Serenity",
+                    "Serenity",
+                    "img/Serenity.png",
+                    true
+                )
+                +circled_item(
+                    "starship1",
+                    "starship",
+                    "Rosinant",
+                    "Rosinant",
+                    "img/Rossinant.png",
+                    false
+                )
+                +circled_item(
+                    "starship2",
+                    "starship",
+                    "Millennium Falcon",
+                    "Millennium Falcon",
+                    "img/milleniumFalcon-min.png",
+                    false
+                )
+                +circled_item(
+                    "starship3",
+                    "starship",
+                    "Normandia Sr2",
+                    "Normandia Sr2",
+                    "img/NormandiaSr2-min.png",
+                    false
+                )
                 
             button.carousel-control-next.position-relative(type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next")
                 span.carousel-control-next-icon(aria-hidden="true")

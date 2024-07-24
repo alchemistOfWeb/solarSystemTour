@@ -1,7 +1,7 @@
 mixin circled_item(id, name, value, title, img_path, active=false)
     if active
         div.active.carousel-item
-            div.d-flex.flex-column.align-items-center.starship-choice-item
+            div.d-flex.flex-column.align-items-center
                 div.img-wrapper.w-100.px-3
                     img(class="rounded-circle w-100" src=img_path alt="..." srcset="")
                 div.card-body
@@ -12,10 +12,10 @@ mixin circled_item(id, name, value, title, img_path, active=false)
                         data-bs-toggle="tooltip"
                         title="Tooltip on top"
                         for="starship0")
-                        =title
+                        | !{title}
     else
         div.carousel-item
-            div.d-flex.flex-column.align-items-center.starship-choice-item
+            div.d-flex.flex-column.align-items-center
                 div.img-wrapper.w-100.px-3
                     img(class="rounded-circle w-100" src=img_path alt="..." srcset="")
                 div.card-body
@@ -26,5 +26,35 @@ mixin circled_item(id, name, value, title, img_path, active=false)
                         data-bs-toggle="tooltip"
                         title="Tooltip on top"
                         for="starship0")
-                        =title
+                        | !{title}
+
+
+mixin monolit_item(id, name, value, title, img_path, active=false)
+    if active
+        div.active.carousel-item
+            div.card.h-100.bg-dark.text-white
+                img(class="card-img h-100 object-fit-cover" src=img_path alt="..." srcset="")
+                //- div.img-wrapper.w-100.px-3
+                div.card-img-overlay
+                    input(class="d-none" id=id value=value type="radio" name=name)
+                    label(
+                        class="text-center text-light fs-4 fw-bold"
+                        tabindex="0"
+                        data-bs-toggle="tooltip"
+                        title="Tooltip on top"
+                        for="starship0")
+                        | !{title}
+    else
+        div.carousel-item
+            div.card.h-100.bg-dark.text-white
+                img(class="card-img h-100 object-fit-cover" src=img_path alt="..." srcset="")
+                div.card-img-overlay
+                    input(class="d-none" id=id value=value type="radio" name=name)
+                    label(
+                        class="text-center text-light fs-4 fw-bold"
+                        tabindex="0"
+                        data-bs-toggle="tooltip"
+                        title="Tooltip on top"
+                        for="starship0")
+                        | !{title}
     

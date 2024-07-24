@@ -567,19 +567,6 @@ $infobar_height: 115px;
         size: cover;
     }
 }
-// .picture-serenity:before{
-//     @include background('../img/Serenity.png')
-//     // background-image: url();
-// }
-// .picture-rossinant:before{
-//     @include background('../img/Rossinant.png');
-// }
-// .picture-millenniumFalcon:before{
-//     @include background('../img/milleniumFalcon-min.png');
-// }
-// .picture-normandia:before{
-//     @include background('../img/NormandiaSr2-min.png');
-// }
 
 @media (min-width: $md) {
     .carousel-item {
@@ -591,13 +578,14 @@ $infobar_height: 115px;
       display: flex;
     }
 }
-// .carousel-control-next,
-// .carousel-control-prev {
-//     position: relative;
-// }
 
+// HELPERS
 .fit-content {
     width: fit-content;
+}
+
+.object-fit-cover {
+    object-fit: cover;
 }
 
 .choise-link-animation{
@@ -675,19 +663,7 @@ $infobar_height: 115px;
     background-position: center;
     background-size: cover;
 }
-// === / choose-starship ===
-.picture-accelerator:before{
-    @include background('../img/accelerator.png');
-}
-.picture-railGan:before{
-    @include background('../img/railGan.png');
-}
-.picture-faceBeacon:before{
-    @include background('../img/fakeBeacon.png');
-}
-.picture-strangeSphere:before{
-    @include background('../img/strangeSphere.png');
-}
+
 // === section-equipment ===
 .choose-equipment {
     background: linear-gradient(45deg, rgb(53, 223, 157), rgb(19, 52, 114));
@@ -721,25 +697,7 @@ $infobar_height: 115px;
     }
 }
 // === / section-crew ===
-.picture-titan:before{
-    @include background('../img/nebula-planet-by-david-cowan-1629768-1599x956.jpg');
-}
-.picture-mars:before{
-    @include background('../img/mars.jpg');
-}
-.picture-jupiter:before{
-    @include background('../img/Jupiter\'sSputnics.jpg');
-}
-.picture-asteroidBelt:before{
-    @include background('../img/asteroidBelt.jpg');
-}
-.picture-ceres:before{
-    @include background('../img/Ceres.jpg');
-}
-.picture-saturnsSputnics:before{
-    @include background('../img/saturnSputnics.jpg');
-    
-}
+
 .picture-saturnsSputnics:after{
     content: "Спутники Сатурна";
     color: white;

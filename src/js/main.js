@@ -116,6 +116,7 @@ $(function() {
     
     activateCarousel("#starshipCarouselControls");
     activateCarousel("#equipmentCarouselControls");
+    activateCarousel("#flightpathCarouselControls");
 
     // change to funtion
     const changePositionSlide = ($object, newPos)=>{

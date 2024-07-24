@@ -1,29 +1,8 @@
 include ../mixins/carousel_items
+include ../mixins/background_stars
 div.d-flex.flex-column.section-outer.choose-starship
     div.infobar-min-height.w-100
-    div.background-stars(style="top: 12%; left: 21%;")
-        img(class="background-stars__img" src="img/stars.jpg" alt="")
-    
-    div.background-stars(style="top: 72%; left: 71%;")
-        img(class="background-stars__img" src="img/stars.jpg" alt="")
-    
-    div.background-stars(style="top: 34%; left: 12%;")
-        img(class="background-stars__img" src="img/stars.jpg" alt="")
-    
-    div.background-stars(style="top: 74%; left: 7%;")
-        img(class="background-stars__img" src="img/stars.jpg" alt="")
-    
-    div.background-stars(style="top: 80%; left: 35%;")
-        img(class="background-stars__img" src="img/stars.jpg" alt="")
-    
-    div.background-stars(style="top: 30%; left: 85%;")
-        img(class="background-stars__img" src="img/stars.jpg" alt="")
-    
-    div.background-stars(style="top: 20%; left: 1%;")
-        img(class="background-stars__img" src="img/stars.jpg" alt="")
-    
-    div.background-stars(style="top: 88%; left: 95%;")
-        img(class="background-stars__img" src="img/stars.jpg" alt="")
+    +draw_stars
     
     div.container
         div.little-choise__description.text-center.text-light.mt-4 Выберите корабль

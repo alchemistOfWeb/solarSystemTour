@@ -571,8 +571,13 @@ $infobar_height: 115px;
 @media (min-width: $md) {
     .carousel-item {
       margin-right: 0;
-      flex: 0 0 33.333333%;
       display: block;
+    }
+    .flex-basis-md-3 {
+        flex: 0 0 33.333333%;
+    }
+    .flex-basis-md-4 {
+        flex: 0 0 25%;
     }
     .carousel-inner {
       display: flex;

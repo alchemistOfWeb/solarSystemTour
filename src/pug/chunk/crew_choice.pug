@@ -1,91 +1,63 @@
-div.section-outer.choose-crew
-    div.background-stars(style="top: 12%; left: 21%;")
-        img.background-stars__img(src="img/stars.jpg" alt="")
-    
-    div.background-stars(style="top: 72%; left: 71%;")
-        img.background-stars__img(src="img/stars.jpg" alt="" )
-    
-    div.background-stars(style="top: 34%; left: 12%;")
-        img.background-stars__img(src="img/stars.jpg" alt="" )
-    
-    div.background-stars(style="top: 74%; left: 7%;")
-        img.background-stars__img(src="img/stars.jpg" alt="" )
-    
-    div.background-stars(style="top: 80%; left: 35%;")
-        img.background-stars__img(src="img/stars.jpg" alt="" )
-    
-    div.background-stars(style="top: 30%; left: 85%;")
-        img.background-stars__img(src="img/stars.jpg" alt="" )
-    
-    div.background-stars(style="top: 20%; left: 1%;")
-        img.background-stars__img(src="img/stars.jpg" alt="" )
-    
-    div.background-stars(style="top: 88%; left: 95%;")
-        img.background-stars__img(src="img/stars.jpg" alt="" )
+include ../mixins/background_stars
+div.d-flex.flex-column.section-outer.choose-crew
+    div.infobar-min-height.w-100
+    +draw_stars
 
-    div.section-inner
-        div.little-choise
-            div.little-choise__description Выберите членов экипажа (максимум 5)
-            div.little-choise-container.little-choise-container_flex.little-choise-container_grid(id="crew-container-js")
-                div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                    input(class="little-choise-container__radio-input" id="crew-member0" value="Алан Шепард" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
-                    label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member0")
-                        | Алан Шепард
-                
-                div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                    input(class="little-choise-container__radio-input" id="crew-member1" value="Боб Бенкин" type="checkbox" name="crew-member" data-url-image="img/bobBehnken.png")
-                    label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-bobBehnken" for="crew-member1")
-                        | Боб Бенкин
-                
-                div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                    input(class="little-choise-container__radio-input" id="crew-member2" value="Даг Херли" type="checkbox" name="crew-member" data-url-image="img/DougHurley.png")
-                    label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-dougHurley" for="crew-member2")
-                        | Даг Херли
-                
-                div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                    input(class="little-choise-container__radio-input" id="crew-member3" value="Нил Армстронг" type="checkbox" name="crew-member" data-url-image="img/neilArmstrong.png")
-                    label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-neilArmstrong" for="crew-member3")
-                        | Нил Армстронг
-                
-                div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                    input(class="little-choise-container__radio-input" id="crew-member4" value="Чек бокс" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
-                    label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member4")
-                        | Алексей Леонов
-                
-                div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                    input(class="little-choise-container__radio-input" id="crew-member5" value="Человек" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
-                    label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member5")
-                        | Человек
-                
-                div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                    input(class="little-choise-container__radio-input" id="crew-member6" value="Член Экипажа" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
-                    label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member6")
-                        | Венерянин
-                
-                div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                    input(class="little-choise-container__radio-input" id="crew-member7" value="Пришелец" type="checkbox" name="crew-member" data-url-image="img/feian-min.png")
-                    label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-feian" for="crew-member7")
-                        | Типичный Астероидянин
-                
-                div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                    input(class="little-choise-container__radio-input" id="crew-member8" value="Диффектив" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
-                    label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member8")
-                        | Марсианин
-                
-                div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                    input(class="little-choise-container__radio-input" id="crew-member9" value="Киберленин" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
-                    label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member9")
-                        | Юрий Алексеевич
-                
-        div.btn-container.default
-            //- why ID????????
-            div.btn-back(id="btn-back-equipment-js")
-                img(src="icons/down-arrows_icon-icons.com_70186.svg" alt="next" class="btn-arrow btn-back__arrow")
+    div.container
+        
+        div.little-choise__description.text-center.text-light.mt-4 Выберите членов экипажа (максимум 5)
+        div.mt-5.d-flex
+            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
+                input(class="little-choise-container__radio-input" id="crew-member0" value="Алан Шепард" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
+                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member0")
+                    | Алан Шепард
             
-            div.btn-next(id="btn-next-equipment-js")
-                img(src="icons/down-arrows_icon-icons.com_70186.svg" alt="back" class="btn-arrow btn-next__arrow")
-
-        div.choise-link.swiper-js
-            div.choise-link-text next
-            div.choise-link-icon
+            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
+                input(class="little-choise-container__radio-input" id="crew-member1" value="Боб Бенкин" type="checkbox" name="crew-member" data-url-image="img/bobBehnken.png")
+                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-bobBehnken" for="crew-member1")
+                    | Боб Бенкин
+            
+            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
+                input(class="little-choise-container__radio-input" id="crew-member2" value="Даг Херли" type="checkbox" name="crew-member" data-url-image="img/DougHurley.png")
+                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-dougHurley" for="crew-member2")
+                    | Даг Херли
+            
+            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
+                input(class="little-choise-container__radio-input" id="crew-member3" value="Нил Армстронг" type="checkbox" name="crew-member" data-url-image="img/neilArmstrong.png")
+                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-neilArmstrong" for="crew-member3")
+                    | Нил Армстронг
+            
+            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
+                input(class="little-choise-container__radio-input" id="crew-member4" value="Чек бокс" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
+                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member4")
+                    | Алексей Леонов
+            
+            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
+                input(class="little-choise-container__radio-input" id="crew-member5" value="Человек" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
+                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member5")
+                    | Человек
+            
+            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
+                input(class="little-choise-container__radio-input" id="crew-member6" value="Член Экипажа" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
+                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member6")
+                    | Венерянин
+            
+            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
+                input(class="little-choise-container__radio-input" id="crew-member7" value="Пришелец" type="checkbox" name="crew-member" data-url-image="img/feian-min.png")
+                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-feian" for="crew-member7")
+                    | Типичный Астероидянин
+            
+            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
+                input(class="little-choise-container__radio-input" id="crew-member8" value="Диффектив" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
+                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member8")
+                    | Марсианин
+            
+            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
+                input(class="little-choise-container__radio-input" id="crew-member9" value="Киберленин" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
+                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member9")
+                    | Юрий Алексеевич
+                
+        div.position-absolute.w-100.bottom-0.start-0.d-flex.flex-column.align-items-center.choise-link-animation.swiper-js
+            div.text-light.fs-3.fit-content next
+            div.choise-link-icon.fit-content
                 img(src="icons/1492533501-arrow-30_83308.ico" alt="next")

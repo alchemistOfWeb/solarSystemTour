@@ -10,10 +10,14 @@
 //     });
 //     console.log("using wow2");
 // });
+import * as constants from "./constants.js";
 import $ from "jquery";
 import * as popper from "@popperjs/core";
 import * as bootstrap from "bootstrap";
 import tippy from 'tippy.js';
+import ChoicesCarousel from './module/carousel.js';
+
+window.$ = $;
 
 function checkboxLimitation(checkboxSelector, num){
     const $crewMembers = $(checkboxSelector);
@@ -42,62 +46,15 @@ function isACorrectInput($inputSelector){
     return regularExp.test(str) && (!regularExp2.test(str));
 }
 
-function btnAddSwiperEvent($container, $btnBack, $btnNext){
-    $btnBack.on('click',(e)=>{
-        $container.animate({left:'+=250'}, 400, 'swing');
-    });
-    $btnNext.on('click',(e)=>{
-        $container.animate({left:'-=250'}, 400, 'swing');
-    });
-}
 
-function activateCarousel(selectorStr) {
+// const starshipTPLayout = (speed, fuel, health, firepower) => `
+// <span>speed: ${speed}</span>
+// <span>fuel: ${fuel}</span>
+// <span>health: ${health}</span>
+// <span>firepower: ${firepower}</span>
+// `;
 
-    const $starshipCarouselControls = $(selectorStr);
-    if (window.matchMedia(`(min-width: ${SCREENSIZES.md}px)`).matches) {
-        var carousel = new bootstrap.Carousel($starshipCarouselControls, {
-            interval: false,
-        });
-        var carouselWidth = $(".carousel-inner")[0].scrollWidth;
-        var cardWidth = $(".carousel-item").width();
-        var scrollPosition = 0;
-        
-        $starshipCarouselControls.find(".carousel-control-next").on("click", function () {
-            if (scrollPosition < carouselWidth - cardWidth * 4) {
-                scrollPosition += cardWidth;
-                $starshipCarouselControls.find(".carousel-inner").animate(
-                    { scrollLeft: scrollPosition },
-                    600
-                );
-            }
-        });
-        $starshipCarouselControls.find(".carousel-control-prev").on("click", function () {
-            if (scrollPosition > 0) {
-                scrollPosition -= cardWidth;
-                $starshipCarouselControls.find(".carousel-inner").animate(
-                    { scrollLeft: scrollPosition },
-                    600
-                );
-            }
-        });
-    } else {
-        $starshipCarouselControls.addClass("slide");
-    }
-}
 
-const starshipTPLayout = (speed, fuel, health, firepower) => `
-<span>speed: ${speed}</span>
-<span>fuel: ${fuel}</span>
-<span>health: ${health}</span>
-<span>firepower: ${firepower}</span>
-`;
-
-const SCREENSIZES = {
-    sm: 576,
-    md: 768,
-    lg: 992,
-    xl: 1200
-}
 
 // ENTRYPOINT ----------------------------------------
 $(function() {
@@ -112,11 +69,9 @@ $(function() {
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
-
-    
-    activateCarousel("#starshipCarouselControls");
-    activateCarousel("#equipmentCarouselControls");
-    activateCarousel("#flightpathCarouselControls");
+    var first = new ChoicesCarousel($("#starshipCarouselControls")[0], 3); first.activate();
+    var first = new ChoicesCarousel($("#equipmentCarouselControls")[0], 3); first.activate();
+    var first = new ChoicesCarousel($("#flightpathCarouselControls")[0], 4); first.activate();
 
     // change to funtion
     const changePositionSlide = ($object, newPos)=>{
@@ -259,23 +214,6 @@ $(function() {
         $btnInfoBarOpen.toggleClass('info-bar__toggle-arrow_up');
         $infoBarWrapper.toggleClass('info-bar_open');
     });
-    
-    const $starshipContainer = $('#starship-container-js');
-    const $btnBackStarship = $('#btn-back-starship-js');
-    const $btnNextStarship = $('#btn-next-starship-js');
-    btnAddSwiperEvent($starshipContainer, $btnBackStarship, $btnNextStarship);
-    const $equipmentContainer = $('#equipment-container-js');
-    const $btnBackEquipment = $('#btn-back-equipment-js');
-    const $btnNextEquipment = $('#btn-next-equipment-js');
-    btnAddSwiperEvent($equipmentContainer, $btnBackEquipment, $btnNextEquipment);
-    const $crewContainer = $('#crew-container-js');
-    const $btnBackCrew = $('#btn-back-crew-js');
-    const $btnNextCrew = $('#btn-next-crew-js');
-    btnAddSwiperEvent($crewContainer, $btnBackCrew, $btnNextCrew);
-    const $flightPathContainer = $('#flightPath-container-js');
-    const $btnBackFlightPath = $('#btn-back-flightPath-js');
-    const $btnNextFlightPath = $('#btn-next-flightPath-js');
-    btnAddSwiperEvent($flightPathContainer, $btnBackFlightPath, $btnNextFlightPath);
 
     const $infoBarLinks =  $('.info-bar-link-js');
     $infoBarLinks.on('click', function(){

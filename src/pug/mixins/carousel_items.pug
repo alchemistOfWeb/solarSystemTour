@@ -1,6 +1,6 @@
 mixin circled_item(id, name, value, title, img_path, active=false)
     if active
-        div.active.carousel-item
+        div.active.carousel-item.flex-basis-md-3
             div.d-flex.flex-column.align-items-center
                 div.img-wrapper.w-100.px-3
                     img(class="rounded-circle w-100" src=img_path alt="..." srcset="")
@@ -14,7 +14,7 @@ mixin circled_item(id, name, value, title, img_path, active=false)
                         for="starship0")
                         | !{title}
     else
-        div.carousel-item
+        div.carousel-item.flex-basis-md-3
             div.d-flex.flex-column.align-items-center
                 div.img-wrapper.w-100.px-3
                     img(class="rounded-circle w-100" src=img_path alt="..." srcset="")
@@ -31,7 +31,7 @@ mixin circled_item(id, name, value, title, img_path, active=false)
 
 mixin monolit_item(id, name, value, title, img_path, active=false)
     if active
-        div.active.carousel-item
+        div.active.carousel-item.flex-basis-md-4
             div.card.h-100.bg-dark.text-white
                 img(class="card-img h-100 object-fit-cover" src=img_path alt="..." srcset="")
                 //- div.img-wrapper.w-100.px-3
@@ -45,7 +45,7 @@ mixin monolit_item(id, name, value, title, img_path, active=false)
                         for="starship0")
                         | !{title}
     else
-        div.carousel-item
+        div.carousel-item.flex-basis-md-4
             div.card.h-100.bg-dark.text-white
                 img(class="card-img h-100 object-fit-cover" src=img_path alt="..." srcset="")
                 div.card-img-overlay

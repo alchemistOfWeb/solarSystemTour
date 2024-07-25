@@ -76,8 +76,10 @@ $(function() {
     });
     // TODO: automatic activation carousel by special class
     var first = new ChoicesCarousel($("#starshipCarouselControls")[0], 4); first.activate();
-    var first = new ChoicesCarousel($("#equipmentCarouselControls")[0], 4); first.activate();
-    var first = new ChoicesCarousel($("#flightpathCarouselControls")[0], 4); first.activate();
+    var eq = new ChoicesCarousel($("#equipmentCarouselControls")[0], 4); eq.activate();
+    var flightPathCarousel = new ChoicesCarousel($("#flightpathCarouselControls")[0], 4); flightPathCarousel.activate();
+    console.log("point 1");
+    var crewCarousel = new ChoicesCarousel($("#crewCarouselControls")[0], 5); crewCarousel.activate();
 
     // TODO: change to funtion
     const changePositionSlide = ($object, newPos)=>{

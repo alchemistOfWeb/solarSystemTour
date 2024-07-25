@@ -1,61 +1,84 @@
 include ../mixins/next_btn
+include ../mixins/carousel_items
 include ../mixins/background_stars
+
 div.d-flex.flex-column.section-outer.choose-crew
     div.infobar-min-height.w-100
     +draw_stars
 
     div.container
-        
         div.little-choise__description.text-center.text-light.mt-4 Выберите членов экипажа (максимум 5)
-        div.mt-5.d-flex
-            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                input(class="little-choise-container__radio-input" id="crew-member0" value="Алан Шепард" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
-                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member0")
-                    | Алан Шепард
-            
-            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                input(class="little-choise-container__radio-input" id="crew-member1" value="Боб Бенкин" type="checkbox" name="crew-member" data-url-image="img/bobBehnken.png")
-                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-bobBehnken" for="crew-member1")
-                    | Боб Бенкин
-            
-            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                input(class="little-choise-container__radio-input" id="crew-member2" value="Даг Херли" type="checkbox" name="crew-member" data-url-image="img/DougHurley.png")
-                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-dougHurley" for="crew-member2")
-                    | Даг Херли
-            
-            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                input(class="little-choise-container__radio-input" id="crew-member3" value="Нил Армстронг" type="checkbox" name="crew-member" data-url-image="img/neilArmstrong.png")
-                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-neilArmstrong" for="crew-member3")
-                    | Нил Армстронг
-            
-            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                input(class="little-choise-container__radio-input" id="crew-member4" value="Чек бокс" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
-                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member4")
-                    | Алексей Леонов
-            
-            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                input(class="little-choise-container__radio-input" id="crew-member5" value="Человек" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
-                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member5")
-                    | Человек
-            
-            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                input(class="little-choise-container__radio-input" id="crew-member6" value="Член Экипажа" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
-                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member6")
-                    | Венерянин
-            
-            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                input(class="little-choise-container__radio-input" id="crew-member7" value="Пришелец" type="checkbox" name="crew-member" data-url-image="img/feian-min.png")
-                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-feian" for="crew-member7")
-                    | Типичный Астероидянин
-            
-            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                input(class="little-choise-container__radio-input" id="crew-member8" value="Диффектив" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
-                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member8")
-                    | Марсианин
-            
-            div.little-choise-container__radio.little-choise-container__radio_small.little-choise-container__radio_margin
-                input(class="little-choise-container__radio-input" id="crew-member9" value="Киберленин" type="checkbox" name="crew-member" data-url-image="img/placeholder-Copy.png")
-                label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member9")
-                    | Юрий Алексеевич
-                
+        div.carousel.mt-5.d-flex(id="crewCarouselControls")
+            button.carousel-control-prev.position-relative(type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev")
+                span.carousel-control-prev-icon(aria-hidden="true")
+                span.visually-hidden Previous
+            div.carousel-inner
+                +crew_item(
+                    "crew-member0",
+                    "crew-member",
+                    "Алан Шепард",
+                    "Алан Шепард",
+                    "img/placeholder-Copy.png", 
+                    true
+                )
+                +crew_item(
+                    "crew-member1", 
+                    "crew-member", 
+                    "Артур Дент", 
+                    "Артур Дент", 
+                    "img/placeholder-Copy.png",
+                    false
+                )
+                +crew_item(
+                    "crew-member2", 
+                    "crew-member", 
+                    "Рендом Амбер", 
+                    "Рендом Амбер", 
+                    "img/placeholder-Copy.png",
+                    false
+                )
+                +crew_item(
+                    "crew-member3", 
+                    "crew-member", 
+                    "Джонни Рико", 
+                    "Джонни Рико", 
+                    "img/placeholder-Copy.png",
+                    false
+                )
+                +crew_item(
+                    "crew-member4", 
+                    "crew-member", 
+                    "Ксеномоф", 
+                    "Ксеномоф", 
+                    "img/placeholder-Copy.png",
+                    false
+                )
+                +crew_item(
+                    "crew-member5", 
+                    "crew-member", 
+                    "Граф Дукулу", 
+                    "Граф Дукулу", 
+                    "img/placeholder-Copy.png",
+                    false
+                )
+                +crew_item(
+                    "crew-member6", 
+                    "crew-member", 
+                    "Бендер", 
+                    "Бендер", 
+                    "img/placeholder-Copy.png",
+                    false
+                )
+                +crew_item(
+                    "crew-member7", 
+                    "crew-member", 
+                    "Гермес Конрад", 
+                    "Гермес Конрад", 
+                    "img/placeholder-Copy.png",
+                    false
+                )
+            button.carousel-control-next.position-relative(type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next")
+                span.carousel-control-next-icon(aria-hidden="true")
+                span.visually-hidden Next
+
         +next-bottom-btn

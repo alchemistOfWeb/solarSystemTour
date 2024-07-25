@@ -24,4 +24,19 @@ mixin monolit_item(id, name, value, title, img_path, active=false)
                 div(
                     class="text-center text-light fs-4 fw-bold")
                     | !{title}
-    
+
+mixin crew_item(id, name, value, title, img_path, active=false)
+    div(class= active ? "active carousel-item flex-basis-md-5" : "carousel-item flex-basis-md-5")
+        div.d-flex.flex-column.align-items-center.px-3
+            div.img-wrapper.w-100.position-relative
+                img(class="rounded-circle w-100" src=img_path alt="..." srcset="")
+                div(class="rounded-circle w-100 h-100 carousel-item__rotated-border-block choice-click-handler-js")
+            input(class="d-none" id=id value=value type="radio" name=name)
+            //- div.card-body
+            //-     label(
+            //-         class="text-center text-light fs-4 fw-bold"
+            //-         tabindex="0"
+            //-         data-bs-toggle="tooltip"
+            //-         title="Tooltip on top"
+            //-         for="starship0")
+            //-         | !{title}

@@ -6,12 +6,15 @@ export default class ChoicesCarousel {
     constructor(elementNode, elementsInView=4) {
         this.elementsInView = elementsInView;
         this.elementNode = elementNode;
+        console.log("point 'before CarouselWidth'");
         this.carouselWidth = this.getRealCarouselWidth();
+        console.log("point 'before cardlWidth'");
         this.cardWidth = this.getRealCardWidth();
         this.scrollPosition = 0;
     }
 
     getRealCarouselWidth() {
+        console.log(this.elementNode);
         return this.elementNode.querySelector(".carousel-inner").scrollWidth;
     }
 
@@ -20,6 +23,7 @@ export default class ChoicesCarousel {
     }
 
     createCarousel() {
+        console.log("point 'create'");
         this.carousel = new bootstrap.Carousel(this.elementNode, {interval: false});
     }
 
@@ -28,6 +32,7 @@ export default class ChoicesCarousel {
     }
 
     activate() {
+        console.log("point 'activate'");
         if (window.matchMedia(`(min-width: ${constants.SCREENSIZES.md}px)`).matches) {
             this.createCarousel();
             this.elementNode.querySelector(".carousel-control-prev")

@@ -1,5 +1,7 @@
 include ../mixins/carousel_items
 include ../mixins/background_stars
+include ../mixins/next_btn
+
 div.d-flex.flex-column.section-outer.choose-starship
     div.infobar-min-height.w-100
     +draw_stars
@@ -48,7 +50,4 @@ div.d-flex.flex-column.section-outer.choose-starship
                 span.carousel-control-next-icon(aria-hidden="true")
                 span.visually-hidden Next
         
-        div.position-absolute.w-100.bottom-0.start-0.d-flex.flex-column.align-items-center.choise-link-animation.swiper-js
-            div.text-light.fs-3.fit-content next
-            div.choise-link-icon.fit-content
-                img(src="icons/1492533501-arrow-30_83308.ico" alt="next")
+        +next-bottom-btn

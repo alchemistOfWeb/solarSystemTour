@@ -1,0 +1,9 @@
+mixin fivestars(title, stars_number)
+    li.d-flex.justify-content-between
+        span= title
+        div.stars
+            i(class= stars_number==1 ? "bi bi-star-fill" : "bi bi-star")
+            i(class= stars_number==2 ? "bi bi-star-fill" : "bi bi-star")
+            i(class= stars_number==3 ? "bi bi-star-fill" : "bi bi-star")
+            i(class= stars_number==4 ? "bi bi-star-fill" : "bi bi-star")
+            i(class= stars_number==5 ? "bi bi-star-fill" : "bi bi-star")

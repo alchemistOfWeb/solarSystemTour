@@ -1,3 +1,4 @@
+include ../mixins/next_btn
 include ../mixins/background_stars
 div.d-flex.flex-column.section-outer.choose-crew
     div.infobar-min-height.w-100
@@ -57,7 +58,4 @@ div.d-flex.flex-column.section-outer.choose-crew
                 label(class="little-choise-container__radio-label little-choise-container__radio-label_small picture-placeholder" for="crew-member9")
                     | Юрий Алексеевич
                 
-        div.position-absolute.w-100.bottom-0.start-0.d-flex.flex-column.align-items-center.choise-link-animation.swiper-js
-            div.text-light.fs-3.fit-content next
-            div.choise-link-icon.fit-content
-                img(src="icons/1492533501-arrow-30_83308.ico" alt="next")
+        +next-bottom-btn

@@ -617,6 +617,17 @@ $infobar_height: 115px;
             // border-style: dashed;
         }
     }
+    
+}
+
+.hover-grayscale {
+    // transition-timing-function: linear;
+    // transition-duration: 0.3s;
+    transition: filter 0.5s linear;
+    filter: grayscale(100%);
+    &:hover {
+        filter: grayscale(0%);
+    }
 }
 
 @keyframes rotate-border {

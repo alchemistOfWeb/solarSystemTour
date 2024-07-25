@@ -69,16 +69,22 @@ $(function() {
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
-    var first = new ChoicesCarousel($("#starshipCarouselControls")[0], 3); first.activate();
-    var first = new ChoicesCarousel($("#equipmentCarouselControls")[0], 3); first.activate();
+
+    // TODO: refactoring
+    $(".choice-click-handler-js").on("click", (e) => {
+        console.log("Clicked choice-click-handler-js", e);
+    });
+    // TODO: automatic activation carousel by special class
+    var first = new ChoicesCarousel($("#starshipCarouselControls")[0], 4); first.activate();
+    var first = new ChoicesCarousel($("#equipmentCarouselControls")[0], 4); first.activate();
     var first = new ChoicesCarousel($("#flightpathCarouselControls")[0], 4); first.activate();
 
-    // change to funtion
+    // TODO: change to funtion
     const changePositionSlide = ($object, newPos)=>{
         $object.animate({marginTop: `${newPos}vh`}, 500,'swing');
     };
 
-    // change to function
+    // TODO: change to function
     const infoBarHide = ($selector, CONST_POS, pos)=>{
         // hide bar on a magic position
         console.log(pos);

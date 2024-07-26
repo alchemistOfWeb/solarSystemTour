@@ -12,71 +12,96 @@ div.d-flex.flex-column.section-outer.choose-crew
             button.carousel-control-prev.position-relative(type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev")
                 span.carousel-control-prev-icon(aria-hidden="true")
                 span.visually-hidden Previous
-            div.carousel-inner
-                +crew_item(
-                    "crew-member0",
-                    "crew-member",
-                    "Алан Шепард",
-                    "Алан Шепард",
-                    "img/placeholder-Copy.png", 
-                    true
-                )
-                +crew_item(
-                    "crew-member1", 
-                    "crew-member", 
-                    "Артур Дент", 
-                    "Артур Дент", 
-                    "img/placeholder-Copy.png",
-                    false
-                )
-                +crew_item(
-                    "crew-member2", 
-                    "crew-member", 
-                    "Рендом Амбер", 
-                    "Рендом Амбер", 
-                    "img/placeholder-Copy.png",
-                    false
-                )
-                +crew_item(
-                    "crew-member3", 
-                    "crew-member", 
-                    "Джонни Рико", 
-                    "Джонни Рико", 
-                    "img/placeholder-Copy.png",
-                    false
-                )
-                +crew_item(
-                    "crew-member4", 
-                    "crew-member", 
-                    "Ксеномоф", 
-                    "Ксеномоф", 
-                    "img/placeholder-Copy.png",
-                    false
-                )
-                +crew_item(
-                    "crew-member5", 
-                    "crew-member", 
-                    "Граф Дукулу", 
-                    "Граф Дукулу", 
-                    "img/placeholder-Copy.png",
-                    false
-                )
-                +crew_item(
-                    "crew-member6", 
-                    "crew-member", 
-                    "Бендер", 
-                    "Бендер", 
-                    "img/placeholder-Copy.png",
-                    false
-                )
-                +crew_item(
-                    "crew-member7", 
-                    "crew-member", 
-                    "Гермес Конрад", 
-                    "Гермес Конрад", 
-                    "img/placeholder-Copy.png",
-                    false
-                )
+            div.carousel-inner.p-3
+                each item, index in crew
+                    +crew_item(
+                        "crew-member-" + item.id,
+                        "crew-member",
+                        item.name_ru,
+                        item.name_ru,
+                        item.img_path, 
+                        index==0 ? true : false 
+                    )
+                //- +crew_item(
+                //-     "crew-member0",
+                //-     "crew-member",
+                //-     "Алан Шепард",
+                //-     "Алан Шепард - пилот",
+                //-     "img/crew/pilot_oldman.jpeg", 
+                //-     true
+                //- )
+                //- +crew_item(
+                //-     "crew-member1", 
+                //-     "crew-member", 
+                //-     "Артур Дент", 
+                //-     "Артур Дент - планетолог", 
+                //-     "img/crew/planetolog.jpeg",
+                //-     false
+                //- )
+                //- +crew_item(
+                //-     "crew-member2", 
+                //-     "crew-member", 
+                //-     "Грейс", 
+                //-     "Грейс - биолог", 
+                //-     "img/crew/biologist_beautiful_woman.jpeg",
+                //-     false
+                //- )
+                //- +crew_item(
+                //-     "crew-member3", 
+                //-     "crew-member", 
+                //-     "Деррек", 
+                //-     "Деррек - телепат", 
+                //-     "img/crew/telepath2.jpeg",
+                //-     false
+                //- )
+                //- +crew_item(
+                //-     "crew-member4", 
+                //-     "crew-member", 
+                //-     "Джулиа", 
+                //-     "Джулиа - Пилот/гонщица", 
+                //-     "img/crew/pilot_girl2.jpeg",
+                //-     false
+                //- )
+                //- +crew_item(
+                //-     "crew-member5", 
+                //-     "crew-member", 
+                //-     "Бендер", 
+                //-     "Бендер - жизнерадостный робот", 
+                //-     "img/crew/funy_robot.jpeg",
+                //-     false
+                //- )
+                //- +crew_item(
+                //-     "crew-member6", 
+                //-     "crew-member", 
+                //-     "Тринити", 
+                //-     "Тринити - инженер", 
+                //-     "img/crew/trinity_ingeneer.jpeg",
+                //-     false
+                //- )
+                //- +crew_item(
+                //-     "crew-member7", 
+                //-     "crew-member", 
+                //-     "Джессика", 
+                //-     "Джессика - телепат", 
+                //-     "img/crew/psyonic_woman.jpeg",
+                //-     false
+                //- )
+                //- +crew_item(
+                //-     "crew-member8", 
+                //-     "crew-member", 
+                //-     "Гермес Конрад", 
+                //-     "Гермес Конрад - биолог", 
+                //-     "img/crew/biologist_male.jpeg",
+                //-     false
+                //- )
+                //- +crew_item(
+                //-     "crew-member9", 
+                //-     "crew-member", 
+                //-     "Кейли", 
+                //-     "Кейли - механик", 
+                //-     "img/crew/beautiful_girl_ingeneer.jpeg",
+                //-     false
+                //- )
             button.carousel-control-next.position-relative(type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next")
                 span.carousel-control-next-icon(aria-hidden="true")
                 span.visually-hidden Next

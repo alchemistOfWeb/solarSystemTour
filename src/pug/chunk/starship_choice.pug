@@ -13,38 +13,48 @@ div.d-flex.flex-column.section-outer.choose-starship
                 span.carousel-control-prev-icon(aria-hidden="true")
                 span.visually-hidden Previous
             div.carousel-inner
-                +circled_item(
-                    "starship0",
-                    "starship",
-                    "Serenity",
-                    "Serenity",
-                    "img/Serenity.png",
-                    true
-                )
-                +circled_item(
-                    "starship1",
-                    "starship",
-                    "Rosinant",
-                    "Rosinant",
-                    "img/Rossinant.png",
-                    false
-                )
-                +circled_item(
-                    "starship2",
-                    "starship",
-                    "Millennium Falcon",
-                    "Millennium Falcon",
-                    "img/milleniumFalcon-min.png",
-                    false
-                )
-                +circled_item(
-                    "starship3",
-                    "starship",
-                    "Normandia Sr2",
-                    "Normandia Sr2",
-                    "img/NormandiaSr2-min.png",
-                    false
-                )
+                each item, index in starships
+                    +circled_item(
+                        "starship-" + item.id,
+                        "starship",
+                        item.title_en,
+                        item.title_ru,
+                        item.img_path, 
+                        index==0 ? true : false 
+                    )
+
+                //- +circled_item(
+                //-     "starship0",
+                //-     "starship",
+                //-     "Serenity",
+                //-     "Serenity",
+                //-     "img/Serenity.png",
+                //-     true
+                //- )
+                //- +circled_item(
+                //-     "starship1",
+                //-     "starship",
+                //-     "Rosinant",
+                //-     "Rosinant",
+                //-     "img/Rossinant.png",
+                //-     false
+                //- )
+                //- +circled_item(
+                //-     "starship2",
+                //-     "starship",
+                //-     "Millennium Falcon",
+                //-     "Millennium Falcon",
+                //-     "img/milleniumFalcon-min.png",
+                //-     false
+                //- )
+                //- +circled_item(
+                //-     "starship3",
+                //-     "starship",
+                //-     "Normandia Sr2",
+                //-     "Normandia Sr2",
+                //-     "img/NormandiaSr2-min.png",
+                //-     false
+                //- )
                 
             button.carousel-control-next.position-relative(type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next")
                 span.carousel-control-next-icon(aria-hidden="true")

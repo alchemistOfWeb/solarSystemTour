@@ -14,38 +14,47 @@ div.d-flex.flex-column.section-outer.choose-equipment
                 span.carousel-control-prev-icon(aria-hidden="true")
                 span.visually-hidden Previous
             div.carousel-inner
-                +circled_item(
-                    "item-equ0",
-                    "item-equipment",
-                    "ускоритель",
-                    "ускоритель",
-                    "img/accelerator.png",
-                    true
-                )
-                +circled_item(
-                    "item-equ1",
-                    "item-equipment",
-                    "рельсовые пушки",
-                    "рельсовые пушки",
-                    "img/railGan.png",
-                    false
-                )
-                +circled_item(
-                    "item-equ2",
-                    "item-equipment",
-                    "псевдо-маячки",
-                    "псевдо<span class=\"hyphen\">-</span>маячки",
-                    "img/fakeBeacon.png",
-                    false
-                )
-                +circled_item(
-                    "item-equ3",
-                    "item-equipment",
-                    "таинственный шар",
-                    "таинственный шар(сувенир)",
-                    "img/strangeSphere.png",
-                    false
-                )
+                each item, index in equipment
+                    +circled_item(
+                        "equipment-item-" + item.id,
+                        "equipment-item",
+                        item.title_en,
+                        item.title_ru,
+                        item.img_path, 
+                        index==0 ? true : false 
+                    )
+                //- +circled_item(
+                //-     "item-equ0",
+                //-     "item-equipment",
+                //-     "ускоритель",
+                //-     "ускоритель",
+                //-     "img/accelerator.png",
+                //-     true
+                //- )
+                //- +circled_item(
+                //-     "item-equ1",
+                //-     "item-equipment",
+                //-     "рельсовые пушки",
+                //-     "рельсовые пушки",
+                //-     "img/railGan.png",
+                //-     false
+                //- )
+                //- +circled_item(
+                //-     "item-equ2",
+                //-     "item-equipment",
+                //-     "псевдо-маячки",
+                //-     "псевдо<span class=\"hyphen\">-</span>маячки",
+                //-     "img/fakeBeacon.png",
+                //-     false
+                //- )
+                //- +circled_item(
+                //-     "item-equ3",
+                //-     "item-equipment",
+                //-     "таинственный шар",
+                //-     "таинственный шар(сувенир)",
+                //-     "img/strangeSphere.png",
+                //-     false
+                //- )
                 
             button.carousel-control-next.position-relative(type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next")
                 span.carousel-control-next-icon(aria-hidden="true")

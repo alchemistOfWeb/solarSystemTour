@@ -2,7 +2,7 @@ mixin circled_item(id, name, value, title, img_path, active=false)
     div(class= active ? "active carousel-item flex-basis-md-3" : "carousel-item flex-basis-md-3")
         div.d-flex.flex-column.align-items-center.px-3
             div.img-wrapper.w-100.position-relative
-                img(class="rounded-circle w-100" src=img_path alt="..." srcset="")
+                img(class="rounded-circle w-100 shadow height_eq_width" src=img_path alt="..." srcset="")
                 div(class="rounded-circle w-100 h-100 carousel-item__rotated-border-block choice-click-handler-js")
             div.card-body
                 input(class="d-none" id=id value=value type="radio" name=name)
@@ -16,7 +16,7 @@ mixin circled_item(id, name, value, title, img_path, active=false)
 
 mixin monolit_item(id, name, value, title, img_path, active=false)
     div(class= active ? "active carousel-item flex-basis-md-4 hover-grayscale cursor-pointer" : "carousel-item flex-basis-md-4 hover-grayscale cursor-pointer")
-        div.card.h-100.bg-dark.text-white
+        div.card.h-100.bg-dark.text-white.shadow
             img(class="card-img h-100 object-fit-cover" src=img_path alt="..." srcset="")
             //- div.img-wrapper.w-100.px-3
             div.card-img-overlay.choice-click-handler-js
@@ -29,8 +29,10 @@ mixin crew_item(id, name, value, title, img_path, active=false)
     div(class= active ? "active carousel-item flex-basis-md-5" : "carousel-item flex-basis-md-5")
         div.d-flex.flex-column.align-items-center.px-3
             div.img-wrapper.w-100.position-relative
-                img(class="rounded-circle w-100" src=img_path alt="..." srcset="")
-                div(class="rounded-circle w-100 h-100 carousel-item__rotated-border-block choice-click-handler-js")
+                img(class="rounded-circle w-100 shadow" src=img_path alt="..." srcset="")
+                div(
+                    class="rounded-circle w-100 h-100 carousel-item__rotated-border-block choice-click-handler-js" 
+                    title= title)
             input(class="d-none" id=id value=value type="radio" name=name)
             //- div.card-body
             //-     label(

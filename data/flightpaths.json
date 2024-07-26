@@ -1,0 +1,47 @@
+[
+    {
+      "id": 1,
+      "title_en": "Asteroid belt",
+      "title_ru": "Пояс астероидов",
+      "description_en": "Navigate through the Asteroid Belt, a vast region filled with rocky fragments and debris between Mars and Jupiter. This area is known for its dense field of asteroids and requires careful maneuvering to avoid collisions. The belt's chaotic beauty offers both danger and opportunity for intrepid explorers.",
+      "description_ru": "Путешествуйте через Пояс астероидов, обширный регион, заполненный каменными фрагментами и обломками между Марсом и Юпитером. Эта зона известна плотным полем астероидов и требует осторожного маневрирования, чтобы избежать столкновений. Хаотичная красота пояса предлагает как опасность, так и возможности для отважных исследователей.",
+      "img_path": "img/flightpath/asteroidBelt.jpg",
+      "order": 1
+    },
+    {
+      "id": 2,
+      "title_en": "Mars",
+      "title_ru": "Марс",
+      "description_en": "Explore Mars, the Red Planet, known for its striking reddish surface and the potential for past water activity. Mars features vast deserts, towering volcanoes, and deep canyons. Its thin atmosphere and mysterious landscapes make it a prime destination for scientific research and colonization efforts.",
+      "description_ru": "Исследуйте Марс, Красную планету, известную своей поразительно красной поверхностью и потенциальной активностью воды в прошлом. Марс обладает огромными пустынями, гигантскими вулканами и глубокими каньонами. Его разреженная атмосфера и загадочные ландшафты делают его основным местом для научных исследований и колонизационных усилий.",
+      "img_path": "img/flightpath/mars.jpg",
+      "order": 2
+    },
+    {
+      "id": 3,
+      "title_en": "Jupiter",
+      "title_ru": "Юпитер",
+      "description_en": "Marvel at Jupiter, the largest planet in our solar system, with its massive storms and iconic Great Red Spot. The gas giant features a complex system of rings and moons, each with unique characteristics. Its dynamic atmosphere and immense size make it a captivating object of study.",
+      "description_ru": "Полюбуйтесь Юпитером, крупнейшей планетой нашей солнечной системы, с её гигантскими штормами и знаковым Великим Красным пятном. Газовый гигант обладает сложной системой колец и спутников, каждый из которых имеет уникальные характеристики. Его динамичная атмосфера и колоссальные размеры делают его захватывающим объектом изучения.",
+      "img_path": "img/flightpath/Jupiter.jpg",
+      "order": 3
+    },
+    {
+      "id": 4,
+      "title_en": "Saturn",
+      "title_ru": "Сатурн",
+      "description_en": "Admire Saturn, renowned for its stunning ring system and numerous moons. The planet's majestic rings, made up of ice and rock particles, create a breathtaking view. Saturn’s unique features and its role in the outer solar system make it a focal point for exploration.",
+      "description_ru": "Полюбуйтесь Сатурном, знаменитым своей потрясающей системой колец и многочисленными спутниками. Великолепные кольца планеты, состоящие из частиц льда и камня, создают захватывающий вид. Уникальные особенности Сатурна и его роль в внешней солнечной системе делают его центром для исследований.",
+      "img_path": "img/flightpath/Saturn.jpg",
+      "order": 4
+    },
+    {
+      "id": 5,
+      "title_en": "Ceres",
+      "title_ru": "Церера",
+      "description_en": "Visit Ceres, the largest object in the asteroid belt and a dwarf planet with intriguing surface features. Known for its bright spots and potential water ice, Ceres offers a unique environment for scientific study. Its diverse terrain and potential for future exploration make it a fascinating destination",
+      "description_ru": "Посетите Цереру, крупнейший объект в поясе астероидов и карликовую планету с интригующими особенностями поверхности. Известная своими яркими пятнами и потенциальным ледяным водоемом, Церера предлагает уникальную среду для научных исследований. Её разнообразный рельеф и потенциал для будущих исследований делают её увлекательным направлением.",
+      "img_path": "img/flightpath/Ceres.jpg",
+      "order": 5
+    }
+]

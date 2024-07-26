@@ -29,7 +29,7 @@ export default {
         dest: pathDest + "/js"
     },
     img: {
-        src: pathSrc + "/img/*.{jpg,jpeg,png,gif,svg}",
+        src: pathSrc + "/img/**/*.{jpg,jpeg,png,gif,svg}",
         watch: pathSrc + "/img/**/*.{jpg,jpeg,png,gif,svg}",
         dest: pathDest + "/img"
     },

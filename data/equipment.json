@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "title_en": "Miner drone",
+      "title_ru": "Дрон-добытчик",
+      "description_ru": "Позволит вам добыть немного ресурсов из астеройдов",
+      "description_en": "Позволит вам добыть немного ресурсов из астеройдов",
+      "img_path": "img/equipment/drone_miner.jpeg",
+      "order": 1
+    },
+    {
+      "id": 2,
+      "title_en": "Scout drone",
+      "title_ru": "Дрон-развечик",
+      "description_ru": "Можно использовать в бою, а можно отправить вперед для оценки обстановки",
+      "description_en": "Можно использовать в бою, а можно отправить вперед для оценки обстановки",
+      "img_path": "img/equipment/drone_scout.jpeg",
+      "order": 2
+    },
+    {
+      "id": 3,
+      "title_en": "Servey probe",
+      "title_ru": "Исследовательский зонд",
+      "description_ru": "Позволит вам узнать нечто интересное",
+      "description_en": "Позволит вам узнать нечто интересное",
+      "img_path": "img/equipment/servey_probe.jpeg",
+      "order": 3
+    },
+    {
+      "id": 4,
+      "title_en": "Drone repairer",
+      "title_ru": "Дрон-ремонтник",
+      "description_ru": "Периодически восстанавливает 5ед прочности корпуса и чинит ваше оборудование",
+      "description_en": "Периодически восстанавливает 5ед прочности корпуса и чинит ваше оборудование",
+      "img_path": "img/equipment/drone_repairer.jpeg",
+      "order": 4
+    }
+]

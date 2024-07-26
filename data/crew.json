@@ -1,0 +1,92 @@
+[
+    {
+      "id": 1,
+      "name_en": "",
+      "name_ru": "Алан Шепард",
+      "description_en": "",
+      "description_ru": "пилот. Был военным пилотом, но ушел в отставку. Мужчина 56лет",
+      "img_path": "img/crew/pilot_oldman.jpeg",
+      "order": 1
+    },
+    {
+      "id": 2,
+      "name_en": "",
+      "name_ru": "Артур Дент",
+      "description_en": "",
+      "description_ru": "планетолог - мужчина 40лет",
+      "img_path": "img/crew/planetolog.jpeg",
+      "order": 2
+    },
+    {
+      "id": 3,
+      "name_en": "",
+      "name_ru": "Трейси",
+      "description_en": "",
+      "description_ru": "биолог - женщина 38лет",
+      "img_path": "img/crew/biologist_beautiful_woman.jpeg",
+      "order": 3
+    },
+    {
+      "id": 4,
+      "name_en": "",
+      "name_ru": "Деррек",
+      "description_en": "",
+      "description_ru": "телепат - мужчина 27лет",
+      "img_path": "img/crew/telepath2.jpeg",
+      "order": 4
+    },
+    {
+      "id": 5,
+      "name_en": "",
+      "name_ru": "Джулия",
+      "description_en": "",
+      "description_ru": "пилот - 28лет. Неоднократно выигрывала в космических гонках",
+      "img_path": "img/crew/pilot_girl2.jpeg",
+      "order": 5
+    },
+    {
+      "id": 6,
+      "name_en": "",
+      "name_ru": "Робот",
+      "description_en": "",
+      "description_ru": "жизнерадостный робот. помогает отвечать на сложные вопросы и помогает в работе механику, инженеру или биологу",
+      "img_path": "img/crew/funy_robot.jpeg",
+      "order": 6
+    },
+    {
+      "id": 7,
+      "name_en": "",
+      "name_ru": "Тринити",
+      "description_en": "",
+      "description_ru": "инженер - девушка 31год",
+      "img_path": "img/crew/trinity_ingeneer.jpeg",
+      "order": 7
+    },
+    {
+      "id": 8,
+      "name_en": "",
+      "name_ru": "Джессика",
+      "description_en": "",
+      "description_ru": "телепат - девушка 29лет",
+      "img_path": "img/crew/psyonic_woman.jpeg",
+      "order": 8
+    },
+    {
+      "id": 9,
+      "name_en": "",
+      "name_ru": "Зойдберг",
+      "description_en": "",
+      "description_ru": "биолог - мужчина 37лет. Может выполнять функции доктора на корабле",
+      "img_path": "img/crew/biologist_male.jpeg",
+      "order": 9
+    },
+    {
+      "id": 10,
+      "name_en": "",
+      "name_ru": "Кейси",
+      "description_en": "",
+      "description_ru": "механик - девушка 27лет",
+      "img_path": "img/crew/beautiful_girl_ingeneer.jpeg",
+      "order": 10
+    }
+]

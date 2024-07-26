@@ -666,6 +666,11 @@ $infobar_height: 115px;
     object-fit: cover;
 }
 
+.height_eq_width {
+    aspect-ratio: 1 / 1;
+}
+
+
 .choise-link-animation{
     // position: relative;
     // top: 50px;

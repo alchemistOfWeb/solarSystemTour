@@ -31,15 +31,15 @@ export function verifyInputs(values=null) {
     inputSurname.on('input',()=>{
         if(isACorrectInput(inputSurname)){
             console.log('surname is correct');
-            inputName.removeClass('border-focus-danger');
-            inputName.removeClass('border-focus-normal');
-            inputName.addClass('border-focus-success');
+            inputSurname.removeClass('border-focus-danger');
+            inputSurname.removeClass('border-focus-normal');
+            inputSurname.addClass('border-focus-success');
             window.isCorrectInputSurname = true;
         }else{
             console.log('surname is incorrect');
-            inputName.removeClass('border-focus-success');
-            inputName.removeClass('border-focus-normal');
-            inputName.addClass('border-focus-danger');
+            inputSurname.removeClass('border-focus-success');
+            inputSurname.removeClass('border-focus-normal');
+            inputSurname.addClass('border-focus-danger');
             window.isCorrectInputSurname = false;
         }
     });

@@ -1,12 +1,37 @@
 import $ from "jquery";
-import * as constants from "../constants.js";
+// import * as constants from "../constants.js";
 
-function infoBarHide($selector, CONST_POS, pos) {
-    // hide bar on a magic position
-    console.log(pos);
-    if (pos > CONST_POS || pos < -400){
-        $selector.animate({'top':'-120px'}, 700, 'swing');
-    } else{
-        $selector.animate({'top':'0'}, 700, 'swing');
+export default class Infobar {
+    constructor(infobarSelector) {
+        this.infobarObject = $(infobarSelector);
+        // this.activeInterval = {start: -100, end: -400};
+        this.disabledSections = ["header", "startGame"]
+    }
+
+    // isInActiveInterval(pos) {
+    //     return pos > this.activeInterval.start && pos < this.activeInterval.end;
+    // }
+
+    activatePagesliderGoHandling() {
+        $(document).on("pageSlider:go", (event, currentSlide) => {
+            if (this.disabledSections.includes(currentSlide.slidename)) {
+                this.hide();
+            } else {
+                this.show();
+            }
+        })
+    }
+    deactivatePagesliderGoHandling() {
+        $(document).off("pageSlider:go");
+    }
+
+    hide(duration=700) {
+        // this.infobarObject.addClass();
+        this.infobarObject.animate({'top':'-120px'}, duration, 'swing'); // hiden
+    }
+
+    show(duration=700) {
+        // this.infobarObject.addClass();
+        this.infobarObject.animate({'top':'0'}, duration, 'swing'); // active
     }
 }

@@ -93,5 +93,6 @@ export default class PageSlider {
     animateSlide(margin, duration=DEFAULT_DURATION) {
         let marginStr = margin + this.measure;
         this.sliderObject.animate({ marginTop: marginStr }, duration, 'swing');
+        $(document).trigger("pageSlider:go", this.currentSlide);
     }
 }

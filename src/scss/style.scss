@@ -60,6 +60,9 @@ $infobar_height: 115px;
 .infobar-height {
     height: $infobar_height;
 }
+.infobar-hide {
+    top: -$infobar_height;
+}
 
 .hyphen{
     font-family: Arial, Helvetica, sans-serif;

@@ -16,6 +16,7 @@ import tippy from 'tippy.js';
 import ChoicesCarousel from './module/carousel.js';
 import * as verification from './module/verify_inputs.js';
 import PageSlider from './module/page_slider.js';
+import Infobar from './module/inofbar.js';
 window.$ = $; // just for tests
 
 
@@ -42,16 +43,6 @@ function checkboxChangeInfo(checkboxSelector, infoSelector) {
     });
 }
 
-function infoBarHide($selector, CONST_POS, pos) {
-    // hide bar on a magic position
-    console.log(pos);
-    if (pos > CONST_POS || pos < -400){
-        $selector.animate({'top':'-120px'}, 700, 'swing');
-    } else{
-        $selector.animate({'top':'0'}, 700, 'swing');
-    }
-}
-
 // ENTRYPOINT ----------------------------------------
 $(function() {
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
@@ -67,10 +58,12 @@ $(function() {
     var first = new ChoicesCarousel($("#starshipCarouselControls")[0], 4); first.activate();
     var eq = new ChoicesCarousel($("#equipmentCarouselControls")[0], 4); eq.activate();
     var flightPathCarousel = new ChoicesCarousel($("#flightpathCarouselControls")[0], 4); flightPathCarousel.activate();
-    console.log("point 1");
     var crewCarousel = new ChoicesCarousel($("#crewCarouselControls")[0], 5); crewCarousel.activate();
 
     var pageSlider = new PageSlider('.section-header');
+    var infobar = new Infobar('.js-info-bar');
+    window.infobar = infobar;
+    infobar.activatePagesliderGoHandling();
 
     const BIND_DELAY = 400;
     let lastWheel = new Date();
@@ -81,7 +74,7 @@ $(function() {
     const sectionCount = $('.section-outer').length;
     const SCROLL_MAX = (sectionCount * 100) - 100;
     const SCROLL_MIN = 0;
-    const INFO_BAR_HIDE_POS = -100;
+    // const INFO_BAR_HIDE_POS = -100;
 
     window.isCorrectInputName = false;
     window.isCorrectInputSurname = false;
@@ -100,16 +93,13 @@ $(function() {
             personName.text(inputName.val());
             personSurname.text(inputSurname.val());
             pageSlider.goNext();
-            infoBarHide($infoBar, INFO_BAR_HIDE_POS, pageSlider.getMargin());
         } else {
             alert('Введите корректное имя и фамилию. (Имя и фамилия должны быть от 3 до 18 символов и не содержать пробелов)');
         }
     });
 
-
     $commonSwiper.on("click", ()=>{
         pageSlider.goNext();
-        infoBarHide($infoBar, INFO_BAR_HIDE_POS, pageSlider.getMargin());
     });
     // NEXT BTN HANDLING END
 
@@ -119,13 +109,10 @@ $(function() {
         if(nowWheel.getTime() - lastWheel.getTime() > BIND_DELAY){
             lastWheel = new Date();
             
-            if(e.originalEvent.wheelDelta > 0){
-                
+            if(e.originalEvent.wheelDelta > 0) {
                 pageSlider.goBack();
-                infoBarHide($infoBar, INFO_BAR_HIDE_POS, pageSlider.getMargin());
             } else {
                 pageSlider.goNext();
-                infoBarHide($infoBar, INFO_BAR_HIDE_POS, pageSlider.getMargin());
             }
         }
     });
@@ -170,7 +157,7 @@ $(function() {
 
     // CHOICE HANDLING END
 
-    // INFOBAR use infoBarHide, jquery
+    // INFOBAR use jquery
     const $infoBarWrapper = $('.info-bar__wrapper');
     const $btnInfoBarOpen = $('.info-bar__toggle');
 
@@ -183,7 +170,6 @@ $(function() {
     $infoBarLinks.on('click', function() {
         let slidename = $(this).attr('data-slidename');
         pageSlider.slideTo(slidename);
-        infoBarHide($infoBar, INFO_BAR_HIDE_POS, pageSlider.getMargin());
         $btnInfoBarOpen.removeClass('info-bar__toggle-arrow_up');
         $infoBarWrapper.removeClass('info-bar_open');
     });

@@ -8,19 +8,14 @@ export function isACorrectInput($inputSelector){
 }
 
 export function verifyInputs(values=null) {
-    console.log("verifyInputs");
     const inputName = $('#input-name-js');
-    console.log("verifyInputs", inputName);
     inputName.on('input', (e)=>{
-        console.log("verifyInputs on input name");
-        if(isACorrectInput(inputName)){
-            console.log("is correct input");
+        if (isACorrectInput(inputName)) {
             inputName.removeClass('border-focus-danger');
             inputName.removeClass('border-focus-normal');
             inputName.addClass('border-focus-success');
             window.isCorrectInputName = true;
-        }else{
-            console.log("isnt correct input");
+        } else {
             inputName.removeClass('border-focus-success');
             inputName.removeClass('border-focus-normal');
             inputName.addClass('border-focus-danger');
@@ -29,13 +24,13 @@ export function verifyInputs(values=null) {
     });
     const inputSurname = $('#input-surname-js');
     inputSurname.on('input',()=>{
-        if(isACorrectInput(inputSurname)){
+        if(isACorrectInput(inputSurname)) {
             console.log('surname is correct');
             inputSurname.removeClass('border-focus-danger');
             inputSurname.removeClass('border-focus-normal');
             inputSurname.addClass('border-focus-success');
             window.isCorrectInputSurname = true;
-        }else{
+        } else {
             console.log('surname is incorrect');
             inputSurname.removeClass('border-focus-success');
             inputSurname.removeClass('border-focus-normal');

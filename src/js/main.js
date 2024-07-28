@@ -42,12 +42,6 @@ function checkboxChangeInfo(checkboxSelector, infoSelector) {
     });
 }
 
-
-// Obsolete TODO: remove code
-// function changePositionSlide($object, newPos) {
-//     $object.animate({marginTop: `${newPos}vh`}, 500,'swing');
-// }
-
 function infoBarHide($selector, CONST_POS, pos) {
     // hide bar on a magic position
     console.log(pos);
@@ -60,13 +54,6 @@ function infoBarHide($selector, CONST_POS, pos) {
 
 // ENTRYPOINT ----------------------------------------
 $(function() {
-    // tooltips
-    // tippy(".little-choise-container__radio:has(> #starship0)", {
-    //     theme: 'material',
-    //     animation: 'scale',
-    //     content: 'Tooltip test',
-    //     placement: 'left'
-    // })
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
@@ -87,8 +74,6 @@ $(function() {
 
     const BIND_DELAY = 400;
     let lastWheel = new Date();
-    // let positionSlide = 0; // Obsolete TODO: remove code
-    const $section = $('.section-header'); // The element for which we set the margin so that pageSlider works.
 
     const $swiper = $('#swiper-js'); 
     const $commonSwiper = $('.swiper-js'); // next-btn in the botom of each slide
@@ -196,9 +181,6 @@ $(function() {
 
     const $infoBarLinks =  $('.info-bar-link-js');
     $infoBarLinks.on('click', function() {
-        // Obsolete TODO: remove code after testing
-        // positionSlide = $(this).attr('data-index-translate');
-        // changePositionSlide($section, positionSlide);
         let slidename = $(this).attr('data-slidename');
         pageSlider.slideTo(slidename);
         infoBarHide($infoBar, INFO_BAR_HIDE_POS, pageSlider.getMargin());
@@ -207,4 +189,3 @@ $(function() {
     });
     // INFOBAR END
 });
-

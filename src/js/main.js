@@ -1,6 +1,4 @@
-// const sum = require("./module/sum.js");
 // import AOS from "aos";
-// import * as bootstrap from "bootstrap";
 // window.bootstrap = bootstrap;
 // document.addEventListener('DOMContentLoaded', () => {
 //     console.log("using wow1");
@@ -17,7 +15,9 @@ import * as bootstrap from "bootstrap";
 import tippy from 'tippy.js';
 import ChoicesCarousel from './module/carousel.js';
 import * as verification from './module/verify_inputs.js';
-window.$ = $;
+import PageSlider from './module/page_slider.js';
+window.$ = $; // just for tests
+
 
 function checkboxLimitation(checkboxSelector, num){
     // deprecated function
@@ -43,10 +43,10 @@ function checkboxChangeInfo(checkboxSelector, infoSelector) {
 }
 
 
-
-function changePositionSlide($object, newPos) {
-    $object.animate({marginTop: `${newPos}vh`}, 500,'swing');
-}
+// Obsolete TODO: remove code
+// function changePositionSlide($object, newPos) {
+//     $object.animate({marginTop: `${newPos}vh`}, 500,'swing');
+// }
 
 function infoBarHide($selector, CONST_POS, pos) {
     // hide bar on a magic position
@@ -57,16 +57,6 @@ function infoBarHide($selector, CONST_POS, pos) {
         $selector.animate({'top':'0'}, 700, 'swing');
     }
 }
-
-
-
-// const starshipTPLayout = (speed, fuel, health, firepower) => `
-// <span>speed: ${speed}</span>
-// <span>fuel: ${fuel}</span>
-// <span>health: ${health}</span>
-// <span>firepower: ${firepower}</span>
-// `;
-
 
 // ENTRYPOINT ----------------------------------------
 $(function() {
@@ -93,10 +83,12 @@ $(function() {
     console.log("point 1");
     var crewCarousel = new ChoicesCarousel($("#crewCarouselControls")[0], 5); crewCarousel.activate();
 
+    var pageSlider = new PageSlider('.section-header');
+
     const BIND_DELAY = 400;
     let lastWheel = new Date();
-    let positionSlide = 0;
-    const $section = $('.section-header');
+    // let positionSlide = 0; // Obsolete TODO: remove code
+    const $section = $('.section-header'); // The element for which we set the margin so that pageSlider works.
 
     const $swiper = $('#swiper-js'); 
     const $commonSwiper = $('.swiper-js'); // next-btn in the botom of each slide
@@ -122,11 +114,8 @@ $(function() {
         if(window.isCorrectInputSurname && window.isCorrectInputName){
             personName.text(inputName.val());
             personSurname.text(inputSurname.val());
-            if(positionSlide > -SCROLL_MAX){
-                positionSlide -=100;
-                infoBarHide($infoBar, INFO_BAR_HIDE_POS, positionSlide);
-                changePositionSlide($section, positionSlide);
-            }
+            pageSlider.goNext();
+            infoBarHide($infoBar, INFO_BAR_HIDE_POS, pageSlider.getMargin());
         } else {
             alert('Введите корректное имя и фамилию. (Имя и фамилия должны быть от 3 до 18 символов и не содержать пробелов)');
         }
@@ -134,32 +123,24 @@ $(function() {
 
 
     $commonSwiper.on("click", ()=>{
-        if(positionSlide > -SCROLL_MAX){
-            positionSlide -=100;
-            infoBarHide($infoBar, INFO_BAR_HIDE_POS, positionSlide);
-            changePositionSlide($section, positionSlide);
-        }
+        pageSlider.goNext();
+        infoBarHide($infoBar, INFO_BAR_HIDE_POS, pageSlider.getMargin());
     });
     // NEXT BTN HANDLING END
 
-    // SCROLL HANDLING
+    // SCROLL HANDLING using pageSlider
     $(document).on('mousewheel DOMMouseScroll', (e)=>{
         let nowWheel = new Date();
         if(nowWheel.getTime() - lastWheel.getTime() > BIND_DELAY){
             lastWheel = new Date();
+            
             if(e.originalEvent.wheelDelta > 0){
-                if(positionSlide < SCROLL_MIN){
-                    positionSlide +=100;
-                    infoBarHide($infoBar, INFO_BAR_HIDE_POS, positionSlide);
-                    changePositionSlide($section, positionSlide);
-                }
-            }else{
-                if(positionSlide > -SCROLL_MAX){
-                    positionSlide -=100;
-                    infoBarHide($infoBar, INFO_BAR_HIDE_POS, positionSlide);
-                    changePositionSlide($section, positionSlide);
-                }
                 
+                pageSlider.goBack();
+                infoBarHide($infoBar, INFO_BAR_HIDE_POS, pageSlider.getMargin());
+            } else {
+                pageSlider.goNext();
+                infoBarHide($infoBar, INFO_BAR_HIDE_POS, pageSlider.getMargin());
             }
         }
     });
@@ -204,7 +185,7 @@ $(function() {
 
     // CHOICE HANDLING END
 
-    // INFOBAR
+    // INFOBAR use infoBarHide, jquery
     const $infoBarWrapper = $('.info-bar__wrapper');
     const $btnInfoBarOpen = $('.info-bar__toggle');
 
@@ -214,10 +195,13 @@ $(function() {
     });
 
     const $infoBarLinks =  $('.info-bar-link-js');
-    $infoBarLinks.on('click', function(){
-        positionSlide = $(this).attr('data-index-translate');
-        changePositionSlide($section, positionSlide);
-        infoBarHide($infoBar, INFO_BAR_HIDE_POS, positionSlide);
+    $infoBarLinks.on('click', function() {
+        // Obsolete TODO: remove code after testing
+        // positionSlide = $(this).attr('data-index-translate');
+        // changePositionSlide($section, positionSlide);
+        let slidename = $(this).attr('data-slidename');
+        pageSlider.slideTo(slidename);
+        infoBarHide($infoBar, INFO_BAR_HIDE_POS, pageSlider.getMargin());
         $btnInfoBarOpen.removeClass('info-bar__toggle-arrow_up');
         $infoBarWrapper.removeClass('info-bar_open');
     });

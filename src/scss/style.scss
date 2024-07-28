@@ -392,6 +392,18 @@ $infobar_height: 115px;
     }
 }
 
+.border-focus {
+    &-danger:focus {
+        box-shadow: 0 0 0 2px rgb(194, 29, 29);
+    }
+    &-success:focus {
+        box-shadow: 0 0 0 2px rgb(29, 194, 29);
+    }
+    &-normal:focus {
+        box-shadow: 0 0 0 2px white;
+    }
+}
+
 @keyframes h1-text-animation {
     from {
         text-shadow: 0 0 10px red;

@@ -65,39 +65,3 @@ export default class ChoicesCarousel {
         );
     }
 }
-
-
-function activateCarousel(selectorStr) {
-
-    const $starshipCarouselControls = $(selectorStr);
-    if (window.matchMedia(`(min-width: ${constants.SCREENSIZES.md}px)`).matches) {
-        var carousel = new bootstrap.Carousel($starshipCarouselControls, {
-            interval: false,
-        });
-        var carouselWidth = $(".carousel-inner")[0].scrollWidth;
-        var cardWidth = $(".carousel-item").width();
-        var scrollPosition = 0;
-        
-        $starshipCarouselControls.find(".carousel-control-next").on("click", function () {
-            console.log("information: ", {scrollPosition, carouselWidth, cardWidth});
-            if (scrollPosition < carouselWidth - cardWidth * 4) {
-                scrollPosition += cardWidth;
-                $starshipCarouselControls.find(".carousel-inner").animate(
-                    { scrollLeft: scrollPosition },
-                    600
-                );
-            }
-        });
-        $starshipCarouselControls.find(".carousel-control-prev").on("click", function () {
-            if (scrollPosition > 0) {
-                scrollPosition -= cardWidth;
-                $starshipCarouselControls.find(".carousel-inner").animate(
-                    { scrollLeft: scrollPosition },
-                    600
-                );
-            }
-        });
-    } else {
-        $starshipCarouselControls.addClass("slide");
-    }
-}

@@ -8,17 +8,38 @@
 //     });
 //     console.log("using wow2");
 // });
+console.log("ENTRYPOINT");
+console.log("ENTRYPOINT");
+console.log("ENTRYPOINT");
+console.log("ENTRYPOINT");
+console.log("ENTRYPOINT");
+console.log("ENTRYPOINT");
+console.log("ENTRYPOINT");
+console.log("ENTRYPOINT");
+console.log("ENTRYPOINT");
 import * as constants from "./constants.js";
 import $ from "jquery";
 import * as popper from "@popperjs/core";
 import * as bootstrap from "bootstrap";
-import tippy from 'tippy.js';
+// import tippy from 'tippy.js';
 import ChoicesCarousel from './module/carousel.js';
 import * as verification from './module/verify_inputs.js';
 import PageSlider from './module/page_slider.js';
 import Infobar from './module/inofbar.js';
+import * as choice_managers from './module/choice_manager.js';
 window.$ = $; // just for tests
 
+import crew from "../../data/crew.json"
+import equipment from "../../data/equipment.json";
+import flightpaths from "../../data/flightpaths.json";
+import starships from "../../data/starships.json";
+
+window.readOnlyData = {
+    crew,
+    equipment,
+    flightpaths,
+    starships
+};
 
 function checkboxLimitation(checkboxSelector, num){
     // deprecated function
@@ -45,15 +66,12 @@ function checkboxChangeInfo(checkboxSelector, infoSelector) {
 
 // ENTRYPOINT ----------------------------------------
 $(function() {
+    
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
 
-    // TODO: refactoring
-    $(".choice-click-handler-js").on("click", (e) => {
-        console.log("Clicked choice-click-handler-js", e);
-    });
     // TODO: automatic activation carousel by special class
     var first = new ChoicesCarousel($("#starshipCarouselControls")[0], 4); first.activate();
     var eq = new ChoicesCarousel($("#equipmentCarouselControls")[0], 4); eq.activate();
@@ -64,6 +82,46 @@ $(function() {
     var infobar = new Infobar('.js-info-bar');
     window.infobar = infobar;
     infobar.activatePagesliderGoHandling();
+
+    const starshipManager = new choice_managers.StarshipChoiceManager({
+        displayingSelector: '#starship',
+        eventSelector: '.choice-click-handler-js[data-choice-name=starship]', 
+        idAttr: 'data-choice-id',
+        choices: window.readOnlyData.starships
+    });
+
+    const equipmentManager = new choice_managers.EquipmentChoiceManager({
+        displayingSelector: '#equipment',
+        eventSelector: '.choice-click-handler-js[data-choice-name=equipment]', 
+        idAttr: 'data-choice-id',
+        choices: window.readOnlyData.equipment
+    });
+
+    const flightpathManager = new choice_managers.FlightpathChoiceManager({
+        displayingSelector: '#flightPath',
+        eventSelector: '.choice-click-handler-js[data-choice-name=flightpath]', 
+        idAttr: 'data-choice-id',
+        choices: window.readOnlyData.equipment
+    });
+
+    // const crewManager = new choice_managers.CrewChoiceManager({
+    //     displayingSelector: '#js-crew-list',
+    //     eventSelector: '.choice-click-handler-js[data-choice-name=crew]', 
+    //     idAttr: 'data-choice-id',
+    //     choices: window.readOnlyData.equipment
+    // });
+    // const shipManager = new SpaceshipChoiceManager(
+    //     {
+    //         maxChoices: 3,
+    //         minChoices: 3,
+            
+    //     }
+    //     window.readOnlyData.spaceships, 
+    //     'data-attrname', 
+    //     '.starshipitem'
+    // );
+    // shipManager.
+
 
     const BIND_DELAY = 400;
     let lastWheel = new Date();
@@ -161,11 +219,13 @@ $(function() {
     const $infoBarWrapper = $('.info-bar__wrapper');
     const $btnInfoBarOpen = $('.info-bar__toggle');
 
+    // infobar for mobile
     $btnInfoBarOpen.on("click", ()=>{
         $btnInfoBarOpen.toggleClass('info-bar__toggle-arrow_up');
         $infoBarWrapper.toggleClass('info-bar_open');
     });
 
+    // infobar links as anchors
     const $infoBarLinks =  $('.info-bar-link-js');
     $infoBarLinks.on('click', function() {
         let slidename = $(this).attr('data-slidename');

@@ -7,7 +7,7 @@ import notify from "gulp-notify";
 import babel from "gulp-babel";
 import uglify from "gulp-uglify";
 import webpack from "webpack-stream";
-
+// import webpackConfig from "../webpack.config.js";
 
 const js = () => {
     return gulp.src(path.js.src, {sourcemaps: app.isProd})

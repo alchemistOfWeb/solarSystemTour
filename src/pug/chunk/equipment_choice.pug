@@ -17,8 +17,8 @@ div.d-flex.flex-column.section-outer.choose-equipment
                 each item, index in equipment
                     +circled_item(
                         "equipment-item-" + item.id,
-                        "equipment-item",
-                        item.title_en,
+                        "equipment",
+                        item.id,
                         item.title_ru,
                         item.img_path, 
                         index==0 ? true : false 

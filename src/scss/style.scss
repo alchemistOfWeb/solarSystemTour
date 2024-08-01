@@ -46,7 +46,8 @@ $infobar_height: 115px;
     &__img{
         height: 100%;
         width: 100%;
-        filter: contrast(20%);
+        filter: contrast(60%) drop-shadow(0px 0px 16px white);
+        // filter: contrast(20%);
     }
 }
 .section-outer{
@@ -757,14 +758,15 @@ $infobar_height: 115px;
 
 // === choose-starship ===
 .choose-starship {
-    background: linear-gradient(45deg, rgb(30, 209, 185), rgb(3, 88, 109));
+    background: linear-gradient(215deg, #1ed1b9, #223d0d);
+    // background: linear-gradient(45deg, rgb(30, 209, 185), rgb(3, 88, 109));
     background-position: center;
     background-size: cover;
 }
 
 // === section-equipment ===
 .choose-equipment {
-    background: linear-gradient(45deg, rgb(53, 223, 157), rgb(19, 52, 114));
+    background: linear-gradient(45deg, #35dfd1, #133472, #29529d);
     background-position: center;
     background-size: cover;
 }
@@ -787,7 +789,7 @@ $infobar_height: 115px;
 }
 // === section-crew ===
 .choose-crew {
-    background: linear-gradient(45deg, rgb(128, 63, 113), rgb(19, 134, 180));
+    background: linear-gradient(45deg, #351313, #198dbb);
     background-position: center;
     background-size: cover;
     .section-inner{
@@ -805,7 +807,7 @@ $infobar_height: 115px;
 }
 // === flight-path ===
 .choose-flightPath{
-    background: linear-gradient(45deg, rgb(117, 41, 99), rgb(60, 44, 206));
+    background: linear-gradient(45deg, #0b010e, #2c4775, #1a3155);
     background-position: center;
     background-size: cover;
 }

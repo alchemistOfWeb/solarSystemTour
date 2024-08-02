@@ -19,7 +19,6 @@ export class ChoiceManagerAbstract {
     }
 
     setup() {
-        console.log("binding events");
         this.bindEvents();
     }
 
@@ -29,7 +28,6 @@ export class ChoiceManagerAbstract {
     }
 
     handleItemClick(event) {
-        console.log("test");
         const itemId = $(event.target).attr(this.idAttr);
         let alreadySelected = this.selectedItems.includes(itemId);
         let reselectCondition = (this.reselectForOne && this.selectedItems.length == 1);
@@ -38,6 +36,9 @@ export class ChoiceManagerAbstract {
             this.deselectItem(event, itemId);
         } else if (this.selectedItems.length < this.max || reselectCondition) {
             this.selectItem(event, itemId);
+            if (this.selectedItems.length == this.max) {
+                this.onLimitReached();
+            };
         } else {
             this.onLimitExceeded();
         }
@@ -62,9 +63,14 @@ export class ChoiceManagerAbstract {
         console.log(`Selection limit exceeded. Only ${this.max} items can be selected.`);
     }
 
+    onLimitReached() {
+        // Override in subclass if necessary
+        console.log(`Selection limit reached. Only ${this.max} items can be selected.`);
+    }
+
     updateDisplay() {
         // uses this.displayingSelector and this.selectedItems
-        console.log('updating display in infobar', this.displayingSelector, this.selectedItems)
+        console.log('updating display in infobar')
         // Change html in some places to show changes after some action (select, deselect)
         // Override in subclass if necessary
     }
@@ -82,7 +88,6 @@ export class StarshipChoiceManager extends ChoiceManagerAbstract {
         console.log("selected: ", this.selectedItems.length);
         if (this.selectedItems.length !== 0) {
             let prevId = this.selectedItems[0];
-            console.log(`selector ${this.eventSelector}[${this.idAttr}=${prevId}]`);
             let el = $(`${this.eventSelector}[${this.idAttr}=${prevId}]`);
             el.removeClass('chosen');
         }
@@ -111,7 +116,6 @@ export class EquipmentChoiceManager extends ChoiceManagerAbstract {
         console.log("selected: ", this.selectedItems.length);
         if (this.selectedItems.length !== 0) {
             let prevId = this.selectedItems[0];
-            console.log(`selector ${this.eventSelector}[${this.idAttr}=${prevId}]`);
             let el = $(`${this.eventSelector}[${this.idAttr}=${prevId}]`);
             el.removeClass('chosen');
         }
@@ -122,7 +126,6 @@ export class EquipmentChoiceManager extends ChoiceManagerAbstract {
     updateDisplay() {
         super.updateDisplay();
         let choiceId = this.selectedItems[0];
-        console.log("choceID: ", choiceId);
         let selectedChoice = this.choices.find(choice => choice.id == choiceId);
         $(this.displayingSelector).text(selectedChoice.title_ru);
     }
@@ -137,10 +140,8 @@ export class FlightpathChoiceManager extends ChoiceManagerAbstract {
     }
 
     selectItem(event, itemId) {
-        console.log("selected: ", this.selectedItems.length);
         if (this.selectedItems.length !== 0) {
             let prevId = this.selectedItems[0];
-            console.log(`selector ${this.eventSelector}[${this.idAttr}=${prevId}]`);
             let el = $(`${this.eventSelector}[${this.idAttr}=${prevId}]`);
             el.removeClass('chosen');
         }
@@ -151,7 +152,6 @@ export class FlightpathChoiceManager extends ChoiceManagerAbstract {
     updateDisplay() {
         super.updateDisplay();
         let choiceId = this.selectedItems[0];
-        console.log("choceID: ", choiceId);
         let selectedChoice = this.choices.find(choice => choice.id == choiceId);
         $(this.displayingSelector).text(selectedChoice.title_ru);
     }
@@ -163,10 +163,39 @@ export class CrewChoiceManager extends ChoiceManagerAbstract {
         super(options);
         this.max = options.max || 5;
         this.min = options.min || 5;
+        this.choicesContainerSelector = '#crew-choices-container';
+    }
+
+    deselectItem(event, itemId) {
+        let index = this.selectedItems.indexOf(itemId);
+        this.selectedItems.splice(index, 1);
+        $(event.target).removeClass('chosen');
+        $(this.choicesContainerSelector).removeClass('limit-reached');
+    }
+
+    selectItem(event, itemId) {
+        this.selectedItems.push(itemId);
+        $(event.target).addClass('chosen');
+    }
+
+    onLimitReached(){
+        $(this.choicesContainerSelector).addClass('limit-reached');
     }
 
     updateDisplay() {
         super.updateDisplay();
-        console.log('updateDisplay in CrewChoiceManager')
+        $(this.displayingSelector).empty();
+        this.selectedItems.forEach((choiceId, ind)=>{
+            let selectedChoice = this.choices.find(choice => choice.id == choiceId);
+            let crewEl = $('<li>')
+                .attr('title', selectedChoice.title_ru)
+                .attr('id', 'crew-member2in-list')
+                .attr('class', 'info-bar__crew-list-item')
+                .css({
+                    'background-image': `url(${selectedChoice.img_path})`,
+                    'background-size': 'contain'
+                });
+            $(this.displayingSelector).append(crewEl);
+        })
     }
 }

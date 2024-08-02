@@ -104,12 +104,12 @@ $(function() {
         choices: window.readOnlyData.flightpaths
     });
 
-    // const crewManager = new choice_managers.CrewChoiceManager({
-    //     displayingSelector: '#js-crew-list',
-    //     eventSelector: '.choice-click-handler-js[data-choice-name=crew]', 
-    //     idAttr: 'data-choice-id',
-    //     choices: window.readOnlyData.equipment
-    // });
+    const crewManager = new choice_managers.CrewChoiceManager({
+        displayingSelector: '#js-crew-list',
+        eventSelector: '.choice-click-handler-js[data-choice-name=crew-member]', 
+        idAttr: 'data-choice-id',
+        choices: window.readOnlyData.crew
+    });
     // const shipManager = new SpaceshipChoiceManager(
     //     {
     //         maxChoices: 3,

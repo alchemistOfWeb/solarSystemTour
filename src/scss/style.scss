@@ -209,10 +209,10 @@ $infobar_height: 115px;
             color: rgb(63, 146, 63);
         }
         &-list{
-            padding-top: 15px;
-            display: flex;
+            // padding-top: 15px;
+            // display: flex;
             flex-direction: row;
-            justify-content: start;
+            // justify-content: start;
             &-item{
                 margin: 0 10px;
                 width: 40px;
@@ -790,7 +790,10 @@ $infobar_height: 115px;
 .monolit-choice-item .chosen {
     outline: solid 2px white;
 }
-
+// carousel-item__rotated-border-block
+.limit-reached .rounded-circle:not(.chosen) {
+    border-color: #e22a2a;
+}
 
 .picture-saturnsSputnics:after{
     content: "Спутники Сатурна";

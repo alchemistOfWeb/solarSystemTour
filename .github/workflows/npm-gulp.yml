@@ -11,7 +11,7 @@ permissions:
   deployments: write
   pages: write
   id-token: write
-  
+
 concurrency:
   group: 'pages'
   cancel-in-progress: true
@@ -54,4 +54,4 @@ jobs:
 
     - name: Deploy pages
       id: deployment
-      uses: actions/deploy-pages@v2
+      uses: actions/deploy-pages@v4

@@ -6,8 +6,6 @@ on:
   pull_request:
     branches: [ "master" ]
 
-  workflow-dispatch:
-
 permissions:
   contents: read
   pages: write

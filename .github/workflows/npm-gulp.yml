@@ -26,7 +26,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: 20.x
 
     steps:
     - name: Checkout
@@ -51,6 +51,7 @@ jobs:
       uses: actions/upload-pages-artifact@v3
       with:
         path: './public'
+        overwrite: true
 
     - name: Deploy pages
       id: deployment

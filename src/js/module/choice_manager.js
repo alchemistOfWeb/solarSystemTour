@@ -28,16 +28,16 @@ export class ChoiceManagerAbstract {
         $(this.eventSelector).on('click', (e) => this.handleItemClick(e));
     }
 
-    handleItemClick(e) {
+    handleItemClick(event) {
         console.log("test");
-        const itemId = $(e.target).attr(this.idAttr);
+        const itemId = $(event.target).attr(this.idAttr);
         let alreadySelected = this.selectedItems.includes(itemId);
         let reselectCondition = (this.reselectForOne && this.selectedItems.length == 1);
 
         if (alreadySelected) {
-            this.deselectItem(itemId);
+            this.deselectItem(event, itemId);
         } else if (this.selectedItems.length < this.max || reselectCondition) {
-            this.selectItem(itemId);
+            this.selectItem(event, itemId);
         } else {
             this.onLimitExceeded();
         }
@@ -45,13 +45,13 @@ export class ChoiceManagerAbstract {
         this.updateDisplay();
     }
 
-    selectItem(itemId) {
+    selectItem(event, itemId) {
         // Override in subclass if necessary
         // this.selectedItems.push(itemId);
         console.log(`Item ${itemId} selected`);
     }
 
-    deselectItem(itemId) {
+    deselectItem(event, itemId) {
         // Override in subclass if necessary
         // this.selectedItems = this.selectedItems.filter(id => id !== itemId);
         console.log(`Item ${itemId} deselected`);
@@ -78,8 +78,16 @@ export class StarshipChoiceManager extends ChoiceManagerAbstract {
         this.min = 1;
     }
 
-    selectItem(itemId) {
+    selectItem(event, itemId) {
+        console.log("selected: ", this.selectedItems.length);
+        if (this.selectedItems.length !== 0) {
+            let prevId = this.selectedItems[0];
+            console.log(`selector ${this.eventSelector}[${this.idAttr}=${prevId}]`);
+            let el = $(`${this.eventSelector}[${this.idAttr}=${prevId}]`);
+            el.removeClass('chosen');
+        }
         this.selectedItems = [itemId];
+        $(event.target).addClass('chosen')
     }
 
     updateDisplay() {
@@ -99,8 +107,16 @@ export class EquipmentChoiceManager extends ChoiceManagerAbstract {
         this.min = 1;
     }
 
-    selectItem(itemId) {
+    selectItem(event, itemId) {
+        console.log("selected: ", this.selectedItems.length);
+        if (this.selectedItems.length !== 0) {
+            let prevId = this.selectedItems[0];
+            console.log(`selector ${this.eventSelector}[${this.idAttr}=${prevId}]`);
+            let el = $(`${this.eventSelector}[${this.idAttr}=${prevId}]`);
+            el.removeClass('chosen');
+        }
         this.selectedItems = [itemId];
+        $(event.target).addClass('chosen')
     }
 
     updateDisplay() {

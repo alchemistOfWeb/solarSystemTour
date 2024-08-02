@@ -771,22 +771,6 @@ $infobar_height: 115px;
     background-size: cover;
 }
 // === / section-equipment ===
-
-.picture-neilArmstrong:before{
-    @include background('../img/neilArmstrong.png');
-}
-.picture-dougHurley:before{
-    @include background('../img/DougHurley.png');
-}
-.picture-bobBehnken:before{
-    @include background('../img/bobBehnken.png');
-}
-.picture-feian:before{
-    @include background('../img/feian-min.png');
-}
-.picture-placeholder:before{
-    @include background('../img/placeholder-Copy.png');
-}
 // === section-crew ===
 .choose-crew {
     background: linear-gradient(45deg, #351313, #198dbb);
@@ -797,6 +781,11 @@ $infobar_height: 115px;
     }
 }
 // === / section-crew ===
+
+.circled-choice-item .chosen {
+    border-width: 4px;
+    border-style: solid;
+}
 
 .picture-saturnsSputnics:after{
     content: "Спутники Сатурна";

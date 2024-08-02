@@ -135,9 +135,25 @@ export class FlightpathChoiceManager extends ChoiceManagerAbstract {
         this.max = 1;
         this.min = 1;
     }
+
+    selectItem(event, itemId) {
+        console.log("selected: ", this.selectedItems.length);
+        if (this.selectedItems.length !== 0) {
+            let prevId = this.selectedItems[0];
+            console.log(`selector ${this.eventSelector}[${this.idAttr}=${prevId}]`);
+            let el = $(`${this.eventSelector}[${this.idAttr}=${prevId}]`);
+            el.removeClass('chosen');
+        }
+        this.selectedItems = [itemId];
+        $(event.target).addClass('chosen')
+    }
+
     updateDisplay() {
         super.updateDisplay();
-        console.log('updateDisplay in FlightpathChoiceManager')
+        let choiceId = this.selectedItems[0];
+        console.log("choceID: ", choiceId);
+        let selectedChoice = this.choices.find(choice => choice.id == choiceId);
+        $(this.displayingSelector).text(selectedChoice.title_ru);
     }
 }
 

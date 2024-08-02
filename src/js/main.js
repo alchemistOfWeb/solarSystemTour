@@ -101,7 +101,7 @@ $(function() {
         displayingSelector: '#flightPath',
         eventSelector: '.choice-click-handler-js[data-choice-name=flightpath]', 
         idAttr: 'data-choice-id',
-        choices: window.readOnlyData.equipment
+        choices: window.readOnlyData.flightpaths
     });
 
     // const crewManager = new choice_managers.CrewChoiceManager({

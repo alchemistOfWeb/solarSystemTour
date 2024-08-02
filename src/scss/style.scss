@@ -640,9 +640,9 @@ $infobar_height: 115px;
     // transition-timing-function: linear;
     // transition-duration: 0.3s;
     transition: filter 0.5s linear;
-    filter: grayscale(100%);
+    filter: grayscale(100%) brightness(0.8);
     &:hover {
-        filter: grayscale(0%);
+        filter: grayscale(0%) brightness(1.4);
     }
 }
 
@@ -786,6 +786,11 @@ $infobar_height: 115px;
     border-width: 4px;
     border-style: solid;
 }
+
+.monolit-choice-item .chosen {
+    outline: solid 2px white;
+}
+
 
 .picture-saturnsSputnics:after{
     content: "Спутники Сатурна";

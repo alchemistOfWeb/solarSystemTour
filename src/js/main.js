@@ -8,15 +8,6 @@
 //     });
 //     console.log("using wow2");
 // });
-console.log("ENTRYPOINT");
-console.log("ENTRYPOINT");
-console.log("ENTRYPOINT");
-console.log("ENTRYPOINT");
-console.log("ENTRYPOINT");
-console.log("ENTRYPOINT");
-console.log("ENTRYPOINT");
-console.log("ENTRYPOINT");
-console.log("ENTRYPOINT");
 import * as constants from "./constants.js";
 import $ from "jquery";
 import * as popper from "@popperjs/core";
@@ -73,10 +64,11 @@ $(function() {
     })
 
     // TODO: automatic activation carousel by special class
-    var first = new ChoicesCarousel($("#starshipCarouselControls")[0], 4); first.activate();
-    var eq = new ChoicesCarousel($("#equipmentCarouselControls")[0], 4); eq.activate();
-    var flightPathCarousel = new ChoicesCarousel($("#flightpathCarouselControls")[0], 4); flightPathCarousel.activate();
-    var crewCarousel = new ChoicesCarousel($("#crewCarouselControls")[0], 5); crewCarousel.activate();
+    console.log('Sus');
+    var first = new ChoicesCarousel($("#starshipCarouselControls")[0], {md: 3});
+    var eq = new ChoicesCarousel($("#equipmentCarouselControls")[0], {md: 3});
+    var flightPathCarousel = new ChoicesCarousel($("#flightpathCarouselControls")[0], {md: 4});
+    var crewCarousel = new ChoicesCarousel($("#crewCarouselControls")[0], {md: 5});
 
     var pageSlider = new PageSlider('.section-header');
     var infobar = new Infobar('.js-info-bar');

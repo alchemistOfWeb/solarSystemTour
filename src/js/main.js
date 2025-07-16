@@ -75,6 +75,15 @@ $(function() {
     window.infobar = infobar;
     infobar.activatePagesliderGoHandling();
 
+    const $startGameBtn = $('#start-game-btn');
+    const $swiper = $('#swiper-js');
+    const $commonSwiper = $('.swiper-js');
+
+    const inputName = $('#input-name-js');
+    const inputSurname = $('#input-surname-js');
+    const personName = $('.js-person-name');
+    const personSurname = $('.js-person-surname');
+
     const starshipManager = new choice_managers.StarshipChoiceManager({
         displayingSelector: '#starship',
         eventSelector: '.choice-click-handler-js[data-choice-name=starship]', 
@@ -159,10 +168,6 @@ $(function() {
     const BIND_DELAY = 400;
     let lastWheel = new Date();
 
-    const $swiper = $('#swiper-js');
-    const $commonSwiper = $('.swiper-js'); // next-btn in the bottom of each slide
-    const $startGameBtn = $('#start-game-btn');
-
     const sectionCount = $('.section-outer').length;
     const SCROLL_MAX = (sectionCount * 100) - 100;
     const SCROLL_MIN = 0;
@@ -174,12 +179,7 @@ $(function() {
 
     verification.verifyInputs();
 
-    const personName = $('.js-person-name');
-    const personSurname = $('.js-person-surname');
-
     // NEXT BTN HANDLING
-    const inputName = $('#input-name-js');
-    const inputSurname = $('#input-surname-js');
     $swiper.on("click", (e)=>{
         if(window.isCorrectInputSurname && window.isCorrectInputName){
             personName.text(inputName.val());

@@ -44,6 +44,7 @@ export class ChoiceManagerAbstract {
         }
 
         this.updateDisplay();
+        $(document).trigger('choice:change');
     }
 
     selectItem(event, itemId) {
@@ -101,6 +102,20 @@ export class StarshipChoiceManager extends ChoiceManagerAbstract {
         let selectedChoice = this.choices.find(choice => choice.id == choiceId);
         $(this.displayingSelector).text(selectedChoice.title_ru);
     }
+
+    initializeSelection(id) {
+        this.selectedItems = [];
+        $(this.eventSelector).removeClass('chosen');
+        if (id) {
+            const $el = $(`${this.eventSelector}[${this.idAttr}=${id}]`);
+            if ($el.length) {
+                this.selectedItems = [id];
+                $el.addClass('chosen');
+            }
+        }
+        this.updateDisplay();
+        $(document).trigger('choice:change');
+    }
 }
 
 
@@ -129,6 +144,20 @@ export class EquipmentChoiceManager extends ChoiceManagerAbstract {
         let selectedChoice = this.choices.find(choice => choice.id == choiceId);
         $(this.displayingSelector).text(selectedChoice.title_ru);
     }
+
+    initializeSelection(id) {
+        this.selectedItems = [];
+        $(this.eventSelector).removeClass('chosen');
+        if (id) {
+            const $el = $(`${this.eventSelector}[${this.idAttr}=${id}]`);
+            if ($el.length) {
+                this.selectedItems = [id];
+                $el.addClass('chosen');
+            }
+        }
+        this.updateDisplay();
+        $(document).trigger('choice:change');
+    }
 }
 
 
@@ -154,6 +183,20 @@ export class FlightpathChoiceManager extends ChoiceManagerAbstract {
         let choiceId = this.selectedItems[0];
         let selectedChoice = this.choices.find(choice => choice.id == choiceId);
         $(this.displayingSelector).text(selectedChoice.title_ru);
+    }
+
+    initializeSelection(id) {
+        this.selectedItems = [];
+        $(this.eventSelector).removeClass('chosen');
+        if (id) {
+            const $el = $(`${this.eventSelector}[${this.idAttr}=${id}]`);
+            if ($el.length) {
+                this.selectedItems = [id];
+                $el.addClass('chosen');
+            }
+        }
+        this.updateDisplay();
+        $(document).trigger('choice:change');
     }
 }
 
@@ -197,5 +240,24 @@ export class CrewChoiceManager extends ChoiceManagerAbstract {
                 });
             $(this.displayingSelector).append(crewEl);
         })
+    }
+
+    initializeSelection(ids=[]) {
+        this.selectedItems = [];
+        $(this.eventSelector).removeClass('chosen');
+        ids.forEach(id => {
+            const $el = $(`${this.eventSelector}[${this.idAttr}=${id}]`);
+            if ($el.length) {
+                this.selectedItems.push(id);
+                $el.addClass('chosen');
+            }
+        });
+        if (this.selectedItems.length >= this.max) {
+            $(this.choicesContainerSelector).addClass('limit-reached');
+        } else {
+            $(this.choicesContainerSelector).removeClass('limit-reached');
+        }
+        this.updateDisplay();
+        $(document).trigger('choice:change');
     }
 }

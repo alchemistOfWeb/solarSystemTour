@@ -75,6 +75,15 @@ $(function() {
     window.infobar = infobar;
     infobar.activatePagesliderGoHandling();
 
+    const $startGameBtn = $('#start-game-btn');
+    const $swiper = $('#swiper-js');
+    const $commonSwiper = $('.swiper-js');
+
+    const inputName = $('#input-name-js');
+    const inputSurname = $('#input-surname-js');
+    const personName = $('.js-person-name');
+    const personSurname = $('.js-person-surname');
+
     const starshipManager = new choice_managers.StarshipChoiceManager({
         displayingSelector: '#starship',
         eventSelector: '.choice-click-handler-js[data-choice-name=starship]', 
@@ -98,10 +107,51 @@ $(function() {
 
     const crewManager = new choice_managers.CrewChoiceManager({
         displayingSelector: '#js-crew-list',
-        eventSelector: '.choice-click-handler-js[data-choice-name=crew-member]', 
+        eventSelector: '.choice-click-handler-js[data-choice-name=crew-member]',
         idAttr: 'data-choice-id',
         choices: window.readOnlyData.crew
     });
+
+    function updateStartBtnState() {
+        const ready = starshipManager.selectedItems.length >= starshipManager.min &&
+            equipmentManager.selectedItems.length >= equipmentManager.min &&
+            flightpathManager.selectedItems.length >= flightpathManager.min &&
+            crewManager.selectedItems.length >= crewManager.min;
+        $startGameBtn.prop('disabled', !ready);
+    }
+
+    $(document).on('choice:change', updateStartBtnState);
+
+    const savedSetupStr = localStorage.getItem('gameSetup');
+    if (savedSetupStr) {
+        try {
+            const savedSetup = JSON.parse(savedSetupStr);
+            if (savedSetup.name) {
+                inputName.val(savedSetup.name);
+                personName.text(savedSetup.name);
+            }
+            if (savedSetup.surname) {
+                inputSurname.val(savedSetup.surname);
+                personSurname.text(savedSetup.surname);
+            }
+            if (savedSetup.starshipId) {
+                starshipManager.initializeSelection(savedSetup.starshipId);
+            }
+            if (savedSetup.equipmentId) {
+                equipmentManager.initializeSelection(savedSetup.equipmentId);
+            }
+            if (savedSetup.flightpathId) {
+                flightpathManager.initializeSelection(savedSetup.flightpathId);
+            }
+            if (Array.isArray(savedSetup.crewIds)) {
+                crewManager.initializeSelection(savedSetup.crewIds);
+            }
+        } catch (e) {
+            console.error('failed to load gameSetup', e);
+        }
+    }
+
+    updateStartBtnState();
     // const shipManager = new SpaceshipChoiceManager(
     //     {
     //         maxChoices: 3,
@@ -118,10 +168,6 @@ $(function() {
     const BIND_DELAY = 400;
     let lastWheel = new Date();
 
-    const $swiper = $('#swiper-js');
-    const $commonSwiper = $('.swiper-js'); // next-btn in the bottom of each slide
-    const $startGameBtn = $('#start-game-btn');
-
     const sectionCount = $('.section-outer').length;
     const SCROLL_MAX = (sectionCount * 100) - 100;
     const SCROLL_MIN = 0;
@@ -133,12 +179,7 @@ $(function() {
 
     verification.verifyInputs();
 
-    const personName = $('.js-person-name');
-    const personSurname = $('.js-person-surname');
-
     // NEXT BTN HANDLING
-    const inputName = $('#input-name-js');
-    const inputSurname = $('#input-surname-js');
     $swiper.on("click", (e)=>{
         if(window.isCorrectInputSurname && window.isCorrectInputName){
             personName.text(inputName.val());

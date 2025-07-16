@@ -98,10 +98,51 @@ $(function() {
 
     const crewManager = new choice_managers.CrewChoiceManager({
         displayingSelector: '#js-crew-list',
-        eventSelector: '.choice-click-handler-js[data-choice-name=crew-member]', 
+        eventSelector: '.choice-click-handler-js[data-choice-name=crew-member]',
         idAttr: 'data-choice-id',
         choices: window.readOnlyData.crew
     });
+
+    function updateStartBtnState() {
+        const ready = starshipManager.selectedItems.length >= starshipManager.min &&
+            equipmentManager.selectedItems.length >= equipmentManager.min &&
+            flightpathManager.selectedItems.length >= flightpathManager.min &&
+            crewManager.selectedItems.length >= crewManager.min;
+        $startGameBtn.prop('disabled', !ready);
+    }
+
+    $(document).on('choice:change', updateStartBtnState);
+
+    const savedSetupStr = localStorage.getItem('gameSetup');
+    if (savedSetupStr) {
+        try {
+            const savedSetup = JSON.parse(savedSetupStr);
+            if (savedSetup.name) {
+                inputName.val(savedSetup.name);
+                personName.text(savedSetup.name);
+            }
+            if (savedSetup.surname) {
+                inputSurname.val(savedSetup.surname);
+                personSurname.text(savedSetup.surname);
+            }
+            if (savedSetup.starshipId) {
+                starshipManager.initializeSelection(savedSetup.starshipId);
+            }
+            if (savedSetup.equipmentId) {
+                equipmentManager.initializeSelection(savedSetup.equipmentId);
+            }
+            if (savedSetup.flightpathId) {
+                flightpathManager.initializeSelection(savedSetup.flightpathId);
+            }
+            if (Array.isArray(savedSetup.crewIds)) {
+                crewManager.initializeSelection(savedSetup.crewIds);
+            }
+        } catch (e) {
+            console.error('failed to load gameSetup', e);
+        }
+    }
+
+    updateStartBtnState();
     // const shipManager = new SpaceshipChoiceManager(
     //     {
     //         maxChoices: 3,

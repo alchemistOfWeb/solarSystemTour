@@ -118,8 +118,9 @@ $(function() {
     const BIND_DELAY = 400;
     let lastWheel = new Date();
 
-    const $swiper = $('#swiper-js'); 
-    const $commonSwiper = $('.swiper-js'); // next-btn in the botom of each slide
+    const $swiper = $('#swiper-js');
+    const $commonSwiper = $('.swiper-js'); // next-btn in the bottom of each slide
+    const $startGameBtn = $('#start-game-btn');
 
     const sectionCount = $('.section-outer').length;
     const SCROLL_MAX = (sectionCount * 100) - 100;
@@ -150,6 +151,19 @@ $(function() {
 
     $commonSwiper.on("click", ()=>{
         pageSlider.goNext();
+    });
+
+    $startGameBtn.on('click', ()=>{
+        const gameSetup = {
+            name: inputName.val(),
+            surname: inputSurname.val(),
+            starshipId: starshipManager.selectedItems[0],
+            equipmentId: equipmentManager.selectedItems[0],
+            flightpathId: flightpathManager.selectedItems[0],
+            crewIds: crewManager.selectedItems
+        };
+        localStorage.setItem('gameSetup', JSON.stringify(gameSetup));
+        window.location.href = 'game.html';
     });
     // NEXT BTN HANDLING END
 
@@ -227,3 +241,4 @@ $(function() {
     });
     // INFOBAR END
 });
+
